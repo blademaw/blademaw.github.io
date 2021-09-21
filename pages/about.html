@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width">
         <title>About | Divide & Ponder</title>
 
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico?" type="image/x-icon">
         <link rel="alternate" type="application/atom+xml" title="Divide & Ponder blog atom feed" href="/feeds/all.atom.xml" />
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
 
@@ -375,6 +375,41 @@ article .meta a.comments_btn:hover {
 .col-lg-12 {
   padding-right: 0px;
   padding-left: 0px;
+}
+
+figure {
+  text-align: center;
+}
+
+figure.styled {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background: repeating-linear-gradient(135deg, #dfdfdf 0, #dfdfdf 1%, #ffffff 0, #ffffff 50%) 0 / 20px 20px;
+  text-align: center;
+  img {
+      margin: 0 auto 0.2rem auto;
+      border: 1px solid #ddd;
+      box-shadow: none;
+      background-color: #fff;
+  }
+}
+figcaption {
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 1.6;
+  font-family: Consolas, monaco, monospace;
+  span {
+      background-color: #fff;
+      padding: 0.2rem 0.5rem;
+  }
+  a:hover {
+      cursor: pointer;
+  }
 }</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -433,10 +468,10 @@ article .meta a.comments_btn:hover {
 	  <div class="social-links">
 	    <ul>
 	      <li><a href="http://blademaw.github.io" rel="me">blog</a></li>
-	      <li><a href="https://docs.google.com/viewer?url=https://github.com/blademaw/cv/raw/main/resume.pdf" rel="me">CV</a></li>
-	      <li><a class="fab fa-github" href="http://github.com/blademaw" rel="me"></a></li>
-	      <li><a class="fab fa-linkedin" href="https://www.linkedin.com/in/jack-roy-oliver/" rel="me"></a></li>
-	      <li><a class="fab fa-goodreads" href="https://www.goodreads.com/user/show/104565077-jack-oliver" rel="me"></a></li>
+        <span>·</span><li><a href="/features/files/cv.pdf" rel="me" target="_blank">CV</a></li>
+        <span>·</span><li><a class="fab fa-github" href="http://github.com/blademaw" rel="me"></a></li>
+        <span>·</span><li><a class="fab fa-linkedin" href="https://www.linkedin.com/in/jack-roy-oliver/" rel="me"></a></li>
+        <span>·</span><li><a class="fab fa-goodreads" href="https://www.goodreads.com/user/show/104565077-jack-oliver" rel="me"></a></li>
 	    </ul>
         </header>
 
@@ -444,12 +479,15 @@ article .meta a.comments_btn:hover {
             <p><img src="/images/me.jpg" align="left" width="150" style="padding-right:20px;"/>
 Hi! — My name is Jack, and I'm an aspiring data scientist with a passion for computer science. 
 I'm currently completing a Bachelor's degree of Computer Science
-at <a href="https://www.monash.edu/">Monash University</a>. When I'm not occupied with school,
+at <a href="https://www.monash.edu/" target="_blank">Monash University</a>. When I'm not occupied with school,
 I enjoy crafting side-projects that give me space to experiment and explore topics in data science
 or computer science. Sometimes I end up uploading them to this blog and talking about them.
-<br clear="left"/></p>
-<p><strong>About this blog</strong>: <br/>
-    This blog is built under Pelican, with a (slightly tweaked) theme from <a href="https://github.com/jakevdp/jakevdp.github.io-source">Jake VanderPlas</a>.</p>
+<br/></p>
+<p><strong>Details about this blog</strong>:</p>
+<ul>
+<li>This blog is built with <a href="https://blog.getpelican.com/" target="_blank">Pelican</a>, using a (slightly tweaked) theme from <a href="https://github.com/jakevdp/jakevdp.github.io-source" target="_blank">Jake VanderPlas</a>.</li>
+<li>Images on this blog such as the following: <figure class="styled"><img class="styled" src="/images/lorenz.png" width="200" height="150" title="Figure 1: The Lorenz System" alt="Figure 1: The Lorenz System"><figcaption>Figure 1: The Lorenz System</figcaption></figure> are implemented using a <a href="#">modified version</a> of Jake VanderPlas' <a href="https://github.com/pelican-plugins/liquid-tags" target="_blank">Liquid Tags</a> and styling inspired by <a href="https://heiswayi.nrird.com/image-caption-using-liquid-syntax" target="_blank">Heiswayi Nrird</a>.</li>
+</ul>
         </div>
 
     </article>
