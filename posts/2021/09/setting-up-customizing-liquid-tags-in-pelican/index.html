@@ -621,11 +621,11 @@ jQuery(document).ready(function($) {
 
         <div class="article_content">
             <h2>A word on <code>liquid-tags</code> and Pelican plugins</h2>
-<p>Without delving in too deep, <abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin">Liquid Tags</abbr> are the saving grace of integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, writing</p>
+<p>Without delving in too deep, <abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin">Liquid Tags</abbr> are the saving grace of media integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, the following:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{%</span><span class="w"> </span><span class="nt">notebook</span><span class="w"> </span>my-jupyter-notebook.ipynb<span class="w"> </span><span class="na">cells[2</span><span class="o">:</span><span class="mi">3</span>]<span class="w"> </span><span class="p">%}</span>
 </code></pre></div>
 
-<p>results in the following:</p>
+<p>displays cells 2–3 of a Jupyter notebook:</p>
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
@@ -14934,8 +14934,8 @@ a.anchor-link {
 
 </html>
 
-<p>They follow a simplistic structure — enclosed in curly braces and percent signs, the first argument is the type of liquid tag to be integrated, and the following arguments are content parameters, usually a file directory and display-tuners.</p>
-<p>They use regular expressions to match arguments to groups, generating HTML tags appropriately. Created by one of my favorite data scientists, Jake VanderPlas, they are an ingenious invention that are hard to live without once you start using them.</p>
+<p>They follow a simplistic structure — enclosed in curly braces and percent signs, the first argument is the type of liquid tag to be integrated, and the following arguments are content parameters, usually a directory to a file, and aesthetic tuners.</p>
+<p>They use regular expressions to match arguments to groups, generating HTML tags appropriately. Created by one of my favorite data scientists, <a href="https://github.com/jakevdp">Jake VanderPlas</a>, they are an ingenious invention that are difficult to live without once you start using them.</p>
 <p>Unfortunately, they <strong>do not come standard</strong> with Pelican, and must be installed and recognized by Pelican in order to be used within articles. Choosing which method of installation and which version of <code>liquid-tags</code> to install can be time-consuming, so it is my aim in this brief article to simplify the process for any future users.</p>
 <h2>Installing <code>liquid-tags</code></h2>
 <p>From what I can tell, it used to be that <strong>all</strong> Pelican plugins had to be cloned from <a href="https://github.com/getpelican/pelican-plugins">this massive repo</a> and stored locally in a <code>/plugins/</code> directory to be used. Recently however, the Pelican Plugins organization has attempted to streamline the plugin acquisition pipeline by migrating plugins to a <a href="https://github.com/pelican-plugins">new organization</a>.</p>
@@ -14951,7 +14951,7 @@ a.anchor-link {
 </code></pre></div>
 
 <p><br/>
-For local installations, create a <code>/plugins/</code> subdirectory in the same place as your <code>/content/</code> if you don't already have one, and then clone the <code>liquid-tags</code> repo into a folder:</p>
+For local installations, create a <code>/plugins/</code> subdirectory in your <code>pelican</code> root directory if you don't already have one, and then clone the <code>liquid-tags</code> repo into a folder:</p>
 <div class="highlight"><pre><span></span><code>$ git clone https://github.com/pelican-plugins/liquid-tags.git pelican-plugins/liquid_tags
 </code></pre></div>
 
@@ -14970,23 +14970,23 @@ For local installations, create a <code>/plugins/</code> subdirectory in the sam
             └── ...
 </code></pre></div>
 
-<p>Then to your <code>pelicanconf.py</code> add the source directory for liquid-tags and import the tags you want to use (with the local directory, these must be <strong>individually specified and added</strong> to <code>PLUGINS</code> prefixed by <code>liquid_tags.</code>):</p>
+<p>Then add the source directory to your <code>pelicanconf.py</code> for liquid-tags and import the tags you want to use (with the local directory, these must be <strong>individually specified and added</strong> to <code>PLUGINS</code> prefixed by <code>liquid_tags.</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;./plugins/pelican-plugins&#39;</span><span class="p">]</span>
 <span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;render_math&#39;</span><span class="p">,</span> <span class="s1">&#39;liquid_tags.img&#39;</span><span class="p">,</span>
          <span class="s1">&#39;liquid_tags.notebook&#39;</span><span class="p">,</span> <span class="s1">&#39;liquid_tags.literal&#39;</span><span class="p">]</span>
 </code></pre></div>
 
-<p>Now you can begin using the tags. For documentation for specific tags, I find it easier to refer to the tag type's <code>.py</code> file and reading the preamble.</p>
+<p>Now you can begin using the tags. Regarding documentation of specific tags, I find reading the header in the tag's <code>.py</code> file easiest, but you can view the <code>README</code> for <code>liquid-tags</code> <a href="https://github.com/pelican-plugins/liquid-tags">here</a>.</p>
 <h2>Customizing tags</h2>
 <p>As mentioned, liquid tags substitute the written tag in Markdown by matching a regular expression to the given arguments, and inserting them into appropriate groups in an HTML snippet. If you'd like to add your own arguments to tags, create your own, or edit the HTML outputted by a tag, you can edit the appropriate <code>.py</code> file.</p>
-<p>The good news is most of the legwork is done for you — the first step is customizing the regular expression to match. It'll look something like this:</p>
+<p>The good news is most of the legwork is already done for you — the first step is customizing the regular expression to match. It'll look something like this:</p>
 <div class="highlight"><pre><span></span><code><span class="n">AUDIO</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
     <span class="sa">r</span><span class="s2">&quot;(/\S+|https?:\S+)(?:\s+(/\S+|https?:\S+))?(?:\s+(/\S+|https?:\S+))?&quot;</span>
 <span class="p">)</span>
 </code></pre></div>
 
-<p>Once you've altered it to your liking, check how the file splits and assigns groups, which will depend on the tag. Most files have a for-loop that collects arguments into a dictionary called <code>attrs</code> where <code>(key, value)</code> pairs are in the format <code>(group_name, string)</code> where <code>string</code> is supplied by the user in the tag.</p>
-<p>All tags are functions that return the HTML string to be injected into your article/page. Since string manipulation is especially easy in Python, the rest of the work is just formatting your HTML string by inserting the right dictionary values in the right places.</p>
+<p>Once you've altered it to your liking, check how the file splits and assigns groups, which will depend on the tag. Most files have a <code>for</code> loop that collects arguments into a dictionary <code>attrs</code> where <code>(key, value)</code> pairs are in the format <code>(regex_group, matched_string)</code>.</p>
+<p>All tags work by returning the HTML to be put in your page as a string. Since string manipulation is especially easy in Python, the rest of the work is really just formatting your HTML string by inserting the right dictionary values in the right places.</p>
 <h3>Example — altering <code>img.py</code> for figures</h3>
 <p>While the regular <code>img</code> tags are fine, I wanted a styled version for figures that needed captions, and images of interest. I could have created a separate <code>figure.py</code> liquid tag, but I opted for editing the <code>img.py</code> file.</p>
 <p>This way, I can embed regular images like such:</p>
@@ -15057,7 +15057,7 @@ For local installations, create a <code>/plugins/</code> subdirectory in the sam
 </code></pre></div>
 
 </figure>
-<p>which appends all additional arguments in the liquid tag to the HTML <code>&lt;img&gt;</code> tag. Finally, I added a few final <code>if</code>s to add the source and close the tags:</p>
+<p>which appends all additional arguments in the liquid tag to the HTML <code>&lt;img&gt;</code> tag. Finally, the source is added if supplied, and all tags are closed:</p>
 <figure class='code '>
 
 <div class="highlight"><pre><span></span><code>    <span class="c1"># if source, append to caption</span>
@@ -15073,7 +15073,7 @@ For local installations, create a <code>/plugins/</code> subdirectory in the sam
 </code></pre></div>
 
 </figure>
-<p>So in the end, the three images above can then be generated using the same tag via the respective liquid tags:</p>
+<p>So in the end, the three images above can then be displayed using the following tags:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{%</span><span class="w"> </span><span class="nt">img</span><span class="w"> </span>/images/stochastic_lotka_volterra.png<span class="w"> </span><span class="mi">450</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot;A stochastic Lotka-Volterra model&quot;</span><span class="w"> </span><span class="p">%}</span>
 
 <span class="p">{%</span><span class="w"> </span><span class="nt">img</span><span class="w"> </span>styled<span class="w"> </span>/images/stochastic_lotka_volterra.png<span class="w"> </span><span class="mi">450</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot;A stochastic Lotka-Volterra model&quot;</span><span class="w"> </span><span class="p">%}</span>

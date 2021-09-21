@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Divide &amp; Ponder - articles</title><link href="https://blademaw.github.io/" rel="alternate"></link><link href="https://blademaw.github.io/feeds/articles.atom.xml" rel="self"></link><id>https://blademaw.github.io/</id><updated>2021-09-21T16:00:00+10:00</updated><subtitle>Vague ventures stumbling through computer science</subtitle><subtitle>Vague ventures stumbling through computer science</subtitle><entry><title>Setting up &amp; Customizing Liquid Tags in Pelican</title><link href="https://blademaw.github.io/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/" rel="alternate"></link><published>2021-09-21T16:00:00+10:00</published><updated>2021-09-21T16:00:00+10:00</updated><author><name>Jack Oliver</name></author><id>tag:blademaw.github.io,2021-09-21:/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/</id><summary type="html">&lt;h2&gt;A word on &lt;code&gt;liquid-tags&lt;/code&gt; and Pelican plugins&lt;/h2&gt;
-&lt;p&gt;Without delving in too deep, &lt;abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin"&gt;Liquid Tags&lt;/abbr&gt; are the saving grace of integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, writing&lt;/p&gt;
+&lt;p&gt;Without delving in too deep, &lt;abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin"&gt;Liquid Tags&lt;/abbr&gt; are the saving grace of media integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, the following:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;results in the following:&lt;/p&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;&lt;meta charset="utf-8" /&gt;
-&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-
-&lt;title&gt;Notebook&lt;/title&gt;&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"&gt;&lt;/script&gt;
-
-
-
-
-&lt;style type="text/css"&gt;
-    pre { line-height: 125 …&lt;/style&gt;&lt;/meta&gt;&lt;/head&gt;&lt;/html&gt;</summary><content type="html">&lt;h2&gt;A word on &lt;code&gt;liquid-tags&lt;/code&gt; and Pelican plugins&lt;/h2&gt;
-&lt;p&gt;Without delving in too deep, &lt;abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin"&gt;Liquid Tags&lt;/abbr&gt; are the saving grace of integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, writing&lt;/p&gt;
+&lt;p&gt;displays cells 2–3 of a …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;A word on &lt;code&gt;liquid-tags&lt;/code&gt; and Pelican plugins&lt;/h2&gt;
+&lt;p&gt;Without delving in too deep, &lt;abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin"&gt;Liquid Tags&lt;/abbr&gt; are the saving grace of media integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, the following:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;results in the following:&lt;/p&gt;
+&lt;p&gt;displays cells 2–3 of a Jupyter notebook:&lt;/p&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;&lt;meta charset="utf-8" /&gt;
@@ -14330,8 +14318,8 @@ a.anchor-link {
 
 &lt;/html&gt;
 
-&lt;p&gt;They follow a simplistic structure — enclosed in curly braces and percent signs, the first argument is the type of liquid tag to be integrated, and the following arguments are content parameters, usually a file directory and display-tuners.&lt;/p&gt;
-&lt;p&gt;They use regular expressions to match arguments to groups, generating HTML tags appropriately. Created by one of my favorite data scientists, Jake VanderPlas, they are an ingenious invention that are hard to live without once you start using them.&lt;/p&gt;
+&lt;p&gt;They follow a simplistic structure — enclosed in curly braces and percent signs, the first argument is the type of liquid tag to be integrated, and the following arguments are content parameters, usually a directory to a file, and aesthetic tuners.&lt;/p&gt;
+&lt;p&gt;They use regular expressions to match arguments to groups, generating HTML tags appropriately. Created by one of my favorite data scientists, &lt;a href="https://github.com/jakevdp"&gt;Jake VanderPlas&lt;/a&gt;, they are an ingenious invention that are difficult to live without once you start using them.&lt;/p&gt;
 &lt;p&gt;Unfortunately, they &lt;strong&gt;do not come standard&lt;/strong&gt; with Pelican, and must be installed and recognized by Pelican in order to be used within articles. Choosing which method of installation and which version of &lt;code&gt;liquid-tags&lt;/code&gt; to install can be time-consuming, so it is my aim in this brief article to simplify the process for any future users.&lt;/p&gt;
 &lt;h2&gt;Installing &lt;code&gt;liquid-tags&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;From what I can tell, it used to be that &lt;strong&gt;all&lt;/strong&gt; Pelican plugins had to be cloned from &lt;a href="https://github.com/getpelican/pelican-plugins"&gt;this massive repo&lt;/a&gt; and stored locally in a &lt;code&gt;/plugins/&lt;/code&gt; directory to be used. Recently however, the Pelican Plugins organization has attempted to streamline the plugin acquisition pipeline by migrating plugins to a &lt;a href="https://github.com/pelican-plugins"&gt;new organization&lt;/a&gt;.&lt;/p&gt;
@@ -14347,7 +14335,7 @@ a.anchor-link {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br/&gt;
-For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirectory in the same place as your &lt;code&gt;/content/&lt;/code&gt; if you don't already have one, and then clone the &lt;code&gt;liquid-tags&lt;/code&gt; repo into a folder:&lt;/p&gt;
+For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirectory in your &lt;code&gt;pelican&lt;/code&gt; root directory if you don't already have one, and then clone the &lt;code&gt;liquid-tags&lt;/code&gt; repo into a folder:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ git clone https://github.com/pelican-plugins/liquid-tags.git pelican-plugins/liquid_tags
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -14366,23 +14354,23 @@ For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirector
             └── ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Then to your &lt;code&gt;pelicanconf.py&lt;/code&gt; add the source directory for liquid-tags and import the tags you want to use (with the local directory, these must be &lt;strong&gt;individually specified and added&lt;/strong&gt; to &lt;code&gt;PLUGINS&lt;/code&gt; prefixed by &lt;code&gt;liquid_tags.&lt;/code&gt;):&lt;/p&gt;
+&lt;p&gt;Then add the source directory to your &lt;code&gt;pelicanconf.py&lt;/code&gt; for liquid-tags and import the tags you want to use (with the local directory, these must be &lt;strong&gt;individually specified and added&lt;/strong&gt; to &lt;code&gt;PLUGINS&lt;/code&gt; prefixed by &lt;code&gt;liquid_tags.&lt;/code&gt;):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;./plugins/pelican-plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;render_math&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;liquid_tags.img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
          &lt;span class="s1"&gt;&amp;#39;liquid_tags.notebook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;liquid_tags.literal&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Now you can begin using the tags. For documentation for specific tags, I find it easier to refer to the tag type's &lt;code&gt;.py&lt;/code&gt; file and reading the preamble.&lt;/p&gt;
+&lt;p&gt;Now you can begin using the tags. Regarding documentation of specific tags, I find reading the header in the tag's &lt;code&gt;.py&lt;/code&gt; file easiest, but you can view the &lt;code&gt;README&lt;/code&gt; for &lt;code&gt;liquid-tags&lt;/code&gt; &lt;a href="https://github.com/pelican-plugins/liquid-tags"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Customizing tags&lt;/h2&gt;
 &lt;p&gt;As mentioned, liquid tags substitute the written tag in Markdown by matching a regular expression to the given arguments, and inserting them into appropriate groups in an HTML snippet. If you'd like to add your own arguments to tags, create your own, or edit the HTML outputted by a tag, you can edit the appropriate &lt;code&gt;.py&lt;/code&gt; file.&lt;/p&gt;
-&lt;p&gt;The good news is most of the legwork is done for you — the first step is customizing the regular expression to match. It'll look something like this:&lt;/p&gt;
+&lt;p&gt;The good news is most of the legwork is already done for you — the first step is customizing the regular expression to match. It'll look something like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;AUDIO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;(/\S+|https?:\S+)(?:\s+(/\S+|https?:\S+))?(?:\s+(/\S+|https?:\S+))?&amp;quot;&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Once you've altered it to your liking, check how the file splits and assigns groups, which will depend on the tag. Most files have a for-loop that collects arguments into a dictionary called &lt;code&gt;attrs&lt;/code&gt; where &lt;code&gt;(key, value)&lt;/code&gt; pairs are in the format &lt;code&gt;(group_name, string)&lt;/code&gt; where &lt;code&gt;string&lt;/code&gt; is supplied by the user in the tag.&lt;/p&gt;
-&lt;p&gt;All tags are functions that return the HTML string to be injected into your article/page. Since string manipulation is especially easy in Python, the rest of the work is just formatting your HTML string by inserting the right dictionary values in the right places.&lt;/p&gt;
+&lt;p&gt;Once you've altered it to your liking, check how the file splits and assigns groups, which will depend on the tag. Most files have a &lt;code&gt;for&lt;/code&gt; loop that collects arguments into a dictionary &lt;code&gt;attrs&lt;/code&gt; where &lt;code&gt;(key, value)&lt;/code&gt; pairs are in the format &lt;code&gt;(regex_group, matched_string)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;All tags work by returning the HTML to be put in your page as a string. Since string manipulation is especially easy in Python, the rest of the work is really just formatting your HTML string by inserting the right dictionary values in the right places.&lt;/p&gt;
 &lt;h3&gt;Example — altering &lt;code&gt;img.py&lt;/code&gt; for figures&lt;/h3&gt;
 &lt;p&gt;While the regular &lt;code&gt;img&lt;/code&gt; tags are fine, I wanted a styled version for figures that needed captions, and images of interest. I could have created a separate &lt;code&gt;figure.py&lt;/code&gt; liquid tag, but I opted for editing the &lt;code&gt;img.py&lt;/code&gt; file.&lt;/p&gt;
 &lt;p&gt;This way, I can embed regular images like such:&lt;/p&gt;
@@ -14453,7 +14441,7 @@ For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirector
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/figure&gt;
-&lt;p&gt;which appends all additional arguments in the liquid tag to the HTML &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag. Finally, I added a few final &lt;code&gt;if&lt;/code&gt;s to add the source and close the tags:&lt;/p&gt;
+&lt;p&gt;which appends all additional arguments in the liquid tag to the HTML &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag. Finally, the source is added if supplied, and all tags are closed:&lt;/p&gt;
 &lt;figure class='code '&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;# if source, append to caption&lt;/span&gt;
@@ -14469,7 +14457,7 @@ For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirector
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/figure&gt;
-&lt;p&gt;So in the end, the three images above can then be generated using the same tag via the respective liquid tags:&lt;/p&gt;
+&lt;p&gt;So in the end, the three images above can then be displayed using the following tags:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/images/stochastic_lotka_volterra.png&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;450&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
 
 &lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;styled&lt;span class="w"&gt; &lt;/span&gt;/images/stochastic_lotka_volterra.png&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;450&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
