@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Divide &amp; Ponder</title><link href="https://blademaw.github.io/" rel="alternate"></link><link href="https://blademaw.github.io/feeds/all.atom.xml" rel="self"></link><id>https://blademaw.github.io/</id><updated>2021-09-19T16:00:00+10:00</updated><subtitle>Vague ventures stumbling through computer science</subtitle><subtitle>Vague ventures stumbling through computer science</subtitle><entry><title>My updated post</title><link href="https://blademaw.github.io/posts/2021/09/my-updated-post/" rel="alternate"></link><published>2021-09-19T16:00:00+10:00</published><updated>2021-09-19T16:00:00+10:00</updated><author><name>Jack Oliver</name></author><id>tag:blademaw.github.io,2021-09-19:/posts/2021/09/my-updated-post/</id><summary type="html">&lt;p&gt;A first post, solely for &lt;br/&gt;testing purposes&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Updated Post 2&lt;/h1&gt;
-&lt;h2&gt;For the sake of the sake's sake.&lt;/h2&gt;
-&lt;p&gt;This is my first post in Pelican. &lt;strong&gt;Cool&lt;/strong&gt; or &lt;em&gt;not&lt;/em&gt;?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Divide &amp; Ponder</title><link href="https://blademaw.github.io/" rel="alternate"></link><link href="https://blademaw.github.io/feeds/all.atom.xml" rel="self"></link><id>https://blademaw.github.io/</id><updated>2021-09-21T16:00:00+10:00</updated><subtitle>Vague ventures stumbling through computer science</subtitle><subtitle>Vague ventures stumbling through computer science</subtitle><entry><title>Setting up &amp; Customizing Liquid Tags in Pelican</title><link href="https://blademaw.github.io/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/" rel="alternate"></link><published>2021-09-21T16:00:00+10:00</published><updated>2021-09-21T16:00:00+10:00</updated><author><name>Jack Oliver</name></author><id>tag:blademaw.github.io,2021-09-21:/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/</id><summary type="html">&lt;h2&gt;A word on &lt;code&gt;liquid-tags&lt;/code&gt; and Pelican plugins&lt;/h2&gt;
+&lt;p&gt;Without delving in too deep, &lt;abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin"&gt;Liquid Tags&lt;/abbr&gt; are the saving grace of integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, writing&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;results in the following:&lt;/p&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;meta charset="utf-8" /&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;title&gt;Notebook&lt;/title&gt;&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"&gt;&lt;/script&gt;
+
+
+
+
+&lt;style type="text/css"&gt;
+    pre { line-height: 125 …&lt;/style&gt;&lt;/meta&gt;&lt;/head&gt;&lt;/html&gt;</summary><content type="html">&lt;h2&gt;A word on &lt;code&gt;liquid-tags&lt;/code&gt; and Pelican plugins&lt;/h2&gt;
+&lt;p&gt;Without delving in too deep, &lt;abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin"&gt;Liquid Tags&lt;/abbr&gt; are the saving grace of integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, writing&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;results in the following:&lt;/p&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;&lt;meta charset="utf-8" /&gt;
@@ -14310,70 +14330,153 @@ a.anchor-link {
 
 &lt;/html&gt;
 
-&lt;p&gt;An equation is given by:&lt;/p&gt;
-&lt;div class="math"&gt;$$ \frac{1}{1+e^{-x}} $$&lt;/div&gt;
-&lt;p&gt;And here's an attempt at embedding an image:
-&lt;figure&gt;&lt;img src="/images/Data_Science_VD.png" title="The Conway Venn-Diagram" alt="The conway vd"&gt;&lt;figcaption&gt;The Conway Venn-Diagram&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;And that's all!&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
+&lt;p&gt;They follow a simplistic structure — enclosed in curly braces and percent signs, the first argument is the type of liquid tag to be integrated, and the following arguments are content parameters, usually a file directory and display-tuners.&lt;/p&gt;
+&lt;p&gt;They use regular expressions to match arguments to groups, generating HTML tags appropriately. Created by one of my favorite data scientists, Jake VanderPlas, they are an ingenious invention that are hard to live without once you start using them.&lt;/p&gt;
+&lt;p&gt;Unfortunately, they &lt;strong&gt;do not come standard&lt;/strong&gt; with Pelican, and must be installed and recognized by Pelican in order to be used within articles. Choosing which method of installation and which version of &lt;code&gt;liquid-tags&lt;/code&gt; to install can be time-consuming, so it is my aim in this brief article to simplify the process for any future users.&lt;/p&gt;
+&lt;h2&gt;Installing &lt;code&gt;liquid-tags&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;From what I can tell, it used to be that &lt;strong&gt;all&lt;/strong&gt; Pelican plugins had to be cloned from &lt;a href="https://github.com/getpelican/pelican-plugins"&gt;this massive repo&lt;/a&gt; and stored locally in a &lt;code&gt;/plugins/&lt;/code&gt; directory to be used. Recently however, the Pelican Plugins organization has attempted to streamline the plugin acquisition pipeline by migrating plugins to a &lt;a href="https://github.com/pelican-plugins"&gt;new organization&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The majority of plugins can now be installed via a simple &lt;code&gt;pip install &amp;lt;plugin&amp;gt;&lt;/code&gt; and specified in your &lt;code&gt;pelicanconf.py&lt;/code&gt; for use without hassle. This is a good and viable option &lt;strong&gt;if you do not wish to customize the tags at all&lt;/strong&gt;. However, if you &lt;strong&gt;do&lt;/strong&gt; want some customization, you'll need to go local.&lt;/p&gt;
+&lt;p&gt;The most up-to-date version of liquid-tags should be installed, available &lt;a href="https://github.com/pelican-plugins/liquid-tags"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For no customization, a simple&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ python -m pip install pelican-liquid-tags
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
+&lt;p&gt;will suffice. Then you can specify the plugin and choose your tags in order to use it in your &lt;code&gt;pelicanconf.py&lt;/code&gt; as such:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;liquid-tags&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;LIQUID_TAGS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;literal&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;video&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;img&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;include_code&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+&lt;p&gt;&lt;br/&gt;
+For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirectory in the same place as your &lt;code&gt;/content/&lt;/code&gt; if you don't already have one, and then clone the &lt;code&gt;liquid-tags&lt;/code&gt; repo into a folder:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ git clone https://github.com/pelican-plugins/liquid-tags.git pelican-plugins/liquid_tags
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
+&lt;p&gt;Here I've created an extra subdirectory &lt;code&gt;/plugins/pelican-plugins/&lt;/code&gt; to match the legacy system of importing plugins. Once you've cloned the repo, move all the contents of &lt;code&gt;liquid_tags/pelican/plugins/liquid_tags/&lt;/code&gt; to the folder you cloned liquid-tags to. My final folder looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;main_dir
+├── ...
+├── content
+│   ├── ...
+├── output
+│   ├── ...
+└── plugins
+    └── pelican-plugins
+        └── liquid_tags
+            ├── img.py
+            ├── notebook.py
+            └── ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="articles"></category><category term="first"></category><category term="post"></category></entry></feed>
+&lt;p&gt;Then to your &lt;code&gt;pelicanconf.py&lt;/code&gt; add the source directory for liquid-tags and import the tags you want to use (with the local directory, these must be &lt;strong&gt;individually specified and added&lt;/strong&gt; to &lt;code&gt;PLUGINS&lt;/code&gt; prefixed by &lt;code&gt;liquid_tags.&lt;/code&gt;):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;./plugins/pelican-plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;render_math&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;liquid_tags.img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+         &lt;span class="s1"&gt;&amp;#39;liquid_tags.notebook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;liquid_tags.literal&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now you can begin using the tags. For documentation for specific tags, I find it easier to refer to the tag type's &lt;code&gt;.py&lt;/code&gt; file and reading the preamble.&lt;/p&gt;
+&lt;h2&gt;Customizing tags&lt;/h2&gt;
+&lt;p&gt;As mentioned, liquid tags substitute the written tag in Markdown by matching a regular expression to the given arguments, and inserting them into appropriate groups in an HTML snippet. If you'd like to add your own arguments to tags, create your own, or edit the HTML outputted by a tag, you can edit the appropriate &lt;code&gt;.py&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;The good news is most of the legwork is done for you — the first step is customizing the regular expression to match. It'll look something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;AUDIO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;(/\S+|https?:\S+)(?:\s+(/\S+|https?:\S+))?(?:\s+(/\S+|https?:\S+))?&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Once you've altered it to your liking, check how the file splits and assigns groups, which will depend on the tag. Most files have a for-loop that collects arguments into a dictionary called &lt;code&gt;attrs&lt;/code&gt; where &lt;code&gt;(key, value)&lt;/code&gt; pairs are in the format &lt;code&gt;(group_name, string)&lt;/code&gt; where &lt;code&gt;string&lt;/code&gt; is supplied by the user in the tag.&lt;/p&gt;
+&lt;p&gt;All tags are functions that return the HTML string to be injected into your article/page. Since string manipulation is especially easy in Python, the rest of the work is just formatting your HTML string by inserting the right dictionary values in the right places.&lt;/p&gt;
+&lt;h3&gt;Example — altering &lt;code&gt;img.py&lt;/code&gt; for figures&lt;/h3&gt;
+&lt;p&gt;While the regular &lt;code&gt;img&lt;/code&gt; tags are fine, I wanted a styled version for figures that needed captions, and images of interest. I could have created a separate &lt;code&gt;figure.py&lt;/code&gt; liquid tag, but I opted for editing the &lt;code&gt;img.py&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;This way, I can embed regular images like such:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img src="/images/stochastic_lotka_volterra.png" width="450" height="300" title="A stochastic Lotka-Volterra model" alt="A stochastic Lotka-Volterra model"&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Or highlight images with a subtle &lt;a href="https://heiswayi.nrird.com/image-caption-using-liquid-syntax"&gt;styled background&lt;/a&gt; and padding:&lt;/p&gt;
+&lt;p&gt;&lt;figure class="styled"&gt;&lt;img class="styled" src="/images/stochastic_lotka_volterra.png" width="450" height="300" title="A stochastic Lotka-Volterra model" alt="A stochastic Lotka-Volterra model"&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Or add a figure and source, if necessary:&lt;/p&gt;
+&lt;p&gt;&lt;figure class="styled"&gt;&lt;img class="styled" src="/images/stochastic_lotka_volterra.png" width="450" height="300" title="Figure 1. A stochastic Lotka-Volterra model" alt="A stochastic Lotka-Volterra model"&gt;&lt;figcaption&gt;Figure 1. A stochastic Lotka-Volterra model (&lt;a href='#'&gt;source&lt;/a&gt;)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;To accomplish this, I tweaked the &lt;code&gt;img.py&lt;/code&gt; file:&lt;/p&gt;
+&lt;p&gt;I first changed the expression to match from&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;class&amp;gt;&lt;span class="se"&gt;\S&lt;/span&gt;.*&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;)&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;src&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;?:https?:&lt;span class="se"&gt;\/\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="o"&gt;)(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;width&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;height&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;title&amp;gt;&lt;span class="se"&gt;\s&lt;/span&gt;+.+&lt;span class="o"&gt;)&lt;/span&gt;?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;class&amp;gt;&lt;span class="se"&gt;\S&lt;/span&gt;*&lt;span class="se"&gt;\s&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;src&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;?:https?:&lt;span class="se"&gt;\/\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="o"&gt;)(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;width&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;height&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;title&amp;gt;&lt;span class="se"&gt;\s&lt;/span&gt;+.+&lt;span class="o"&gt;)&lt;/span&gt;?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which limits the tag to one class name. The figure caption, alt text, and source are all captured in the &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; group.&lt;/p&gt;
+&lt;p&gt;Then, I altered the function body to parse the regex like so:&lt;/p&gt;
+&lt;figure class='code '&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;# See if source exists (must provide all 3 title/alt/source)&lt;/span&gt;
+    &lt;span class="c1"&gt;# Check if alt text or source are present -- if so, split it from title&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;match&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ReTitleAltSource&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c1"&gt;# set title, alt, leave source&lt;/span&gt;
+            &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupdict&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+            &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupdict&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+            &lt;span class="n"&gt;source_tag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupdict&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;source&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;match&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ReTitleAlt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="c1"&gt;# if no source, get title/alt&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupdict&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# no alt, set to title&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+&lt;p&gt;which matches a title, alt text, and source if possible — if not, it tries to match a title and alt text. If it can't match either of these and just finds a title (minimum requirement) it'll assign the alt text the title.&lt;/p&gt;
+&lt;p&gt;Then the beginning of the HTML is specified:&lt;/p&gt;
+&lt;figure class='code '&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;figure&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;fig_tag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+&lt;p&gt;which defines &lt;code&gt;tag_out&lt;/code&gt;, the output HTML, and &lt;code&gt;fig_tag&lt;/code&gt;, the caption to be displayed.&lt;/p&gt;
+&lt;figure class='code '&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c1"&gt;# special case: sets title=alt but no caption&lt;/span&gt;
+        &lt;span class="n"&gt;fig_tag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;figcaption&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# if no title, add as alt in image&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c1"&gt;# set figure class if given&lt;/span&gt;
+        &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;figure class=&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+&lt;p&gt;The above code then adds a caption to the figure if necessary, and a class if given in the liquid tag. The following code is from the original plugin:&lt;/p&gt;
+&lt;figure class='code '&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;# add all arguments&lt;/span&gt;
+    &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;img &lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt;&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s1"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s1"&gt;&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                                       &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;six&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iteritems&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+    &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;fig_tag&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+&lt;p&gt;which appends all additional arguments in the liquid tag to the HTML &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag. Finally, I added a few final &lt;code&gt;if&lt;/code&gt;s to add the source and close the tags:&lt;/p&gt;
+&lt;figure class='code '&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;# if source, append to caption&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;source_tag&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; (&amp;lt;a href=&amp;#39;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;source_tag&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;gt;source&amp;lt;/a&amp;gt;)&amp;quot;&lt;/span&gt;
+    
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;fig_tag&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c1"&gt;# close tag if caption present&lt;/span&gt;
+        &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/figure&amp;gt;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+&lt;p&gt;So in the end, the three images above can then be generated using the same tag via the respective liquid tags:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/images/stochastic_lotka_volterra.png&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;450&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
+
+&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;styled&lt;span class="w"&gt; &lt;/span&gt;/images/stochastic_lotka_volterra.png&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;450&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
+
+&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;styled&lt;span class="w"&gt; &lt;/span&gt;/images/stochastic_lotka_volterra.png&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;450&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Figure 1. A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Liquid tags in Markdown ([un]confusingly supplied by the &lt;code&gt;liquid-tags&lt;/code&gt; plugin) are a great way to seamlessly incorporate multimedia in your Markdown articles or pages. In short, acquiring them through &lt;code&gt;pip&lt;/code&gt; is your best bet if you plan on using them as-is, but to alter their behavior you're going to need to peek behind the curtain.&lt;/p&gt;
+&lt;p&gt;Luckily, with some regex, they are easy enough to tweak (and possibly create, if you're brave enough!). If you'd like to try my slightly edited &lt;code&gt;img.py&lt;/code&gt; file discussed in the example, you can download it &lt;a href="/features/code/img_ex.py"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="articles"></category><category term="python"></category><category term="pelican"></category><category term="plugins"></category></entry></feed>
