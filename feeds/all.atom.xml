@@ -4,12 +4,12 @@
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;displays cells 2–3 of a …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;A word on &lt;code&gt;liquid-tags&lt;/code&gt; and Pelican plugins&lt;/h2&gt;
+&lt;p&gt;displays cells &lt;code&gt;[2–3)&lt;/code&gt; (so cell …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;A word on &lt;code&gt;liquid-tags&lt;/code&gt; and Pelican plugins&lt;/h2&gt;
 &lt;p&gt;Without delving in too deep, &lt;abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin"&gt;Liquid Tags&lt;/abbr&gt; are the saving grace of media integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, the following:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;displays cells 2–3 of a Jupyter notebook:&lt;/p&gt;
+&lt;p&gt;displays cells &lt;code&gt;[2–3)&lt;/code&gt; (so cell 2) of a Jupyter notebook:&lt;/p&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;&lt;meta charset="utf-8" /&gt;
@@ -14271,12 +14271,12 @@ a.anchor-link {
 &lt;div class="jp-Cell jp-CodeCell jp-Notebook-cell   "&gt;
 &lt;div class="jp-Cell-inputWrapper"&gt;
 &lt;div class="jp-InputArea jp-Cell-inputArea"&gt;
-&lt;div class="jp-InputPrompt jp-InputArea-prompt"&gt;In&amp;nbsp;[283]:&lt;/div&gt;
+&lt;div class="jp-InputPrompt jp-InputArea-prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
 &lt;div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"&gt;
      &lt;div class="CodeMirror cm-s-jupyter"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;starting_res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;span class="n"&gt;toy_costs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;floor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starting_res&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;toy_costs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# example cell&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;real&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt; &lt;span class="c1"&gt;# e^(pi*i)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
      &lt;/div&gt;
@@ -14292,15 +14292,13 @@ a.anchor-link {
 &lt;div class="jp-OutputArea-child"&gt;
 
     
-    &lt;div class="jp-OutputPrompt jp-OutputArea-prompt"&gt;Out[283]:&lt;/div&gt;
+    &lt;div class="jp-OutputPrompt jp-OutputArea-prompt"&gt;&lt;/div&gt;
 
 
-
-
-&lt;div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain"&gt;
-&lt;pre&gt;[8.0, 7.0, 7.0]&lt;/pre&gt;
+&lt;div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain"&gt;
+&lt;pre&gt;-1.0
+&lt;/pre&gt;
 &lt;/div&gt;
-
 &lt;/div&gt;
 
 &lt;/div&gt;
