@@ -85,6 +85,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+
 a {
   color: #007EE5;
   text-decoration: none;
@@ -95,7 +96,7 @@ a:hover {
 }
 header.main-header {
   background: none repeat scroll 0% 0% #205F29;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 header.main-header a {
   color: #fff;
@@ -427,11 +428,32 @@ figcaption {
   a:hover {
       cursor: pointer;
   }
+}
+
+.vis-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background: repeating-linear-gradient(135deg, #dfdfdf 0, #dfdfdf 1%, #ffffff 0, #ffffff 50%) 0 / 20px 20px;
+  width: 100%;
+  margin:0 auto;
+}
+
+#cent {
+  text-align: center;
 }</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/efe339fa46.js" crossorigin="anonymous"></script>
+
+    <!-- importing Vega-Lite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
         <script type="text/javascript">
@@ -439,6 +461,9 @@ figcaption {
             if (window.MathJax) {
                 // MathJax loaded
                 MathJax.Hub.Config({
+                    tex: {
+                        packages: {'[+]': ['boldsymbol', 'amsmath']}
+                    },
                     tex2jax: {
                         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                         displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
@@ -453,7 +478,6 @@ figcaption {
         }
         init_mathjax();
         </script>
-
     </head>
 
     <body>
@@ -481,7 +505,9 @@ figcaption {
     <ul>
         <li><a href="https://blademaw.github.io/tag/pelican.html">pelican</a> (1)</li>
         <li><a href="https://blademaw.github.io/tag/plugins.html">plugins</a> (1)</li>
-        <li><a href="https://blademaw.github.io/tag/python.html">python</a> (1)</li>
+        <li><a href="https://blademaw.github.io/tag/python.html">python</a> (2)</li>
+        <li><a href="https://blademaw.github.io/tag/r.html">r</a> (1)</li>
+        <li><a href="https://blademaw.github.io/tag/statistics.html">statistics</a> (1)</li>
     </ul>
         </div>
 <!--

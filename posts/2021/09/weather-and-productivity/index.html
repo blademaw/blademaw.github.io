@@ -1,0 +1,4942 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Jack Oliver">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Does the Weather Affect my Productivity? | Divide & Ponder</title>
+
+	<link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico?" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="Divide & Ponder blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 20px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ul,
+article ol {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+h2 code {
+  font-size: 26px;
+  font-weight: 400;
+}
+h3 code {
+  font-size: 20px;
+  font-weight: 400;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 700px;
+}
+.post h2:before {
+  content: "# ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  content: "## ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  content: "### ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+figure {
+  text-align: center;
+}
+
+td.code {
+  width: 100%;
+}
+
+figure.code {
+  text-align: left;
+}
+
+figure.styled {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background: repeating-linear-gradient(135deg, #dfdfdf 0, #dfdfdf 1%, #ffffff 0, #ffffff 50%) 0 / 20px 20px;
+  text-align: center;
+  img {
+      margin: 0 auto 0.2rem auto;
+      border: 1px solid #ddd;
+      box-shadow: none;
+      background-color: #fff;
+  }
+}
+figcaption {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 1.6;
+  font-family: Consolas, monaco, monospace;
+  span {
+      background-color: #fff;
+      padding: 0.2rem 0.5rem;
+  }
+  a:hover {
+      cursor: pointer;
+  }
+}
+
+.vis-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background: repeating-linear-gradient(135deg, #dfdfdf 0, #dfdfdf 1%, #ffffff 0, #ffffff 50%) 0 / 20px 20px;
+  width: 100%;
+  margin:0 auto;
+}
+
+#cent {
+  text-align: center;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/efe339fa46.js" crossorigin="anonymous"></script>
+
+    <!-- importing Vega-Lite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script type="text/javascript">
+        init_mathjax = function() {
+            if (window.MathJax) {
+                // MathJax loaded
+                MathJax.Hub.Config({
+                    tex: {
+                        packages: {'[+]': ['boldsymbol', 'amsmath']}
+                    },
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                    },
+                    displayAlign: 'left', // Change this to 'center' to center equations.
+                    "HTML-CSS": {
+                        styles: {'.MathJax_Display': {"margin": 0}}
+                    }
+                });
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            }
+        }
+        init_mathjax();
+        </script>
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span> 
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">Divide & Ponder</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Does the Weather Affect my Productivity?</h1>
+            <time datetime="article.date.isoformat()" pubdate>Thu 30 September 2021</time>
+
+        </header>
+
+        <div class="article_content">
+            <figure class="styled"><img class="styled" src="/images/lazy_summer.jpeg" width="350" height="200" title="A lazy summer morning, evening?" alt="A lazy summer morning, evening?"><figcaption>Image from The New Yorker <a href="https://www.newyorker.com/tech/annals-of-technology/why-summer-makes-us-lazy">(source)</a></figcaption></figure>
+
+<p>For most of us, the environment in which we work is an extremely impactful factor that contributes to our capacity for productivity. Lighting, odor, temperature, furniture — these are parameters of our environment <strong>we can tune</strong> to allow ourselves to work better.</p>
+<p>But we can't control <em>everything</em>, that would be cheating. Weather conditions are an external factor that may or may not affect productivity: <a href="https://www.apa.org/pubs/journals/features/apl-a0035559.pdf">one study</a> suggests worse weather is correlated with higher productivity.</p>
+<p>This got me thinking — could I conduct a toy case-study on myself? Where would I get the data? Suddenly, I remembered in the months of study-leave leading up to my International Baccalaureate (IB) exams, I had tracked <strong>my time spent studying and doing homework</strong> using <a href="https://toggl.com/">Toggl</a>.</p>
+<figure class="styled"><img class="styled" src="/images/toggl-time.png" width="350" height="260" title="My hours logged leading up to the IB examinations" alt="My hours logged leading up to the IB examinations"></figure>
+
+<p>So I had 135 hours' worth of data over March, April, and May 2019 that could be downloaded as a <code>.csv</code> — not bad. Also, at the time, I was <strong>totally blind</strong> to what I would do with the data, meaning I possibly ducked data collection biases by being naïve! I wagered it wouldn't be too hard to find the weather data, and the rest of this blog post is what ensued.</p>
+<!-- PELICAN_END_SUMMARY -->
+
+<style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #408080; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #BC7A00 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #408080; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #408080; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #FF0000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #00A000 } /* Generic.Inserted */
+ .highlight pre  .go { color: #888888 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #7D9029 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #999999; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #A0A000 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #BB6688 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-1-&#8212;&#160;Weather-data:-collection">Part 1 &#8212;&#160;Weather data: collection<a class="anchor-link" href="#Part-1-&#8212;&#160;Weather-data:-collection">&#182;</a></h2><p>At the time of my IB exams, I was in Hong Kong, so I navigated to the <a href="https://www.hko.gov.hk/en/index.html">Hong Kong Observatory</a> to download the <code>csv</code> files, and was very quickly reality-checked when I realized the data I sought were nowhere to be found. Eventually I found a <a href="https://www.hko.gov.hk/en/cis/climat.htm">subpage</a> that had daily extracts of records for my timeframe, but the problem was, the page looked like this:</p>
+<figure class="styled"><img class="styled" src="/images/hko-daily.png" width="600" height="253" title="A nice front-end presentation with no access to the back." alt="A nice front-end presentation with no access to the back."><figcaption>A nice front-end presentation with no access to the back. <a href="https://www.hko.gov.hk/en/cis/dailyExtract.htm?y=2019&m=6">(source)</a></figcaption></figure><p>And there was no 'Download' button in sight. In defeat, I copy-pasted 2019's records for March, April, May, and June (although June was not in the Toggl data) into a Jupyter notebook and prepared for some wrangling. With each month imported as a string, by some miracle, the text was delimited with tabs:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">mar</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+01	1016.1	22.4	20.8	19.6	18.8	89	91	0.4	0.4	060	30.6
+02	1012.7	23.9	21.5	19.9	19.2	87	84	Trace	5.0	070	23.3
+03	1011.3	23.5	21.5	20.0	19.1	87	85	6.3	4.2	010	8.0
+04	1013.7	22.6	20.9	19.3	17.7	82	83	10.2	3.2	080	26.1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We ideally want this in a <code>pandas</code> data frame or in <code>.csv</code> format, so we can begin by stripping any newlines and replacing the delimiter.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">mar</span><span class="p">,</span> <span class="n">apr</span><span class="p">,</span> <span class="n">may</span><span class="p">,</span> <span class="n">jun</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">mon</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">mon</span> <span class="ow">in</span> <span class="p">(</span><span class="n">mar</span><span class="p">,</span> <span class="n">apr</span><span class="p">,</span> <span class="n">may</span><span class="p">,</span> <span class="n">jun</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then, we can aggregate all months into one <code>yearly</code> string, and format the dates properly by joining <code>2019/0</code> with the month and date:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">yearly</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">m</span><span class="p">,</span> <span class="n">month_obj</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="n">mar</span><span class="p">,</span> <span class="n">apr</span><span class="p">,</span> <span class="n">may</span><span class="p">,</span> <span class="n">jun</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">yearly</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;2019/0</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1">/&#39;</span> <span class="o">+</span> <span class="n">month_obj</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">2019/0</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1">/&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The data also have some special characters indicating partial records, but we'll just strip those too, and add our headers. This gives the following:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">yearly</span> <span class="o">=</span> <span class="n">yearly</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Trace&#39;</span><span class="p">,</span> <span class="s1">&#39;0.0&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># remove trailing \n at end, markers</span>
+<span class="n">yearly</span> <span class="o">=</span> <span class="s2">&quot;date,mean_pressure,max_temp,mean_temp,min_temp,mean_dew,humid,cloud,rain,sunshine,wind_dir,wind_speed</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">yearly</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">yearly</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>date,mean_pressure,max_temp,mean_temp,min_temp,mean_dew,humid,cloud,rain,sunshine,wind_dir,wind_speed
+2019/03/01,1016.1,22.4,20.8,19.6,18.8,89,91,0.4,0.4,060,30.6
+2019/03/02,1012.7,23.9,21.5,19.9,19.2,87,84,0.0,5.0,070,23.3
+2019/03/03,1011.3,23.5,21.5,20.0,19.1,87,85,6.3,4.2,010,8.0
+2019/03/04,1013.7,22.6,20.9,19.3,17.7,82,83,10.2,3.2,080,26.1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we can write this to a file and load it with <code>pandas</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;hk_weather.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">yearly</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">csv_file</span><span class="p">)</span>
+<span class="n">hk_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;hk_weather.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hk_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(122, 12)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Our last preprocessing job is to tell <code>pandas</code> our <code>date</code> column is of datetime format, and our job is done.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hk_df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">hk_df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+<span class="n">hk_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>mean_pressure</th>
+      <th>max_temp</th>
+      <th>mean_temp</th>
+      <th>min_temp</th>
+      <th>mean_dew</th>
+      <th>humid</th>
+      <th>cloud</th>
+      <th>rain</th>
+      <th>sunshine</th>
+      <th>wind_dir</th>
+      <th>wind_speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-01</td>
+      <td>1016.1</td>
+      <td>22.4</td>
+      <td>20.8</td>
+      <td>19.6</td>
+      <td>18.8</td>
+      <td>89</td>
+      <td>91</td>
+      <td>0.4</td>
+      <td>0.4</td>
+      <td>060</td>
+      <td>30.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-02</td>
+      <td>1012.7</td>
+      <td>23.9</td>
+      <td>21.5</td>
+      <td>19.9</td>
+      <td>19.2</td>
+      <td>87</td>
+      <td>84</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>070</td>
+      <td>23.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-03-03</td>
+      <td>1011.3</td>
+      <td>23.5</td>
+      <td>21.5</td>
+      <td>20.0</td>
+      <td>19.1</td>
+      <td>87</td>
+      <td>85</td>
+      <td>6.3</td>
+      <td>4.2</td>
+      <td>010</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-03-04</td>
+      <td>1013.7</td>
+      <td>22.6</td>
+      <td>20.9</td>
+      <td>19.3</td>
+      <td>17.7</td>
+      <td>82</td>
+      <td>83</td>
+      <td>10.2</td>
+      <td>3.2</td>
+      <td>080</td>
+      <td>26.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-03-05</td>
+      <td>1012.1</td>
+      <td>26.7</td>
+      <td>22.2</td>
+      <td>17.7</td>
+      <td>20.0</td>
+      <td>88</td>
+      <td>89</td>
+      <td>30.3</td>
+      <td>2.0</td>
+      <td>070</td>
+      <td>22.7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because I'm curious, let's check out how temperature and rain are distributed over the four months:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temps</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hk_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">tooltip</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">TooltipContent</span><span class="p">(</span><span class="s1">&#39;encoding&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;mean_temp:Q&quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Average Temperature (C)&quot;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;count()&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of days&quot;</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;month(date):O&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Month&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">))</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="n">rains</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">hk_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">tooltip</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">TooltipContent</span><span class="p">(</span><span class="s1">&#39;encoding&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;rain:Q&quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Bin</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">120</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Rainfall (mm)&quot;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;count()&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;month(date):O&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="n">temps</span> <span class="o">|</span> <span class="n">rains</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+<div id="altair-viz-ddcad9d93f1d4f1cb22cdfea2f045724"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-ddcad9d93f1d4f1cb22cdfea2f045724") {
+      outputDiv = document.getElementById("altair-viz-ddcad9d93f1d4f1cb22cdfea2f045724");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "hconcat": [{"mark": {"type": "bar", "tooltip": {"content": "encoding"}}, "encoding": {"color": {"type": "ordinal", "field": "date", "legend": {"direction": "horizontal", "orient": "top"}, "timeUnit": "month", "title": "Month"}, "x": {"type": "quantitative", "bin": true, "field": "mean_temp", "title": "Average Temperature (C)"}, "y": {"type": "quantitative", "aggregate": "count", "title": "Number of days"}}, "height": 200, "width": 250}, {"mark": {"type": "bar", "tooltip": {"content": "encoding"}}, "encoding": {"color": {"type": "ordinal", "field": "date", "timeUnit": "month"}, "x": {"type": "quantitative", "bin": {"extent": [0, 120], "step": 10}, "field": "rain", "title": "Rainfall (mm)"}, "y": {"type": "quantitative", "aggregate": "count", "title": null}}, "height": 200, "width": 250}], "data": {"url": "/features/mydata/altair-data-f96e6253e95232f9754f04bd1cd18379.json", "format": {"type": "json"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is not just an excuse to show off the sheer power of Altair (the chart is interactive, too), but we can see that there are not that many rainy days in our dataset. Either way, we've essentially got half of the data processing done.</p>
+<h2 id="Part-2&#160;&#8212;&#160;Toggl-data:-quantifying-productivity">Part 2&#160;&#8212;&#160;Toggl data: quantifying productivity<a class="anchor-link" href="#Part-2&#160;&#8212;&#160;Toggl-data:-quantifying-productivity">&#182;</a></h2><p>I glossed over this in the introduction, but if we're going to approach the question "Does weather impact my productivity?" we're going to need to define 'productivity.' Before we tackle that, let's load the data from Toggl:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;time_entries.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toggl</span><span class="p">[</span><span class="s1">&#39;Email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+<span class="n">toggl</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>User</th>
+      <th>Email</th>
+      <th>Client</th>
+      <th>Project</th>
+      <th>Task</th>
+      <th>Description</th>
+      <th>Billable</th>
+      <th>Start date</th>
+      <th>Start time</th>
+      <th>End date</th>
+      <th>End time</th>
+      <th>Duration</th>
+      <th>Tags</th>
+      <th>Amount ()</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Jack Oliver</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>Study / Revision</td>
+      <td>NaN</td>
+      <td>Physics Notes</td>
+      <td>No</td>
+      <td>2019-03-30</td>
+      <td>19:30:36</td>
+      <td>2019-03-30</td>
+      <td>20:35:15</td>
+      <td>01:04:39</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jack Oliver</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>Study / Revision</td>
+      <td>NaN</td>
+      <td>Physics Notes</td>
+      <td>No</td>
+      <td>2019-03-30</td>
+      <td>20:47:40</td>
+      <td>2019-03-30</td>
+      <td>21:19:10</td>
+      <td>00:31:30</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Jack Oliver</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>Entertainment</td>
+      <td>NaN</td>
+      <td>Darkest Dungeon</td>
+      <td>No</td>
+      <td>2019-03-30</td>
+      <td>21:23:38</td>
+      <td>2019-03-30</td>
+      <td>21:48:38</td>
+      <td>00:25:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jack Oliver</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>Entertainment</td>
+      <td>NaN</td>
+      <td>Darkest Dungeon</td>
+      <td>No</td>
+      <td>2019-03-30</td>
+      <td>21:48:47</td>
+      <td>2019-03-30</td>
+      <td>22:13:42</td>
+      <td>00:24:55</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Jack Oliver</td>
+      <td>-</td>
+      <td>NaN</td>
+      <td>Study / Revision</td>
+      <td>NaN</td>
+      <td>Physics Notes</td>
+      <td>No</td>
+      <td>2019-03-31</td>
+      <td>09:50:52</td>
+      <td>2019-03-31</td>
+      <td>10:15:52</td>
+      <td>00:25:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Understanding-the-Toggl-data">Understanding the Toggl data<a class="anchor-link" href="#Understanding-the-Toggl-data">&#182;</a></h3><p>In Toggl, each entry requires a 'description' and a 'project' (originally designed for firms to track employee hours). Here, a 'description' in the data represents a specific task done, e.g. <em>Physics Notes</em>, and a 'project' represents what type of task that belongs to, e.g. <em>Study / Revision</em>. Toggl also records the date and time you started and ended the task, in addition to the duration.</p>
+<p>The data frame is obviously quite bloated (and includes my email!), so let's subset the columns:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span> <span class="o">=</span> <span class="n">toggl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">]]</span>
+<span class="n">toggl</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Project</th>
+      <th>Description</th>
+      <th>Start date</th>
+      <th>Start time</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-30</td>
+      <td>19:30:36</td>
+      <td>01:04:39</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-30</td>
+      <td>20:47:40</td>
+      <td>00:31:30</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Entertainment</td>
+      <td>Darkest Dungeon</td>
+      <td>2019-03-30</td>
+      <td>21:23:38</td>
+      <td>00:25:00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Entertainment</td>
+      <td>Darkest Dungeon</td>
+      <td>2019-03-30</td>
+      <td>21:48:47</td>
+      <td>00:24:55</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-31</td>
+      <td>09:50:52</td>
+      <td>00:25:00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Defining-productivity">Defining productivity<a class="anchor-link" href="#Defining-productivity">&#182;</a></h3><p>So how can we <strong>quantify productivity</strong>? There would be many ways to do this, but my approach is simple: assume that productivity is directly proportional to the minutes of schoolwork logged (in some timeframe). This way, if I goofed off, I wouldn't have recorded any work, so <code>Minutes</code> would be 0. An extra benefit of totalling the <em>minutes worked</em> rather than the <em>amount of tasks done in a day</em> is that we don't interpret doing many small tasks as 'being more productive' than doing one large task (also, we lack sufficient data to count entries as units of productivity).</p>
+<p>It may be argued this approach is counterintuitive given <strong>productivity</strong> is largely thought of alongside <strong>efficiency</strong>, and this approach may actually penalize efficiency by rewarding longer tasks (even if the effort is low). However, since our sample is quite small, my intuition says we can't reliably derive a measure like <em>minutes worked per <strong>complete</strong> task</em>, so we'll stick to the prior approach. As an aside, this is an example of an assumption and design decision made in the data science process that may fundamentally alter the results of an analysis.</p>
+<p>With that out of the way, let's add a new row to our data frame called <code>Minutes</code> that is the total minutes worked for one entry. We can pass the string <code>Duration</code> to a function to convert the <code>HH:MM:SS</code> format to a numeric type:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">str_to_dt</span><span class="p">(</span><span class="n">in_string</span><span class="p">):</span>
+    <span class="n">timeq</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">in_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">timeq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="n">timeq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">timeq</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">60</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Minutes&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Duration&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">str_to_dt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>map()</code> function here is essentially taking every record of <code>Duration</code> and passing it to <code>str_to_dt()</code> to compute the minutes worked. Let's take this opportunity to also correct some types, and we'll add a new column called <code>Task_Start</code> to store both the date and time of starting a time entry.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Task_Start&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Start date&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Start time&quot;</span><span class="p">])</span>
+<span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Start date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Start date&quot;</span><span class="p">])</span>
+<span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Start time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Start time&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Project</th>
+      <th>Description</th>
+      <th>Start date</th>
+      <th>Start time</th>
+      <th>Duration</th>
+      <th>Minutes</th>
+      <th>Task_Start</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-30</td>
+      <td>2021-10-01 19:30:36</td>
+      <td>01:04:39</td>
+      <td>64.650000</td>
+      <td>2019-03-30 19:30:36</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-30</td>
+      <td>2021-10-01 20:47:40</td>
+      <td>00:31:30</td>
+      <td>31.500000</td>
+      <td>2019-03-30 20:47:40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Entertainment</td>
+      <td>Darkest Dungeon</td>
+      <td>2019-03-30</td>
+      <td>2021-10-01 21:23:38</td>
+      <td>00:25:00</td>
+      <td>25.000000</td>
+      <td>2019-03-30 21:23:38</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Entertainment</td>
+      <td>Darkest Dungeon</td>
+      <td>2019-03-30</td>
+      <td>2021-10-01 21:48:47</td>
+      <td>00:24:55</td>
+      <td>24.916667</td>
+      <td>2019-03-30 21:48:47</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-31</td>
+      <td>2021-10-01 09:50:52</td>
+      <td>00:25:00</td>
+      <td>25.000000</td>
+      <td>2019-03-31 09:50:52</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we're ready to visualize the data. The two plots effortlessly made with Altair display how minutes are distributed in each project, and when each task was done. Click on a colored bar in the top plot to explore a project, and hover over points on the lower chart to see individual tasks. You can also try clicking and dragging on the lower plot to highlight a timeframe to see the minutes distribution update.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">proj_select</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span> <span class="n">encodings</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span>
+<span class="n">hist_select</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Project&quot;</span><span class="p">])</span>
+
+<span class="n">hist_alt</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">toggl</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">tooltip</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">TooltipContent</span><span class="p">(</span><span class="s1">&#39;encoding&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;Minutes:Q&quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Bin</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">250</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="mi">15</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Minutes spent doing entry&quot;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;count()&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of entries&quot;</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Project:N&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">400</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
+    <span class="n">hist_select</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>
+    <span class="n">proj_select</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>
+    <span class="n">hist_select</span>
+<span class="p">)</span>
+
+<span class="n">line_alt</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">toggl</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;Start date:T&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;Minutes:Q&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Minutes spent doing entry&quot;</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hist_select</span><span class="p">,</span> <span class="s1">&#39;Project:N&#39;</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)),</span>
+    <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.65</span><span class="p">),</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="s1">&#39;Description:N&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_selection</span><span class="p">(</span>
+    <span class="n">proj_select</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">400</span>
+<span class="p">)</span>
+
+<span class="n">hist_alt</span> <span class="o">&amp;</span> <span class="n">line_alt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+<div id="altair-viz-dfeca76bbfcc4f6aa0efabecb220a580"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-dfeca76bbfcc4f6aa0efabecb220a580") {
+      outputDiv = document.getElementById("altair-viz-dfeca76bbfcc4f6aa0efabecb220a580");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"mark": {"type": "bar", "tooltip": {"content": "encoding"}}, "encoding": {"color": {"type": "nominal", "field": "Project"}, "x": {"type": "quantitative", "bin": {"extent": [0, 250], "step": 15}, "field": "Minutes", "title": "Minutes spent doing entry"}, "y": {"type": "quantitative", "aggregate": "count", "title": "Number of entries"}}, "selection": {"selector002": {"type": "single", "fields": ["Project"]}}, "transform": [{"filter": {"selection": "selector001"}}, {"filter": {"selection": "selector002"}}], "width": 400}, {"mark": {"type": "point", "size": 60}, "encoding": {"color": {"condition": {"type": "nominal", "field": "Project", "selection": "selector002"}, "value": "lightgray"}, "opacity": {"value": 0.65}, "tooltip": {"type": "nominal", "field": "Description"}, "x": {"type": "temporal", "field": "Start date", "title": "Date"}, "y": {"type": "quantitative", "field": "Minutes", "title": "Minutes spent doing entry"}}, "selection": {"selector001": {"type": "interval", "encodings": ["x"]}}, "width": 400}], "data": {"url": "/features/mydata/altair-data-1ebdbd37450598a379f0c5be9710f34e.json", "format": {"type": "json"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Unsurprisingly, homework and revision dominate the entries. The 'Entertainment' category is also quick to fade as exams begin to creep up (beginning on May 6 in 2019). There are also some hints my study habits were more sporadic towards the beginning of exams too, with entries becoming more densely distributed at shorter minute counts.</p>
+<p>We can also inquire into the day specifics. The two charts below implicitly answer the questions "Which day was I most productive throughout the week?" and "At what time did I record the most tasks?"</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">w_chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">toggl</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">tooltip</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">TooltipContent</span><span class="p">(</span><span class="s1">&#39;encoding&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;day(Task_Start):T&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Day of week&quot;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;count()&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of entries&quot;</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;Project:N&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">))</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">200</span>
+<span class="p">)</span>
+
+<span class="n">h_chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">toggl</span><span class="p">)</span><span class="o">.</span><span class="n">mark_area</span><span class="p">(</span><span class="n">tooltip</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">TooltipContent</span><span class="p">(</span><span class="s1">&#39;encoding&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;hours(Task_Start):T&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Time of day&quot;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;count()&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Project:N&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">200</span>
+<span class="p">)</span>
+
+<span class="n">w_chart</span> <span class="o">|</span> <span class="n">h_chart</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+<div id="altair-viz-0b453f73dce9477fb95a4c385eee82d6"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-0b453f73dce9477fb95a4c385eee82d6") {
+      outputDiv = document.getElementById("altair-viz-0b453f73dce9477fb95a4c385eee82d6");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "hconcat": [{"mark": {"type": "bar", "tooltip": {"content": "encoding"}}, "encoding": {"color": {"type": "nominal", "field": "Project", "legend": {"orient": "top"}}, "x": {"type": "temporal", "field": "Task_Start", "timeUnit": "day", "title": "Day of week"}, "y": {"type": "quantitative", "aggregate": "count", "title": "Number of entries"}}, "height": 200, "width": 250}, {"mark": {"type": "area", "tooltip": {"content": "encoding"}}, "encoding": {"color": {"type": "nominal", "field": "Project"}, "x": {"type": "temporal", "field": "Task_Start", "timeUnit": "hours", "title": "Time of day"}, "y": {"type": "quantitative", "aggregate": "count", "title": null}}, "height": 200, "width": 250}], "data": {"url": "/features/mydata/altair-data-1ebdbd37450598a379f0c5be9710f34e.json", "format": {"type": "json"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These charts show entertainment and homework taking over during weekends, and revision stagnating throughout the week (remember, I was on study-leave for these months).</p>
+<h2 id="Part-3-&#8212;&#160;Answering-the-question(s)">Part 3 &#8212;&#160;Answering the question(s)<a class="anchor-link" href="#Part-3-&#8212;&#160;Answering-the-question(s)">&#182;</a></h2><p>Let's move on to trying to answer the question at hand: "Does the weather affect my productivity?"</p>
+<h3 id="Rain-analysis">Rain analysis<a class="anchor-link" href="#Rain-analysis">&#182;</a></h3><p>First, I want to investigate whether <em>rain</em> makes me more prone to working hard. We're aiming for data with <strong>just productive entries</strong>, so let's drop all rows that aren't concerning 'Homework' or 'Study / Revision':</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span> <span class="o">=</span> <span class="n">toggl</span><span class="p">[(</span><span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Project&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Study / Revision&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Project&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Homework&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Project</th>
+      <th>Description</th>
+      <th>Start date</th>
+      <th>Start time</th>
+      <th>Duration</th>
+      <th>Minutes</th>
+      <th>Task_Start</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-30</td>
+      <td>2021-10-01 19:30:36</td>
+      <td>01:04:39</td>
+      <td>64.65</td>
+      <td>2019-03-30 19:30:36</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-30</td>
+      <td>2021-10-01 20:47:40</td>
+      <td>00:31:30</td>
+      <td>31.50</td>
+      <td>2019-03-30 20:47:40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-31</td>
+      <td>2021-10-01 09:50:52</td>
+      <td>00:25:00</td>
+      <td>25.00</td>
+      <td>2019-03-31 09:50:52</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-31</td>
+      <td>2021-10-01 10:26:23</td>
+      <td>00:25:00</td>
+      <td>25.00</td>
+      <td>2019-03-31 10:26:23</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Study / Revision</td>
+      <td>Physics Notes</td>
+      <td>2019-03-31</td>
+      <td>2021-10-01 10:56:28</td>
+      <td>00:25:00</td>
+      <td>25.00</td>
+      <td>2019-03-31 10:56:28</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let's take a look at our minutes data for 'productive' entries:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Minutes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>count    204.000000
+mean      39.876797
+std       26.987821
+min        0.050000
+25%       19.787500
+50%       31.900000
+75%       56.320833
+max      126.966667
+Name: Minutes, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As an aside, can we investigate which subject/task took me the longest to complete work for, on average:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Description&#39;</span><span class="p">)[</span><span class="s1">&#39;Minutes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>English Notes</th>
+      <td>5.0</td>
+      <td>61.806667</td>
+      <td>30.260271</td>
+      <td>29.450000</td>
+      <td>32.200000</td>
+      <td>65.133333</td>
+      <td>89.000000</td>
+      <td>93.250000</td>
+    </tr>
+    <tr>
+      <th>Planning Schedule</th>
+      <td>1.0</td>
+      <td>56.333333</td>
+      <td>NaN</td>
+      <td>56.333333</td>
+      <td>56.333333</td>
+      <td>56.333333</td>
+      <td>56.333333</td>
+      <td>56.333333</td>
+    </tr>
+    <tr>
+      <th>Mathematics Past Papers</th>
+      <td>34.0</td>
+      <td>53.134804</td>
+      <td>34.469471</td>
+      <td>5.550000</td>
+      <td>25.041667</td>
+      <td>41.800000</td>
+      <td>83.041667</td>
+      <td>126.966667</td>
+    </tr>
+    <tr>
+      <th>Computer Science Notes</th>
+      <td>21.0</td>
+      <td>39.665079</td>
+      <td>24.453009</td>
+      <td>11.150000</td>
+      <td>20.050000</td>
+      <td>36.950000</td>
+      <td>58.000000</td>
+      <td>105.750000</td>
+    </tr>
+    <tr>
+      <th>Physics Past Papers</th>
+      <td>23.0</td>
+      <td>38.766667</td>
+      <td>26.062142</td>
+      <td>5.516667</td>
+      <td>15.150000</td>
+      <td>44.400000</td>
+      <td>57.958333</td>
+      <td>80.200000</td>
+    </tr>
+    <tr>
+      <th>Spanish Notes</th>
+      <td>6.0</td>
+      <td>38.233333</td>
+      <td>22.977312</td>
+      <td>12.050000</td>
+      <td>18.445833</td>
+      <td>38.841667</td>
+      <td>56.212500</td>
+      <td>66.016667</td>
+    </tr>
+    <tr>
+      <th>Economics Past Papers</th>
+      <td>11.0</td>
+      <td>37.972727</td>
+      <td>27.203248</td>
+      <td>6.133333</td>
+      <td>18.358333</td>
+      <td>25.216667</td>
+      <td>52.025000</td>
+      <td>89.416667</td>
+    </tr>
+    <tr>
+      <th>Economics Notes</th>
+      <td>61.0</td>
+      <td>36.199727</td>
+      <td>25.419009</td>
+      <td>2.366667</td>
+      <td>18.416667</td>
+      <td>29.366667</td>
+      <td>44.366667</td>
+      <td>120.333333</td>
+    </tr>
+    <tr>
+      <th>Computer Science Past Papers</th>
+      <td>16.0</td>
+      <td>36.158333</td>
+      <td>23.603877</td>
+      <td>0.050000</td>
+      <td>25.670833</td>
+      <td>30.075000</td>
+      <td>44.720833</td>
+      <td>93.733333</td>
+    </tr>
+    <tr>
+      <th>Spanish Past Papers</th>
+      <td>9.0</td>
+      <td>32.940741</td>
+      <td>20.024442</td>
+      <td>0.433333</td>
+      <td>24.133333</td>
+      <td>30.333333</td>
+      <td>35.416667</td>
+      <td>72.516667</td>
+    </tr>
+    <tr>
+      <th>Physics Notes</th>
+      <td>14.0</td>
+      <td>30.442857</td>
+      <td>19.917956</td>
+      <td>0.216667</td>
+      <td>21.025000</td>
+      <td>25.000000</td>
+      <td>40.191667</td>
+      <td>64.650000</td>
+    </tr>
+    <tr>
+      <th>English Past Papers</th>
+      <td>1.0</td>
+      <td>28.266667</td>
+      <td>NaN</td>
+      <td>28.266667</td>
+      <td>28.266667</td>
+      <td>28.266667</td>
+      <td>28.266667</td>
+      <td>28.266667</td>
+    </tr>
+    <tr>
+      <th>Mathematics Notes</th>
+      <td>2.0</td>
+      <td>26.783333</td>
+      <td>24.701597</td>
+      <td>9.316667</td>
+      <td>18.050000</td>
+      <td>26.783333</td>
+      <td>35.516667</td>
+      <td>44.250000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So English seems to be the most laborious with Mathematics past papers trailing. Economics also has the highest entry total of 72. I could aggregate these further into classes, but I digress.</p>
+<p>At this point we should ask about the number of days we have:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl</span><span class="p">[</span><span class="s2">&quot;Start date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>39</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>39 is a pretty small sample size, but the analysis is still worth a shot anyways. Let's start by just grabbing the related rows of our weather data frame:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">raindf</span> <span class="o">=</span> <span class="n">hk_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">raindf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>rain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-01</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-02</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-03-03</td>
+      <td>6.3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-03-04</td>
+      <td>10.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-03-05</td>
+      <td>30.3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then we can aggregate our Toggl data into two rows: days, and minutes worked for that day.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl_days</span> <span class="o">=</span> <span class="n">toggl</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Start date&#39;</span><span class="p">)[</span><span class="s1">&#39;Minutes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Start date&quot;</span><span class="p">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;Minutes&quot;</span><span class="p">:</span> <span class="s2">&quot;minutes&quot;</span><span class="p">})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This operation isn't too intimidating — in English, this is telling <code>pandas</code> to compute the sum of minutes worked for each day, and <code>.reset_index()</code> fixes our indices (left-most bolded column), and we finish by renaming the columns.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toggl_days</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-30</td>
+      <td>96.150000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-31</td>
+      <td>82.050000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-04-01</td>
+      <td>185.583333</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-04-02</td>
+      <td>94.050000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-04-03</td>
+      <td>184.066667</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A nice result. We can now seamlessly join these tables and write them to a <code>.csv</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">toggl_days</span><span class="p">,</span> <span class="n">raindf</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>minutes</th>
+      <th>rain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-30</td>
+      <td>96.150000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-31</td>
+      <td>82.050000</td>
+      <td>7.7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-04-01</td>
+      <td>185.583333</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-04-02</td>
+      <td>94.050000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-04-03</td>
+      <td>184.066667</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;rain_raw.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To gauge whether rain has an effect on minutes worked, we want to be able to classify each day as either 'rainy' or 'not rainy'. <a href="http://www.bom.gov.au/climate/data-services/content/faqs-elements.html">One method</a> for classifying days based on precipitation is to use a threshold $\boldsymbol{\lambda} \in \{0.1,0.2,1,10,25\}$ such that:</p>
+$$ \verb|rain| = \begin{cases}
+          \text{False} \quad &amp;\text{if} \, \verb|rain| \lt \lambda \\
+          \text{True} \quad &amp;\text{if} \, \verb|rain| \ge \lambda \\
+     \end{cases} $$<p>To choose $\lambda$, let's check out our data for <code>rain</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rain&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>count    39.000000
+mean      7.169231
+std      14.187896
+min       0.000000
+25%       0.000000
+50%       0.900000
+75%       8.350000
+max      75.800000
+Name: rain, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;rain:Q&quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Bin</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;count()&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+<div id="altair-viz-23f76c2a637d41bdab290056025d33b8"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-23f76c2a637d41bdab290056025d33b8") {
+      outputDiv = document.getElementById("altair-viz-23f76c2a637d41bdab290056025d33b8");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "/features/mydata/altair-data-2a2c1ca967d9ca7d7b4cc93a8406c093.json", "format": {"type": "json"}}, "mark": "bar", "encoding": {"x": {"type": "quantitative", "bin": {"extent": [0, 80], "step": 5}, "field": "rain"}, "y": {"type": "quantitative", "aggregate": "count"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given Hong Kong's humid nature alongside the median precipitation, $\lambda=1\,\text{mm}$ appears to be a good fit for the data. We can redefine our <code>rain</code> column to achieve the following data frame:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rain&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;rain_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Yes&quot;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rain&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;rain_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;No&quot;</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;rain&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;rain_day&quot;</span><span class="p">:</span> <span class="s2">&quot;rain&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>minutes</th>
+      <th>rain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-30</td>
+      <td>96.150000</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-31</td>
+      <td>82.050000</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-04-01</td>
+      <td>185.583333</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-04-02</td>
+      <td>94.050000</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-04-03</td>
+      <td>184.066667</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's see how the data are split:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rain&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>No     20
+Yes    19
+Name: rain, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Which is as good of a split as we could've hoped for. Now for some preliminary visualization: let's see how rainy/non-rainy days are distributed against minutes:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">tooltip</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">TooltipContent</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;minutes:Q&quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Bin</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="mi">500</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="mi">25</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Minutes spent on schoolwork&quot;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;count()&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of entries&quot;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;rain:N&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Rain&quot;</span><span class="p">,</span>
+              <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;No&quot;</span><span class="p">,</span> <span class="s2">&quot;Yes&quot;</span><span class="p">],</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#ffdfbf&#39;</span><span class="p">,</span> <span class="s1">&#39;steelblue&#39;</span><span class="p">]))</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+<div id="altair-viz-2dbceb4358cc4e1a8d4402bf5a0b5ec9"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-2dbceb4358cc4e1a8d4402bf5a0b5ec9") {
+      outputDiv = document.getElementById("altair-viz-2dbceb4358cc4e1a8d4402bf5a0b5ec9");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "/features/mydata/altair-data-ae36042c8a35bb89e8c1af82709b6ddd.json", "format": {"type": "json"}}, "mark": {"type": "bar", "tooltip": {"content": "encoding"}}, "encoding": {"color": {"type": "nominal", "field": "rain", "scale": {"domain": ["No", "Yes"], "range": ["#ffdfbf", "steelblue"]}, "title": "Rain"}, "x": {"type": "quantitative", "bin": {"extent": [25, 500], "step": 25}, "field": "minutes", "title": "Minutes spent on schoolwork"}, "y": {"type": "quantitative", "aggregate": "count", "title": "Number of entries"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By eye, it looks like rainy days have slightly higher minute counts. Let's compute the mean of both types of days:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;rain&#39;</span><span class="p">)[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>rain
+No     200.647500
+Yes    216.942982
+Name: minutes, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the average task time is higher on average, but is the difference <strong>statistically significant</strong>? One way of answering this is to knock on classical statistics' door and ask for a <em>p</em>-value. We want to test the alternative hypothesis that rainy days, on average, have <strong>higher</strong> minute counts. So our null hypothesis will be that there is <strong>no difference</strong> between minutes worked on average on rainy and non-rainy days. So our set-up is as follows:</p>
+$$ H_0:\mu_R=\mu_N \\ \text{vs} \\ H_A:\mu_R\gt\mu_N$$<p>where $\mu_R,\mu_N$ are the true means of minutes worked for rainy and non-rainy days respectively. Let's write the data frame to a <code>.csv</code> and head into R to perform a simple <em>t</em>-test:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;rain_school.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">rain</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;rain_school.csv&quot;</span><span class="p">)</span>
+<span class="nf">t.test</span><span class="p">(</span><span class="n">rain</span><span class="p">[</span><span class="n">rain</span><span class="o">$</span><span class="n">rain</span><span class="o">==</span><span class="s">&quot;Yes&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">minutes</span><span class="p">,</span> <span class="n">rain</span><span class="p">[</span><span class="n">rain</span><span class="o">$</span><span class="n">rain</span><span class="o">==</span><span class="s">&quot;No&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">minutes</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+
+<pre><code>    Welch Two Sample t-test
+
+data:  rain[rain$rain == "Yes", ]$minutes and rain[rain$rain == "No", ]$minutes
+t = 0.48793, df = 35.485, p-value = 0.3143
+alternative hypothesis: true difference in means is greater than 0
+95 percent confidence interval:
+ -40.11065       Inf
+sample estimates:
+mean of x mean of y 
+ 216.9430  200.6475 </code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So we obtain a <em>p</em>-value of $\approx0.3$, which is quite large. To interpret this, we can say that if we repeated the experiment for minutes worked on rainy/non-rainy days, and there really was no impact of rain on minutes worked, the probability of seeing <strong>more</strong> minutes worked for rainy days than non-rainy days to the extent we saw or to a greater extent just by chance is 30%.</p>
+<p>While that is a mouthful, it tells us there is a relatively high probability of seeing a positive deviation in minutes worked just by chance if there was no difference in rainy/non-rainy days — so we <strong>fail to reject</strong> the null hypothesis. The mini-conclusion here is that more data are definitely needed.</p>
+<h3 id="Predicting-minutes-worked">Predicting minutes worked<a class="anchor-link" href="#Predicting-minutes-worked">&#182;</a></h3><p>Let's backtrack and look at the rest of the weather data:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hk_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>mean_pressure</th>
+      <th>max_temp</th>
+      <th>mean_temp</th>
+      <th>min_temp</th>
+      <th>mean_dew</th>
+      <th>humid</th>
+      <th>cloud</th>
+      <th>rain</th>
+      <th>sunshine</th>
+      <th>wind_dir</th>
+      <th>wind_speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-01</td>
+      <td>1016.1</td>
+      <td>22.4</td>
+      <td>20.8</td>
+      <td>19.6</td>
+      <td>18.8</td>
+      <td>89</td>
+      <td>91</td>
+      <td>0.4</td>
+      <td>0.4</td>
+      <td>060</td>
+      <td>30.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-02</td>
+      <td>1012.7</td>
+      <td>23.9</td>
+      <td>21.5</td>
+      <td>19.9</td>
+      <td>19.2</td>
+      <td>87</td>
+      <td>84</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>070</td>
+      <td>23.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-03-03</td>
+      <td>1011.3</td>
+      <td>23.5</td>
+      <td>21.5</td>
+      <td>20.0</td>
+      <td>19.1</td>
+      <td>87</td>
+      <td>85</td>
+      <td>6.3</td>
+      <td>4.2</td>
+      <td>010</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-03-04</td>
+      <td>1013.7</td>
+      <td>22.6</td>
+      <td>20.9</td>
+      <td>19.3</td>
+      <td>17.7</td>
+      <td>82</td>
+      <td>83</td>
+      <td>10.2</td>
+      <td>3.2</td>
+      <td>080</td>
+      <td>26.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-03-05</td>
+      <td>1012.1</td>
+      <td>26.7</td>
+      <td>22.2</td>
+      <td>17.7</td>
+      <td>20.0</td>
+      <td>88</td>
+      <td>89</td>
+      <td>30.3</td>
+      <td>2.0</td>
+      <td>070</td>
+      <td>22.7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are an abundance of variables — let's just choose <code>mean_temp</code>, <code>humid</code>, <code>cloud</code>, <code>rain</code>, and <code>sunshine</code> as factors we think may have an impact on productivity.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">hk_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>mean_temp</th>
+      <th>humid</th>
+      <th>cloud</th>
+      <th>rain</th>
+      <th>sunshine</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-01</td>
+      <td>20.8</td>
+      <td>89</td>
+      <td>91</td>
+      <td>0.4</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-02</td>
+      <td>21.5</td>
+      <td>87</td>
+      <td>84</td>
+      <td>0.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-03-03</td>
+      <td>21.5</td>
+      <td>87</td>
+      <td>85</td>
+      <td>6.3</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-03-04</td>
+      <td>20.9</td>
+      <td>82</td>
+      <td>83</td>
+      <td>10.2</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-03-05</td>
+      <td>22.2</td>
+      <td>88</td>
+      <td>89</td>
+      <td>30.3</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's join this with our previous table containing the minutes, and write that to a <code>.csv</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span> <span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">weather</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;full_days.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[41]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>minutes</th>
+      <th>mean_temp</th>
+      <th>humid</th>
+      <th>cloud</th>
+      <th>rain</th>
+      <th>sunshine</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-30</td>
+      <td>96.150000</td>
+      <td>23.1</td>
+      <td>86</td>
+      <td>81</td>
+      <td>0.0</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-31</td>
+      <td>82.050000</td>
+      <td>21.4</td>
+      <td>85</td>
+      <td>93</td>
+      <td>7.7</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-04-01</td>
+      <td>185.583333</td>
+      <td>20.3</td>
+      <td>81</td>
+      <td>91</td>
+      <td>0.0</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-04-02</td>
+      <td>94.050000</td>
+      <td>20.7</td>
+      <td>76</td>
+      <td>89</td>
+      <td>0.0</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-04-03</td>
+      <td>184.066667</td>
+      <td>22.8</td>
+      <td>80</td>
+      <td>85</td>
+      <td>0.0</td>
+      <td>7.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you were wondering, <code>sunshine</code> is the number of hours of <em>bright</em> sunshine hours, <strong>not</strong> total. Let's head over to R to try to build some models for predicting <code>minutes</code>. We can begin by just checking out the correlations between our variables:</p>
+
+<pre><code>&gt; days &lt;- read.csv("full_days.csv")
+&gt; cor(days[c(2:7)])
+            minutes   mean_temp      humid       cloud        rain    sunshine
+minutes    1.00000000  0.08525068  0.1479811 -0.07462029 -0.04984429  0.07714833
+mean_temp  0.08525068  1.00000000 -0.3882086 -0.63293077 -0.23396924  0.70265663
+humid      0.14798108 -0.38820860  1.0000000  0.56440892  0.53635898 -0.63297290
+cloud     -0.07462029 -0.63293077  0.5644089  1.00000000  0.33323933 -0.90797842
+rain      -0.04984429 -0.23396924  0.5363590  0.33323933  1.00000000 -0.38933099
+sunshine   0.07714833  0.70265663 -0.6329729 -0.90797842 -0.38933099  1.00000000</code></pre>
+<p>We can see the weather associations we'd expect — temperature/cloud and sunshine, humidity and cloud, etc. But the correlations among <code>minutes</code> look pretty unpromising. Regardless, let's begin by partitioning our data with a 75/25 training/testing split:</p>
+<div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">30734592</span><span class="p">)</span> <span class="c1"># for reproduceability</span>
+<span class="n">train.ind</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="nf">seq_len</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">days</span><span class="p">)),</span> <span class="n">size</span> <span class="o">=</span> <span class="nf">floor</span><span class="p">(</span><span class="n">.</span><span class="m">75</span><span class="o">*</span><span class="nf">nrow</span><span class="p">(</span><span class="n">days</span><span class="p">)))</span>
+<span class="n">days.train</span> <span class="o">&lt;-</span> <span class="n">days</span><span class="p">[</span><span class="n">train.ind</span><span class="p">,]</span>
+<span class="n">days.test</span> <span class="o">&lt;-</span> <span class="n">days</span><span class="p">[</span><span class="o">-</span><span class="n">train.ind</span><span class="p">,]</span>
+</pre></div>
+<p>And fit a multiple regression equation by modeling <code>minutes</code> as a function of our weather variables:</p>
+
+<pre><code>&gt; days.fit &lt;- lm(minutes ~ mean_temp + humid + cloud + rain + sunshine, data=days.train)
+&gt; summary(days.fit)
+
+Residuals:
+    Min       1Q   Median       3Q      Max 
+-117.588  -65.600   -2.683   69.162  151.200 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept) -139.4934   413.7243  -0.337    0.739
+mean_temp    -13.0997     9.7955  -1.337    0.194
+humid          7.0194     4.1107   1.708    0.101
+cloud          0.2519     2.0980   0.120    0.905
+rain          -1.7436     1.2900  -1.352    0.190
+sunshine      10.9424    14.1435   0.774    0.447
+
+Residual standard error: 86.59 on 23 degrees of freedom
+Multiple R-squared:  0.1723,    Adjusted R-squared:  -0.007695 
+F-statistic: 0.9572 on 5 and 23 DF,  p-value: 0.4639</code></pre>
+<p>Our <em>p</em>-values are pretty large across the board, but there are some hints a few variables may be associated with <code>minutes</code>. We can calculate the Root Mean Square Error (RMSE) by</p>
+$$
+\text{RMSE} = \sqrt{
+    \frac{\sum_{i=1}^{n}(\hat{y}_i - y_i)^2}
+    {n}
+    }$$<p>where $ y_i $ are the true values for our targets, and $\hat{y}_i$ are the predicted values, and $n$ is our sample size. This can be done in R for our test dataset:</p>
+
+<pre><code>&gt; sqrt(mean((days.test$minutes - predict(days.fit, days.test))^2))
+[1] 160.763</code></pre>
+<p>Which is quite a large average difference. We can try a few other models — bagged regression trees are generally good for reducing variance. We can create one in R with the <code>rpart</code> package:</p>
+<div class="highlight"><pre><span></span><span class="n">rain_bag</span> <span class="o">&lt;-</span> <span class="nf">bagging</span><span class="p">(</span>
+    <span class="n">formula</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">~</span> <span class="n">mean_temp</span> <span class="o">+</span> <span class="n">humid</span> <span class="o">+</span> <span class="n">cloud</span> <span class="o">+</span> <span class="n">rain</span> <span class="o">+</span> <span class="n">sunshine</span><span class="p">,</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">days.train</span><span class="p">,</span>
+    <span class="n">nbagg</span> <span class="o">=</span> <span class="m">100</span><span class="p">,</span>
+    <span class="n">coob</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+    <span class="n">control</span> <span class="o">=</span> <span class="nf">rpart.control</span><span class="p">(</span><span class="n">minsplit</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">cp</span><span class="o">=</span><span class="m">0</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+<pre><code>&gt; sqrt(mean((days.test$minutes - predict(rain_bag, days.test))^2))
+[1] 154.6983</code></pre>
+<p>And we achieve a new RMSE of 155, which is a slight improvement over 161. We can try one more model — a random forest, for fun. We can use the <code>randomForest</code> library in R to elegantly do this:</p>
+<div class="highlight"><pre><span></span><span class="n">rain.rf</span> <span class="o">&lt;-</span> <span class="nf">randomForest</span><span class="p">(</span><span class="n">minutes</span> <span class="o">~</span> <span class="n">mean_temp</span> <span class="o">+</span> <span class="n">humid</span> <span class="o">+</span> <span class="n">cloud</span> <span class="o">+</span> <span class="n">rain</span> <span class="o">+</span> <span class="n">sunshine</span><span class="p">,</span>
+                        <span class="n">data</span><span class="o">=</span><span class="n">days.train</span><span class="p">,</span>
+                        <span class="n">importance</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+
+<pre><code>&gt; sqrt(mean((days.test$minutes - predict(rain.rf, days.test))^2))
+[1] 149.7549</code></pre>
+<p>And an RMSE of 150 is again an improvement over 155 and 161, but is still very high. To conclude, we can plot the predictions and compare models:</p>
+<figure class="styled"><img class="styled" src="/images/weather-model.jpeg" width="480" height="360" title="Models predicting on the test dataset" alt="Models predicting on the test dataset"><figcaption>Models predicting on the test dataset</figcaption></figure><h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>As is typical with analysis of small samples, more data are needed to conclusively suggest there is any difference in (my) productivity owing to the weather. Looking back at the linear model, perhaps an interesting route to explore is <code>humidity</code> due to its notable <em>t</em>-statistic and seemingly borderline association ( $p\approx0.1$). Of course, this may very well be solely due to chance (the more low-quality features we include, the more likely we find a non-existent correlation due to chance).</p>
+<p>At the very least, I'm happy I had the opportunity to poke around in some of my old data and refresh my pandas/R/Altair skils, and conduct some surface-level exploratory analysis even if the results were inconclusive. As is sometimes the case with throwaway personal projects, the famous saying can be invoked — it's about the journey, not the destination.</p>
+
+</div>
+</div>
+</div>
+ 
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'] ],
+        processEscapes: true,
+        preview: 'TeX'
+    }
+});
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="https://blademaw.github.io/tag/analysis.html" class="tag">analysis</a>
+                    <a href="https://blademaw.github.io/tag/python.html" class="tag">python</a>
+                    <a href="https://blademaw.github.io/tag/r.html" class="tag">r</a>
+            </div>
+        </div>
+    </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'blademaw-blog';
+      var disqus_identifier = '/posts/2021/09/weather-and-productivity/';
+      var disqus_url = 'https://blademaw.github.io/posts/2021/09/weather-and-productivity/';
+      var disqus_title = 'Does the Weather Affect my Productivity?';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+strong { font-weight: bold; }
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    font-size: 13px;
+}
+
+div.input_prompt {
+    padding: .7em 0.2em;
+}
+
+div.output_prompt {
+    padding: .4em .2em;
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 580px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 20px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ul,
+article ol {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+h2 code {
+  font-size: 26px;
+  font-weight: 400;
+}
+h3 code {
+  font-size: 20px;
+  font-weight: 400;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 700px;
+}
+.post h2:before {
+  content: "# ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  content: "## ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  content: "### ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+figure {
+  text-align: center;
+}
+
+td.code {
+  width: 100%;
+}
+
+figure.code {
+  text-align: left;
+}
+
+figure.styled {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background: repeating-linear-gradient(135deg, #dfdfdf 0, #dfdfdf 1%, #ffffff 0, #ffffff 50%) 0 / 20px 20px;
+  text-align: center;
+  img {
+      margin: 0 auto 0.2rem auto;
+      border: 1px solid #ddd;
+      box-shadow: none;
+      background-color: #fff;
+  }
+}
+figcaption {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 1.6;
+  font-family: Consolas, monaco, monospace;
+  span {
+      background-color: #fff;
+      padding: 0.2rem 0.5rem;
+  }
+  a:hover {
+      cursor: pointer;
+  }
+}
+
+.vis-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background: repeating-linear-gradient(135deg, #dfdfdf 0, #dfdfdf 1%, #ffffff 0, #ffffff 50%) 0 / 20px 20px;
+  width: 100%;
+  margin:0 auto;
+}
+
+#cent {
+  text-align: center;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2021 Jack Oliver unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    </body>
+</html>

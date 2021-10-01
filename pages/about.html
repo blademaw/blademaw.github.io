@@ -85,6 +85,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+
 a {
   color: #007EE5;
   text-decoration: none;
@@ -95,7 +96,7 @@ a:hover {
 }
 header.main-header {
   background: none repeat scroll 0% 0% #205F29;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 header.main-header a {
   color: #fff;
@@ -427,11 +428,32 @@ figcaption {
   a:hover {
       cursor: pointer;
   }
+}
+
+.vis-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background: repeating-linear-gradient(135deg, #dfdfdf 0, #dfdfdf 1%, #ffffff 0, #ffffff 50%) 0 / 20px 20px;
+  width: 100%;
+  margin:0 auto;
+}
+
+#cent {
+  text-align: center;
 }</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/efe339fa46.js" crossorigin="anonymous"></script>
+
+    <!-- importing Vega-Lite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
         <script type="text/javascript">
@@ -439,6 +461,9 @@ figcaption {
             if (window.MathJax) {
                 // MathJax loaded
                 MathJax.Hub.Config({
+                    tex: {
+                        packages: {'[+]': ['boldsymbol', 'amsmath']}
+                    },
                     tex2jax: {
                         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                         displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
@@ -453,7 +478,6 @@ figcaption {
         }
         init_mathjax();
         </script>
-
     </head>
 
     <body>
@@ -504,6 +528,7 @@ or computer science. Sometimes I end up uploading them to this blog and talking 
 <ul>
 <li>This blog is built with <a href="https://blog.getpelican.com/" target="_blank">Pelican</a>, using a (slightly tweaked) theme from <a href="https://github.com/jakevdp/jakevdp.github.io-source" target="_blank">Jake VanderPlas</a>.</li>
 <li>Images on this blog such as the following: <figure class="styled"><img class="styled" src="/images/lorenz.png" width="200" height="150" title="Figure 1: The Lorenz System" alt="Figure 1: The Lorenz System"><figcaption>Figure 1: The Lorenz System</figcaption></figure> are implemented using a <a href="https://blademaw.github.io/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/">modified version</a> of Jake VanderPlas' <a href="https://github.com/pelican-plugins/liquid-tags" target="_blank">Liquid Tags</a> and styling inspired by <a href="https://heiswayi.nrird.com/image-caption-using-liquid-syntax" target="_blank">Heiswayi Nrird</a>.</li>
+<li>Jupyter notebooks are integrated with a 'Frankensteined' version of the liquid tag — I'm using an environment with <code>notebook</code> and <code>nbconvert</code> versions <code>5.6.0</code>, and my <code>liquid_tags</code> plugin directory has an additional <code>core.py</code> file from the legacy <code>ipynb.liquid</code> Pelican plugin, and modified <code>notebook.py</code>. You can click <a href="/features/code/core.py">here</a> and <a href="/features/code/notebook.py">here</a> to download both files, respectively.</li>
 </ul>
         </div>
 
