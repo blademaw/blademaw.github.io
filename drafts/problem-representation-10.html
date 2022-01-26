@@ -6,7 +6,7 @@
         <meta name="author" content="Jack Oliver">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title>Setting up & Customizing Liquid Tags in Pelican | Divide & Ponder</title>
+        <title>Problem Representation in Python, and N-Queens, Revisited | Divide & Ponder</title>
 
 	<link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico?" type="image/x-icon">
@@ -504,18 +504,16 @@ figcaption {
 <div class="container post">
     <article>
         <header>
-            <h1>Setting up & Customizing Liquid Tags in Pelican</h1>
-            <time datetime="article.date.isoformat()" pubdate>Tue 21 September 2021</time>
+            <h1>Problem Representation in Python, and N-Queens, Revisited</h1>
+            <time datetime="article.date.isoformat()" pubdate>Sun 24 October 2021</time>
 
         </header>
 
         <div class="article_content">
-            <h2>A word on <code>liquid-tags</code> and Pelican plugins</h2>
-<p>Without delving in too deep, <abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin">Liquid Tags</abbr> are the saving grace of media integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, the following:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{%</span><span class="w"> </span><span class="nt">notebook</span><span class="w"> </span>my-jupyter-notebook.ipynb<span class="w"> </span><span class="na">cells[2</span><span class="o">:</span><span class="mi">3</span>]<span class="w"> </span><span class="p">%}</span>
-</code></pre></div>
+            <!-- PELICAN_BEGIN_SUMMARY -->
+<p>In this blog post, I want to take the opportunity to talk a little bit about <strong>representing problems</strong> — a process any CS student must first fully internalize before advancing to complex problem solving. To seasoned problem-solvers, the process of problem representation is so natural that us onlookers are quick to take the process for granted. In this blog post, I'd like to look at three case studies — two of which are puzzles from the gold mine <em><a href="http://puzzlor.com/">The PuzzlOR</a></em>, and the third is the classic N-Queens problem.</p>
+<!-- PELICAN_END_SUMMARY -->
 
-<p>displays cells <code>[2–3)</code> (so cell 2) of a Jupyter notebook:</p>
 <style type="text/css">/*!
 *
 * IPython notebook
@@ -1632,14 +1630,67 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
  .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
  .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
- .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Enumeration-and-Exhaustion">Enumeration and Exhaustion<a class="anchor-link" href="#Enumeration-and-Exhaustion">&#182;</a></h2><h3 id="Problem-1-&#8212;&#160;Toy-Builder">Problem 1 &#8212;&#160;Toy Builder<a class="anchor-link" href="#Problem-1-&#8212;&#160;Toy-Builder">&#182;</a></h3><p>This easy problem imagines you as a <a href="http://puzzlor.com/2016-02_ToyBuilder.html">toy builder</a> who can build three different toys — <strong>airplanes, helicopters, or cars</strong>. Each of these toys requires resources to make, namely <strong>blue blocks, green rods,</strong> or <strong>red wheels</strong>. Below is a table that summarizes the cost for each toy:</p>
+$$ \begin{array} {r|| r r r}
+ \textbf{Toy} &amp; \textbf{Blue Blocks} &amp; \textbf{Green Rods} &amp; \textbf{Red Wheels} \\
+  \hline \text{Airplane} &amp; 3 &amp; 2 &amp; 1 \\ 
+   \text{Helicopter} &amp; 2 &amp; 4 &amp; 1 \\
+    \text{Car} &amp; 1 &amp; 2 &amp; 4 \\
+     \end{array} $$<p>Once each toy is crafted, they can be sold (presumably on the luxury toy market) to net the following profits:</p>
+$$ \begin{array} {r|| r }
+ \textbf{Toy} &amp; \textbf{Profit}  \\
+  \hline \text{Airplane} &amp; \$7 \\ 
+   \text{Helicopter} &amp; \$8  \\
+    \text{Car} &amp; \$5 \\
+     \end{array} $$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You begin with <strong>25 blue blocks, 29 green rods,</strong> and <strong>30 red wheels</strong>. The question is, of course,</p>
+<blockquote><p>What is the maximum profit you can achieve?</p>
+</blockquote>
+<p>You do not have to exhaust your resources.</p>
+<p>As the search space for this problem is quite restricted, one approach is to just enumerate over all possibilities, i.e., brute force. This cut-and-dried approach is (potentially very) expensive, but is less costly on us humans to implement in favor of something like a convoluted backtracking algorithm.</p>
+<p>When implementing brute-force (for an optimization problem), there are generally three steps:</p>
+<blockquote><ol>
+<li><strong>defining</strong> the representation of a candidate solution, </li>
+<li><strong>generating</strong> all candidate solutions, and </li>
+<li><strong>finding</strong> the candidate that solves our problem  by mini/maximizing some cost function.</li>
+</ol>
+</blockquote>
+<p>In this case, we want to find a combination of toys that <em>maximizes</em> the profit generated.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Representation">Representation<a class="anchor-link" href="#Representation">&#182;</a></h4><p>This problem is relatively easy to represent — we can define a $1\times3$ vector to hold the number of airplanes, helicopters, and cars made, respectively. I.e.,
+$$ \text{solution} \leftarrow (airplanes, \space helicopters, \space cars) $$
+is our representation of a candidate solution.</p>
+<h4 id="Generating-possibilities">Generating possibilities<a class="anchor-link" href="#Generating-possibilities">&#182;</a></h4><p>First, we need to limit each toy produced in a given solution by the maximum number we can make of that toy. This will be given by the floor of the minimum amount of toys you can make with <strong>any</strong> of the resources available, or
+$$ \left \lfloor{\min\left(\frac{c^{(i)}_b}{25}, \frac{c_g^{(i)}}{29}, \frac{c^{(i)}_r}{30} \right)}\right \rfloor $$
+where $c^{(i)}_{b,g,r}$ is the cost in blue/green/red resources of toy $i$.</p>
+<p>We can query these results</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># example cell</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="p">)))</span> <span class="c1"># e^(pi*i)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">starting_res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="n">toy_costs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">starting_res</span><span class="o">/</span><span class="n">toy_costs</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 </pre></div>
 
     </div>
@@ -1652,15 +1703,436 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-1.0
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[8.0, 7.0, 7.0]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>to discover we can create a <strong>maximum</strong> of $8$ airplanes, $7$ helicopters, and $7$ cars. To enumerate all possibilities, we can then use a nested <code>for</code> loop to create each vector solution with the maximum constraints in place. We can also cut down on the number of solutions to sift through in the future by axing solutions we know are wrong (if they use excess resources).</p>
+<p>We can write a simple function to ensure after spending all required resources, we didn't over-use any:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">toy_valid</span><span class="p">(</span><span class="n">sol</span><span class="p">):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sol</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sol</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">cur_resources</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span> <span class="c1"># initial</span>
+    <span class="n">cur_resources</span> <span class="o">-=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> \
+                        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">j</span> <span class="o">+</span> \
+                        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span><span class="o">*</span><span class="n">k</span> <span class="c1"># using resources</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">cur_resources</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span> <span class="c1"># valid solution</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Identifying-the-solution">Identifying the solution<a class="anchor-link" href="#Identifying-the-solution">&#182;</a></h4><p>Now we can generate the solutions and accumulate the <em>'correct'</em> ones with the <code>for</code> loops:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sols</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span> <span class="c1"># airplanes </span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span> <span class="c1"># helicopters</span>
+        <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span> <span class="c1"># cars</span>
+            <span class="n">toy_eval</span> <span class="o">=</span> <span class="n">toy_valid</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">z</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">toy_eval</span><span class="p">:</span> <span class="c1"># if valid solution</span>
+                <span class="n">sols</span> <span class="o">+=</span> <span class="p">[[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">z</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's check how many <em>'correct'</em> solutions there are:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">sols</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>246</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a <em>very small</em> number of solutions, so we can more than feasibly solve the given problem by checking each solution. To do so, we'll define a cost function and then iterate over all our candidates, bearing in mind that we're <em>maximizing</em> cost:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">toy_cost</span><span class="p">(</span><span class="n">sol</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">7</span><span class="o">*</span><span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">sol</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">sol</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">max_cost</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">cur_sol</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">sol</span> <span class="ow">in</span> <span class="n">sols</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">toy_cost</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_cost</span><span class="p">:</span>
+        <span class="n">max_cost</span> <span class="o">=</span> <span class="n">toy_cost</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+        <span class="n">cur_sol</span> <span class="o">=</span> <span class="n">sol</span>
+
+<span class="n">max_cost</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">cur_sol</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(76, [5, 2, 5])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Revealing our profit-maximizing toy distribution to be <strong>5 airplanes, 2 helicopters</strong>, and <strong>5 cars</strong>, generating <strong>$76</strong> of profit in total.</p>
+<p>Remember, this enumeration approach was only really used because we knew the number of solutions to check was low. If we increased the amount of starting resources, we'd increase the search space combinatorially (possibly leading to a <em><a href="https://en.wikipedia.org/wiki/Combinatorial_explosion">combinatorial explosion</a></em>, which, like most kinds of explosions, aren't fun).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Problem-2-&#8212;&#160;Port-in-a-Storm">Problem 2 &#8212;&#160;Port in a Storm<a class="anchor-link" href="#Problem-2-&#8212;&#160;Port-in-a-Storm">&#182;</a></h3><p>This is the <a href="http://puzzlor.com/2017-02_PortInAStorm.html">most recent puzzle</a> from <em>PuzzlOR</em>, where it is your job to direct <strong>20 boats</strong> at sea to their nearest dock (with a total of <strong>20 dock spaces</strong>) in the midst of a storm.</p>
+<figure class="styled"><img class="styled" src="/images/portinastorm_desc.png" width="450" height="315" title="Twenty boats at sea to be assigned docks" alt="Twenty boats at sea to be assigned docks"><figcaption>Twenty boats at sea to be assigned docks <a href="https://puzzlor.com/2017-02_PortInAStorm.html">(source)</a></figcaption></figure><p>There are three distinct clusters of boats (labelled above), and we can summarize them as follows:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$ 
+\begin{array} {r r r}
+ \quad\quad\quad\quad &amp; \textbf{Distance} &amp; \quad\quad\\
+\end{array} \\
+\begin{array} {r|| r r r |r}
+ \textbf{Cluster} &amp; \text{Dock 1} &amp; \text{Dock 2} &amp; \text{Dock 3} &amp; \textbf{Boats}\\
+  \hline 1 &amp; 1 &amp; 3 &amp; 2 &amp; 8\\ 
+   2 &amp; 2 &amp; 2 &amp; 1 &amp; 5\\
+    3 &amp; 3 &amp; 2 &amp; 1 &amp; 7\\
+\end{array}
+$$<p>And the dock spaces are:</p>
+$$ 
+\begin{array} {r|| r r r}
+ \textbf{Dock} &amp; \textbf{Spaces Available} \\
+  \hline 1 &amp; 4   \\ 
+   2 &amp; 7 \\
+    3 &amp; 9  \\
+\end{array}
+$$<p>Given the data, the question this time is:</p>
+<blockquote><p>What is the minimum total distance travelled by all boats?</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Representation">Representation<a class="anchor-link" href="#Representation">&#182;</a></h4><p>With this puzzle, it is harder to see how we would go about abstracting a solution to a data structure. Several ideas are possible, some more efficient than others. Take for instance each boat represented by a list with relevant attributes:</p>
+$$ 
+\text{boat}_i \leftarrow \left[ \left(\text{dist}_1, \text{dist}_2, \text{dist}_3 \right), \space \text{current_dock} \right] 
+$$<p>where $\text{dist}_i$ is the distance of the boat to the $i$-th dock.</p>
+<p>This representation is clear and allows querying of the boat's <em>travelled distance,</em> or <em>cost</em> via $\verb|boat|_i\verb|[0][1]|$. However, we must consider that twenty boats in an array means $20\cdot4=100$ total elements in memory, and it's easy to see that many boats are essentially the same array, with the <code>current_dock</code> being the only altered attribute.</p>
+<p>Okay, what about a different data structure? Since <code>current_dock</code> is the only variable attribute, can we encode that data without constantly altering it in some fashion? One possible representation is to transform <code>current_dock</code> a position in an array:</p>
+$$ \text{docks} \leftarrow \left[ \left[ \text{boats}\right], \space \left[\dots\right],\space \left[\dots\right] 
+    \right] 
+$$<p>where $\text{docks}[i]$ stores all boats docked at the $i$-th dock. In this representation, boats would change destinations via array swapping, which is possibly even more costly given the nature of array concatenation and slicing.</p>
+<p>As explicit as this representation is, it still suffers from the redundancy issues of the boat representation, and its practical implementation must constantly ensure $\text{len}(\text{docks}[i])\le\text{dock_spaces}_i$, which is at least three comparisons per iteration.</p>
+<p>Let's move on from this nested array approach. In a <em>single array,</em> can we somehow encode the assigned dock of a boat and identify its cluster at the same time? Unsurprisingly, the answer is yes — probably in many ways.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's move forward with a representation that makes use of the position in the array to signify dock number, and integers 1–3 to signify boat cluster. Here is a sample solution that assigns boats to each dock in sorted order:</p>
+<figure class="styled"><img class="styled" src="/images/portinastorm_rep.png" width="500" height="78" title="Problem representation for Problem 2" alt="Problem representation for Problem 2"></figure><p>Functionally, in this array there are three 'hidden' sets — dock one, two, and three. Within these sets, order does not matter (this will <em>drastically</em> cut down on the search space later), and while we do have repeated elements, we can use these to index cost-distance arrays when evaluating a solution.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Generating-possibilities">Generating possibilities<a class="anchor-link" href="#Generating-possibilities">&#182;</a></h4><p>We can think of our representation as a result of <em>choosing</em> different individual boats from a pool of available boats, one dock at a time. We can define the algorithm for generating a given solution as</p>
+<blockquote><ol>
+<li>Define a pool of available boats, $S$</li>
+<li>Choose $4$ boats from $S$, let this be the set $D_1$</li>
+<li>Choose $7$ boats from $\{S-D_1\}$, let this be the set $D_2$</li>
+<li>The remaining $9$ boats in dock three will be $D_3=\{S-D_1-D_2\}$</li>
+</ol>
+</blockquote>
+<p>Of course, the real algorithm must enumerate all choices of <code>(2)</code> and then <code>(3)</code>.</p>
+<p>In Python, we can define our pool and algorithm as such:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">boat_nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">sols</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">first_dock</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">)):</span> 
+    <span class="c1"># for every first-dock configuration</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="nb">list</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">boat_nums</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">boat</span> <span class="ow">in</span> <span class="n">first_dock</span><span class="p">:</span> <span class="c1"># remove from possible further boats</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">boat</span><span class="p">)</span>
+        
+    <span class="c1"># for each dock 2 config</span>
+    <span class="k">for</span> <span class="n">second_dock</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="mi">7</span><span class="p">)):</span>
+        <span class="n">all_left</span> <span class="o">=</span> <span class="nb">list</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">boat</span> <span class="ow">in</span> <span class="n">second_dock</span><span class="p">:</span> <span class="c1"># find remaining boats to alight at third dock</span>
+            <span class="n">all_left</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">boat</span><span class="p">)</span>
+        <span class="n">sols</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">first_dock</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">second_dock</span><span class="p">)</span> <span class="o">+</span> <span class="n">all_left</span><span class="p">]</span> <span class="c1"># append solution</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's check how many solutions we have in total:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">sols</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>171600</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Which is, again, not that many.</p>
+<h4 id="Identifying-the-solution">Identifying the solution<a class="anchor-link" href="#Identifying-the-solution">&#182;</a></h4><p>A cost function for the problem given our representation is easy — we simply iterate over each boat in each dock slice, applying the appropriate costs as distances:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">costs</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+
+<span class="k">def</span> <span class="nf">distance_cost</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">boat</span> <span class="ow">in</span> <span class="n">s</span><span class="p">[:</span><span class="mi">4</span><span class="p">]:</span> <span class="c1"># first dock</span>
+        <span class="n">dist</span> <span class="o">+=</span> <span class="n">costs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">boat</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">boat</span> <span class="ow">in</span> <span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">11</span><span class="p">]:</span> <span class="c1"># second dock</span>
+        <span class="n">dist</span> <span class="o">+=</span> <span class="n">costs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">boat</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">boat</span> <span class="ow">in</span> <span class="n">s</span><span class="p">[</span><span class="mi">11</span><span class="p">:]:</span> <span class="c1"># third dock</span>
+        <span class="n">dist</span> <span class="o">+=</span> <span class="n">costs</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">boat</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">dist</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can then iterate over all solutions and look for the minimum cost/distance travelled by a configuration of boats in docks:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">min_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">cur_sol</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">sol</span> <span class="ow">in</span> <span class="n">sols</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">distance_cost</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_dist</span><span class="p">:</span>
+        <span class="n">cur_sol</span> <span class="o">=</span> <span class="n">sol</span>
+        <span class="n">min_dist</span> <span class="o">=</span> <span class="n">distance_cost</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+
+<span class="n">min_dist</span><span class="p">,</span> <span class="n">cur_sol</span> <span class="c1"># solution</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(31, [1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And we find the minimum distance to be <strong>31</strong>, and it just so happened to be that the minimum distance yielding configuration was our default case!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exhaustion-of-Enumeration">Exhaustion of Enumeration<a class="anchor-link" href="#Exhaustion-of-Enumeration">&#182;</a></h2><p>Of course, we should note <strong>the only reason we could feasibly solve the previous problems</strong> with <strong>brute-force</strong> was because of the small number of solutions to verify, and the guarantee our parameters/arguments were fixed.</p>
+<p>But what happens when our problem is more general, or simply has too many possibilities to check?</p>
+<h3 id="Problem-3-&#8212;&#160;The-N-Queens-Problem">Problem 3 &#8212;&#160;The N-Queens Problem<a class="anchor-link" href="#Problem-3-&#8212;&#160;The-N-Queens-Problem">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -1704,184 +2176,16 @@ MathJax.Hub.Config({
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-
-<p>They follow a simplistic structure — enclosed in curly braces and percent signs, the first argument is the type of liquid tag to be integrated, and the following arguments are content parameters, usually a directory to a file, and aesthetic tuners.</p>
-<p>They use regular expressions to match arguments to groups, generating HTML tags appropriately. Created by one of my favorite data scientists, <a href="https://github.com/jakevdp">Jake VanderPlas</a>, they are an ingenious invention that are difficult to live without once you start using them.</p>
-<p>Unfortunately, they <strong>do not come standard</strong> with Pelican, and must be installed and recognized by Pelican in order to be used within articles. Choosing which method of installation and which version of <code>liquid-tags</code> to install can be time-consuming, so it is my aim in this brief article to simplify the process for any future users.</p>
-<h2>Installing <code>liquid-tags</code></h2>
-<p>From what I can tell, it used to be that <strong>all</strong> Pelican plugins had to be cloned from <a href="https://github.com/getpelican/pelican-plugins">this massive repo</a> and stored locally in a <code>/plugins/</code> directory to be used. Recently however, the Pelican Plugins organization has attempted to streamline the plugin acquisition pipeline by migrating plugins to a <a href="https://github.com/pelican-plugins">new organization</a>.</p>
-<p>The majority of plugins can now be installed via a simple <code>pip install &lt;plugin&gt;</code> and specified in your <code>pelicanconf.py</code> for use without hassle. This is a good and viable option <strong>if you do not wish to customize the tags at all</strong>. However, if you <strong>do</strong> want some customization, you'll need to go local.</p>
-<p>The most up-to-date version of liquid-tags should be installed, available <a href="https://github.com/pelican-plugins/liquid-tags">here</a>.</p>
-<p>For no customization, a simple</p>
-<div class="highlight"><pre><span></span><code>$ python -m pip install pelican-liquid-tags
-</code></pre></div>
-
-<p>will suffice. Then you can specify the plugin and choose your tags in order to use it in your <code>pelicanconf.py</code> as such:</p>
-<div class="highlight"><pre><span></span><code><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;liquid-tags&#39;</span><span class="p">]</span>
-<span class="n">LIQUID_TAGS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;literal&quot;</span><span class="p">,</span> <span class="s2">&quot;video&quot;</span><span class="p">,</span> <span class="s2">&quot;img&quot;</span><span class="p">,</span> <span class="s2">&quot;include_code&quot;</span><span class="p">]</span>
-</code></pre></div>
-
-<p><br/>
-For local installations, create a <code>/plugins/</code> subdirectory in your <code>pelican</code> root directory if you don't already have one, and then clone the <code>liquid-tags</code> repo into a folder:</p>
-<div class="highlight"><pre><span></span><code>$ git clone https://github.com/pelican-plugins/liquid-tags.git pelican-plugins/liquid_tags
-</code></pre></div>
-
-<p>Here I've created an extra subdirectory <code>/plugins/pelican-plugins/</code> to match the legacy system of importing plugins. Once you've cloned the repo, move all the contents of <code>liquid_tags/pelican/plugins/liquid_tags/</code> to the folder you cloned liquid-tags to. My final folder looks like this:</p>
-<div class="highlight"><pre><span></span><code>main_dir
-├── ...
-├── content
-│   ├── ...
-├── output
-│   ├── ...
-└── plugins
-    └── pelican-plugins
-        └── liquid_tags
-            ├── img.py
-            ├── notebook.py
-            └── ...
-</code></pre></div>
-
-<p>Then add the source directory to your <code>pelicanconf.py</code> for liquid-tags and import the tags you want to use (with the local directory, these must be <strong>individually specified and added</strong> to <code>PLUGINS</code> prefixed by <code>liquid_tags.</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;./plugins/pelican-plugins&#39;</span><span class="p">]</span>
-<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;render_math&#39;</span><span class="p">,</span> <span class="s1">&#39;liquid_tags.img&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;liquid_tags.notebook&#39;</span><span class="p">,</span> <span class="s1">&#39;liquid_tags.literal&#39;</span><span class="p">]</span>
-</code></pre></div>
-
-<p>Now you can begin using the tags. Regarding documentation of specific tags, I find reading the header in the tag's <code>.py</code> file easiest, but you can view the <code>README</code> for <code>liquid-tags</code> <a href="https://github.com/pelican-plugins/liquid-tags">here</a>.</p>
-<h2>Customizing tags</h2>
-<p>As mentioned, liquid tags substitute the written tag in Markdown by matching a regular expression to the given arguments, and inserting them into appropriate groups in an HTML snippet. If you'd like to add your own arguments to tags, create your own, or edit the HTML outputted by a tag, you can edit the appropriate <code>.py</code> file.</p>
-<p>The good news is most of the legwork is already done for you — the first step is customizing the regular expression to match. It'll look something like this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">AUDIO</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
-    <span class="sa">r</span><span class="s2">&quot;(/\S+|https?:\S+)(?:\s+(/\S+|https?:\S+))?(?:\s+(/\S+|https?:\S+))?&quot;</span>
-<span class="p">)</span>
-</code></pre></div>
-
-<p>Once you've altered it to your liking, check how the file splits and assigns groups, which will depend on the tag. Most files have a <code>for</code> loop that collects arguments into a dictionary <code>attrs</code> where <code>(key, value)</code> pairs are in the format <code>(regex_group, matched_string)</code>.</p>
-<p>All tags work by returning the HTML to be put in your page as a string. Since string manipulation is especially easy in Python, the rest of the work is really just formatting your HTML string by inserting the right dictionary values in the right places.</p>
-<h3>Example — altering <code>img.py</code> for figures</h3>
-<p>While the regular <code>img</code> tags are fine, I wanted a styled version for figures that needed captions, and images of interest. I could have created a separate <code>figure.py</code> liquid tag, but I opted for editing the <code>img.py</code> file.</p>
-<p>This way, I can embed regular images like such:</p>
-<p><figure><img src="/images/stochastic_lotka_volterra.png" width="450" height="300" title="A stochastic Lotka-Volterra model" alt="A stochastic Lotka-Volterra model"></figure></p>
-<p>Or highlight images with a subtle <a href="https://heiswayi.nrird.com/image-caption-using-liquid-syntax">styled background</a> and padding:</p>
-<p><figure class="styled"><img class="styled" src="/images/stochastic_lotka_volterra.png" width="450" height="300" title="A stochastic Lotka-Volterra model" alt="A stochastic Lotka-Volterra model"></figure></p>
-<p>Or add a figure and source, if necessary:</p>
-<p><figure class="styled"><img class="styled" src="/images/stochastic_lotka_volterra.png" width="450" height="300" title="Figure 1. A stochastic Lotka-Volterra model" alt="A stochastic Lotka-Volterra model"><figcaption>Figure 1. A stochastic Lotka-Volterra model (<a href='#'>source</a>)</figcaption></figure></p>
-<p>To accomplish this, I tweaked the <code>img.py</code> file:</p>
-<p>I first changed the expression to match from</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>?P&lt;class&gt;<span class="se">\S</span>.*<span class="se">\s</span>+<span class="o">)</span>?<span class="o">(</span>?P&lt;src&gt;<span class="o">(</span>?:https?:<span class="se">\/\/</span><span class="p">|</span><span class="se">\/</span><span class="p">|</span><span class="se">\S</span>+<span class="se">\/</span><span class="o">)</span><span class="se">\S</span>+<span class="o">)(</span>?:<span class="se">\s</span>+<span class="o">(</span>?P&lt;width&gt;<span class="se">\d</span>+<span class="o">))</span>?<span class="o">(</span>?:<span class="se">\s</span>+<span class="o">(</span>?P&lt;height&gt;<span class="se">\d</span>+<span class="o">))</span>?<span class="o">(</span>?P&lt;title&gt;<span class="se">\s</span>+.+<span class="o">)</span>?
-</code></pre></div>
-
-<p>to:</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>?P&lt;class&gt;<span class="se">\S</span>*<span class="se">\s</span><span class="o">)</span>?<span class="o">(</span>?P&lt;src&gt;<span class="o">(</span>?:https?:<span class="se">\/\/</span><span class="p">|</span><span class="se">\/</span><span class="p">|</span><span class="se">\S</span>+<span class="se">\/</span><span class="o">)</span><span class="se">\S</span>+<span class="o">)(</span>?:<span class="se">\s</span>+<span class="o">(</span>?P&lt;width&gt;<span class="se">\d</span>+<span class="o">))</span>?<span class="o">(</span>?:<span class="se">\s</span>+<span class="o">(</span>?P&lt;height&gt;<span class="se">\d</span>+<span class="o">))</span>?<span class="o">(</span>?P&lt;title&gt;<span class="se">\s</span>+.+<span class="o">)</span>?
-</code></pre></div>
-
-<p>which limits the tag to one class name. The figure caption, alt text, and source are all captured in the <code>&lt;title&gt;</code> group.</p>
-<p>Then, I altered the function body to parse the regex like so:</p>
-<figure class='code'>
-
-<div class="highlight"><pre><span></span><code>    <span class="c1"># See if source exists (must provide all 3 title/alt/source)</span>
-    <span class="c1"># Check if alt text or source are present -- if so, split it from title</span>
-    <span class="k">if</span> <span class="s1">&#39;title&#39;</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
-        <span class="n">match</span> <span class="o">=</span> <span class="n">ReTitleAltSource</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">match</span><span class="p">:</span> <span class="c1"># set title, alt, leave source</span>
-            <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
-            <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span>
-            <span class="n">source_tag</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">match</span> <span class="o">=</span> <span class="n">ReTitleAlt</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span> <span class="c1"># if no source, get title/alt</span>
-            <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
-                <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">())</span>
-            <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">))</span> <span class="ow">or</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-                <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="c1"># no alt, set to title</span>
-</code></pre></div>
-
-</figure>
-<p>which matches a title, alt text, and source if possible — if not, it tries to match a title and alt text. If it can't match either of these and just finds a title (minimum requirement) it'll assign the alt text the title.</p>
-<p>Then the beginning of the HTML is specified:</p>
-<figure class='code'>
-
-<div class="highlight"><pre><span></span><code>    <span class="n">tag_out</span> <span class="o">=</span> <span class="s2">&quot;&lt;figure&gt;&quot;</span>
-    <span class="n">fig_tag</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-</code></pre></div>
-
-</figure>
-<p>which defines <code>tag_out</code>, the output HTML, and <code>fig_tag</code>, the caption to be displayed.</p>
-<figure class='code'>
-
-<div class="highlight"><pre><span></span><code>    <span class="k">if</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># special case: sets title=alt but no caption</span>
-        <span class="n">fig_tag</span> <span class="o">=</span> <span class="s2">&quot;&lt;figcaption&gt;&quot;</span> <span class="o">+</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span> <span class="c1"># if no title, add as alt in image</span>
-
-    <span class="k">if</span> <span class="s1">&#39;class&#39;</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span> <span class="c1"># set figure class if given</span>
-        <span class="n">tag_out</span> <span class="o">=</span> <span class="s1">&#39;&lt;figure class=&quot;&#39;</span> <span class="o">+</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&quot;&gt;&#39;</span>
-</code></pre></div>
-
-</figure>
-<p>The above code then adds a caption to the figure if necessary, and a class if given in the liquid tag. The following code is from the original plugin:</p>
-<figure class='code'>
-
-<div class="highlight"><pre><span></span><code>    <span class="c1"># add all arguments</span>
-    <span class="n">tag_out</span> <span class="o">=</span> <span class="n">tag_out</span> <span class="o">+</span> <span class="s2">&quot;&lt;img </span><span class="si">{0}</span><span class="s2">&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">=&quot;</span><span class="si">{1}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
-                                       <span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">attrs</span><span class="p">)))</span>
-    <span class="n">tag_out</span> <span class="o">=</span> <span class="n">tag_out</span> <span class="o">+</span> <span class="n">fig_tag</span>
-</code></pre></div>
-
-</figure>
-<p>which appends all additional arguments in the liquid tag to the HTML <code>&lt;img&gt;</code> tag. Finally, the source is added if supplied, and all tags are closed:</p>
-<figure class='code'>
-
-<div class="highlight"><pre><span></span><code>    <span class="c1"># if source, append to caption</span>
-    <span class="k">if</span> <span class="n">source_tag</span><span class="p">:</span>
-        <span class="n">tag_out</span> <span class="o">=</span> <span class="n">tag_out</span> <span class="o">+</span> <span class="s2">&quot; (&lt;a href=&#39;&quot;</span> <span class="o">+</span> <span class="n">source_tag</span> <span class="o">+</span> <span class="s2">&quot;&#39;&gt;source&lt;/a&gt;)&quot;</span>
-    
-    <span class="k">if</span> <span class="n">fig_tag</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="c1"># close tag if caption present</span>
-        <span class="n">tag_out</span> <span class="o">=</span> <span class="n">tag_out</span> <span class="o">+</span> <span class="s2">&quot;&lt;/figcaption&gt;&lt;/figure&gt;&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">tag_out</span> <span class="o">=</span> <span class="n">tag_out</span> <span class="o">+</span> <span class="s2">&quot;&lt;/figure&gt;&quot;</span>
-
-    <span class="k">return</span> <span class="n">tag_out</span>
-</code></pre></div>
-
-</figure>
-<p>So in the end, the three images above can then be displayed using the following tags:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{%</span><span class="w"> </span><span class="nt">img</span><span class="w"> </span>/images/stochastic_lotka_volterra.png<span class="w"> </span><span class="mi">450</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot;A stochastic Lotka-Volterra model&quot;</span><span class="w"> </span><span class="p">%}</span>
-
-<span class="p">{%</span><span class="w"> </span><span class="nt">img</span><span class="w"> </span>styled<span class="w"> </span>/images/stochastic_lotka_volterra.png<span class="w"> </span><span class="mi">450</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot;A stochastic Lotka-Volterra model&quot;</span><span class="w"> </span><span class="p">%}</span>
-
-<span class="p">{%</span><span class="w"> </span><span class="nt">img</span><span class="w"> </span>styled<span class="w"> </span>/images/stochastic_lotka_volterra.png<span class="w"> </span><span class="mi">450</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="s2">&quot;Figure 1. A stochastic Lotka-Volterra model&quot;</span><span class="w"> </span><span class="s2">&quot;A stochastic Lotka-Volterra model&quot;</span><span class="w"> </span><span class="s2">&quot;#&quot;</span><span class="w"> </span><span class="p">%}</span>
-</code></pre></div>
-
-<h2>Conclusion</h2>
-<p>Liquid tags in Markdown ([un]confusingly supplied by the <code>liquid-tags</code> plugin) are a great way to seamlessly incorporate multimedia in your Markdown articles or pages. In short, acquiring them through <code>pip</code> is your best bet if you plan on using them as-is, but to alter their behavior you're going to need to peek behind the curtain.</p>
-<p>Luckily, with some regex, they are easy enough to tweak (and possibly create, if you're brave enough!). If you'd like to try my slightly edited <code>img.py</code> file discussed in the example, you can download it <a href="/features/code/img_ex.py">here</a>.</p>
         </div>
 
         <div class="meta">
             <div>
                     <a href="https://blademaw.github.io/tag/python.html" class="tag">python</a>
-                    <a href="https://blademaw.github.io/tag/pelican.html" class="tag">pelican</a>
-                    <a href="https://blademaw.github.io/tag/plugins.html" class="tag">plugins</a>
+                    <a href="https://blademaw.github.io/tag/optimization.html" class="tag">optimization</a>
             </div>
         </div>
     </article>
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
-    <script type="text/javascript">
-      var disqus_shortname = 'blademaw-blog';
-      var disqus_identifier = '/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/';
-      var disqus_url = 'https://blademaw.github.io/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/';
-      var disqus_title = 'Setting up & Customizing Liquid Tags in Pelican';
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
-  </section>
 
 </div>
 

@@ -3958,7 +3958,29 @@ $$
 &lt;/div&gt;
  
 
+&lt;style type="text/css"&gt; div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+&lt;/style&gt;
 
+&lt;script type="text/javascript"&gt;
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+&lt;/script&gt;
 &lt;script type="text/x-mathjax-config"&gt;
 MathJax.Hub.Config({
     tex2jax: {
@@ -5134,7 +5156,29 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 &lt;/div&gt;
  
 
+&lt;style type="text/css"&gt; div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+&lt;/style&gt;
 
+&lt;script type="text/javascript"&gt;
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+&lt;/script&gt;
 &lt;script type="text/x-mathjax-config"&gt;
 MathJax.Hub.Config({
     tex2jax: {
