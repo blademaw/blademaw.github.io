@@ -444,6 +444,49 @@ figcaption {
 
 #cent {
   text-align: center;
+}
+
+.proj-contents {
+  width: 80%;
+  text-align: left;
+  padding: 2%;
+  /* justify-content: flex-start; */
+}
+
+.proj-contents p {
+  margin: 0;
+}
+
+.paperimg {
+  object-fit: cover;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+}
+
+.proj-img {
+  width: 20%;
+  height: 100%;
+}
+
+.proj-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(228, 228, 228);
+}
+
+.projs {
+  display: flex;
+  flex-direction: column;
+  /* background: rgb(241, 241, 241); */
+  padding: 2%;
+  row-gap: 25px;
+  /* align-items: flex-start; */
+  width: 100%;
+  margin: 0 auto;
 }</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -499,7 +542,8 @@ figcaption {
                               <li><a href="/">Divide & Ponder</a></li>
                               <li><a href="https://medium.com/@jack_oliver" target="_blank">Medium</a></li>
                             </ul>
-                          </li>
+                        </li>
+                        <li><a href="/pages/papers.html" title="Papers">Papers</a></li>
                             <li><a href="/pages/about.html" title="About">About</a></li>
                             <li><a href="/archives.html" title="Archive">Archive</a></li>
                     </ul>
@@ -524,9 +568,8 @@ figcaption {
 <p>This got me thinking — could I conduct a toy case-study on myself? Where would I get the data? Suddenly, I remembered in the months of study-leave leading up to my International Baccalaureate (IB) exams, I had tracked <strong>my time spent studying and doing homework</strong> using <a href="https://toggl.com/">Toggl</a>.</p>
 <figure class="styled"><img class="styled" src="/images/toggl-time.png" width="350" height="260" title="My hours logged leading up to the IB examinations" alt="My hours logged leading up to the IB examinations"></figure>
 
-<p>So I had 135 hours' worth of data over March, April, and May 2019 that could be downloaded as a <code>.csv</code> — not bad. Also, at the time, I was <strong>totally blind</strong> to what I would do with the data, meaning I possibly ducked data collection biases by being naïve! I wagered it wouldn't be too hard to find the weather data, and the rest of this blog post is what ensued.</p>
-<!-- PELICAN_END_SUMMARY -->
-
+<p>So I had 135 hours' worth of data over March, April, and May 2019 that could be downloaded as a <code>.csv</code> — not bad. Also, at the time, I was <strong>totally blind</strong> to what I would do with the data, meaning I possibly ducked data collection biases by being naïve! I wagered it wouldn't be too hard to find the weather data, and the rest of this blog post is what ensued.
+<!-- PELICAN_END_SUMMARY --></p>
 <style type="text/css">/*!
 *
 * IPython notebook
@@ -1570,29 +1613,29 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 </style>
-<style type="text/css">pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
  .highlight pre  .hll { background-color: #ffffcc }
  .highlight pre  { background: #f8f8f8; }
- .highlight pre  .c { color: #408080; font-style: italic } /* Comment */
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
  .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
  .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
  .highlight pre  .o { color: #666666 } /* Operator */
- .highlight pre  .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
- .highlight pre  .cm { color: #408080; font-style: italic } /* Comment.Multiline */
- .highlight pre  .cp { color: #BC7A00 } /* Comment.Preproc */
- .highlight pre  .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
- .highlight pre  .c1 { color: #408080; font-style: italic } /* Comment.Single */
- .highlight pre  .cs { color: #408080; font-style: italic } /* Comment.Special */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
  .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
  .highlight pre  .ge { font-style: italic } /* Generic.Emph */
- .highlight pre  .gr { color: #FF0000 } /* Generic.Error */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
  .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
- .highlight pre  .gi { color: #00A000 } /* Generic.Inserted */
- .highlight pre  .go { color: #888888 } /* Generic.Output */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
  .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
  .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
  .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -1605,15 +1648,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
  .highlight pre  .m { color: #666666 } /* Literal.Number */
  .highlight pre  .s { color: #BA2121 } /* Literal.String */
- .highlight pre  .na { color: #7D9029 } /* Name.Attribute */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
  .highlight pre  .nb { color: #008000 } /* Name.Builtin */
  .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
  .highlight pre  .no { color: #880000 } /* Name.Constant */
  .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
- .highlight pre  .ni { color: #999999; font-weight: bold } /* Name.Entity */
- .highlight pre  .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
  .highlight pre  .nf { color: #0000FF } /* Name.Function */
- .highlight pre  .nl { color: #A0A000 } /* Name.Label */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
  .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
  .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
  .highlight pre  .nv { color: #19177C } /* Name.Variable */
@@ -1630,11 +1673,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
  .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
  .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
- .highlight pre  .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
  .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
- .highlight pre  .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
  .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
- .highlight pre  .sr { color: #BB6688 } /* Literal.String.Regex */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
  .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
  .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
  .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -3987,8 +4030,8 @@ $$ H_0:\mu_R=\mu_N \\ \text{vs} \\ H_A:\mu_R\gt\mu_N$$<p>where $\mu_R,\mu_N$ are
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="n">rain</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;rain_school.csv&quot;</span><span class="p">)</span>
-<span class="nf">t.test</span><span class="p">(</span><span class="n">rain</span><span class="p">[</span><span class="n">rain</span><span class="o">$</span><span class="n">rain</span><span class="o">==</span><span class="s">&quot;Yes&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">minutes</span><span class="p">,</span> <span class="n">rain</span><span class="p">[</span><span class="n">rain</span><span class="o">$</span><span class="n">rain</span><span class="o">==</span><span class="s">&quot;No&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">minutes</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s">&#39;greater&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">rain</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;rain_school.csv&quot;</span><span class="p">)</span>
+<span class="nf">t.test</span><span class="p">(</span><span class="n">rain</span><span class="p">[</span><span class="n">rain</span><span class="o">$</span><span class="n">rain</span><span class="o">==</span><span class="s">&quot;Yes&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">minutes</span><span class="p">,</span><span class="w"> </span><span class="n">rain</span><span class="p">[</span><span class="n">rain</span><span class="o">$</span><span class="n">rain</span><span class="o">==</span><span class="s">&quot;No&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">minutes</span><span class="p">,</span><span class="w"> </span><span class="n">alternative</span><span class="o">=</span><span class="s">&#39;greater&#39;</span><span class="p">)</span>
 </pre></div>
 
 <pre><code>    Welch Two Sample t-test
@@ -4409,10 +4452,10 @@ cloud     -0.07462029 -0.63293077  0.5644089  1.00000000  0.33323933 -0.90797842
 rain      -0.04984429 -0.23396924  0.5363590  0.33323933  1.00000000 -0.38933099
 sunshine   0.07714833  0.70265663 -0.6329729 -0.90797842 -0.38933099  1.00000000</code></pre>
 <p>We can see the weather associations we'd expect — temperature/cloud and sunshine, humidity and cloud, etc. But the correlations among <code>minutes</code> look pretty unpromising. Regardless, let's begin by partitioning our data with a 75/25 training/testing split:</p>
-<div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">30734592</span><span class="p">)</span> <span class="c1"># for reproduceability</span>
-<span class="n">train.ind</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="nf">seq_len</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">days</span><span class="p">)),</span> <span class="n">size</span> <span class="o">=</span> <span class="nf">floor</span><span class="p">(</span><span class="n">.</span><span class="m">75</span><span class="o">*</span><span class="nf">nrow</span><span class="p">(</span><span class="n">days</span><span class="p">)))</span>
-<span class="n">days.train</span> <span class="o">&lt;-</span> <span class="n">days</span><span class="p">[</span><span class="n">train.ind</span><span class="p">,]</span>
-<span class="n">days.test</span> <span class="o">&lt;-</span> <span class="n">days</span><span class="p">[</span><span class="o">-</span><span class="n">train.ind</span><span class="p">,]</span>
+<div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">30734592</span><span class="p">)</span><span class="w"> </span><span class="c1"># for reproduceability</span>
+<span class="n">train.ind</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="nf">seq_len</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">days</span><span class="p">)),</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">floor</span><span class="p">(</span><span class="n">.</span><span class="m">75</span><span class="o">*</span><span class="nf">nrow</span><span class="p">(</span><span class="n">days</span><span class="p">)))</span>
+<span class="n">days.train</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">days</span><span class="p">[</span><span class="n">train.ind</span><span class="p">,]</span>
+<span class="n">days.test</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">days</span><span class="p">[</span><span class="o">-</span><span class="n">train.ind</span><span class="p">,]</span>
 </pre></div>
 <p>And fit a multiple regression equation by modeling <code>minutes</code> as a function of our weather variables:</p>
 
@@ -4445,21 +4488,21 @@ $$
 <pre><code>&gt; sqrt(mean((days.test$minutes - predict(days.fit, days.test))^2))
 [1] 160.763</code></pre>
 <p>Which is quite a large average difference. We can try a few other models — bagged regression trees are generally good for reducing variance. We can create one in R with the <code>rpart</code> package:</p>
-<div class="highlight"><pre><span></span><span class="n">rain_bag</span> <span class="o">&lt;-</span> <span class="nf">bagging</span><span class="p">(</span>
-    <span class="n">formula</span> <span class="o">=</span> <span class="n">minutes</span> <span class="o">~</span> <span class="n">mean_temp</span> <span class="o">+</span> <span class="n">humid</span> <span class="o">+</span> <span class="n">cloud</span> <span class="o">+</span> <span class="n">rain</span> <span class="o">+</span> <span class="n">sunshine</span><span class="p">,</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">days.train</span><span class="p">,</span>
-    <span class="n">nbagg</span> <span class="o">=</span> <span class="m">100</span><span class="p">,</span>
-    <span class="n">coob</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
-    <span class="n">control</span> <span class="o">=</span> <span class="nf">rpart.control</span><span class="p">(</span><span class="n">minsplit</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">cp</span><span class="o">=</span><span class="m">0</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">rain_bag</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">bagging</span><span class="p">(</span>
+<span class="w">    </span><span class="n">formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">mean_temp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">humid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cloud</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rain</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sunshine</span><span class="p">,</span>
+<span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">days.train</span><span class="p">,</span>
+<span class="w">    </span><span class="n">nbagg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">,</span>
+<span class="w">    </span><span class="n">coob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rpart.control</span><span class="p">(</span><span class="n">minsplit</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">cp</span><span class="o">=</span><span class="m">0</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 
 <pre><code>&gt; sqrt(mean((days.test$minutes - predict(rain_bag, days.test))^2))
 [1] 154.6983</code></pre>
 <p>And we achieve a new RMSE of 155, which is a slight improvement over 161. We can try one more model — a random forest, for fun. We can use the <code>randomForest</code> library in R to elegantly do this:</p>
-<div class="highlight"><pre><span></span><span class="n">rain.rf</span> <span class="o">&lt;-</span> <span class="nf">randomForest</span><span class="p">(</span><span class="n">minutes</span> <span class="o">~</span> <span class="n">mean_temp</span> <span class="o">+</span> <span class="n">humid</span> <span class="o">+</span> <span class="n">cloud</span> <span class="o">+</span> <span class="n">rain</span> <span class="o">+</span> <span class="n">sunshine</span><span class="p">,</span>
-                        <span class="n">data</span><span class="o">=</span><span class="n">days.train</span><span class="p">,</span>
-                        <span class="n">importance</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">rain.rf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">randomForest</span><span class="p">(</span><span class="n">minutes</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">mean_temp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">humid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cloud</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rain</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sunshine</span><span class="p">,</span>
+<span class="w">                        </span><span class="n">data</span><span class="o">=</span><span class="n">days.train</span><span class="p">,</span>
+<span class="w">                        </span><span class="n">importance</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 
 <pre><code>&gt; sqrt(mean((days.test$minutes - predict(rain.rf, days.test))^2))
@@ -4956,6 +4999,49 @@ figcaption {
 
 #cent {
   text-align: center;
+}
+
+.proj-contents {
+  width: 80%;
+  text-align: left;
+  padding: 2%;
+  /* justify-content: flex-start; */
+}
+
+.proj-contents p {
+  margin: 0;
+}
+
+.paperimg {
+  object-fit: cover;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+}
+
+.proj-img {
+  width: 20%;
+  height: 100%;
+}
+
+.proj-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(228, 228, 228);
+}
+
+.projs {
+  display: flex;
+  flex-direction: column;
+  /* background: rgb(241, 241, 241); */
+  padding: 2%;
+  row-gap: 25px;
+  /* align-items: flex-start; */
+  width: 100%;
+  margin: 0 auto;
 }</style>
 
         </div>

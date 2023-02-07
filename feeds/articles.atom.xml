@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Divide &amp; Ponder - articles</title><link href="https://blademaw.github.io/" rel="alternate"></link><link href="https://blademaw.github.io/feeds/articles.atom.xml" rel="self"></link><id>https://blademaw.github.io/</id><updated>2022-01-28T16:00:00+11:00</updated><subtitle>Vague ventures stumbling through computer science</subtitle><subtitle>Vague ventures stumbling through computer science</subtitle><entry><title>Analytical and Simulation Approaches to Stochastic Processes</title><link href="https://blademaw.github.io/posts/2022/01/stochastic-games/" rel="alternate"></link><published>2022-01-28T16:00:00+11:00</published><updated>2022-01-28T16:00:00+11:00</updated><author><name>Jack Oliver</name></author><id>tag:blademaw.github.io,2022-01-28:/posts/2022/01/stochastic-games/</id><summary type="html">&lt;!-- PELICAN_BEGIN_SUMMARY --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Divide &amp; Ponder - articles</title><link href="https://blademaw.github.io/" rel="alternate"></link><link href="https://blademaw.github.io/feeds/articles.atom.xml" rel="self"></link><id>https://blademaw.github.io/</id><updated>2022-01-28T16:00:00+11:00</updated><subtitle>Vague ventures stumbling through computer science</subtitle><entry><title>Analytical and Simulation Approaches to Stochastic Processes</title><link href="https://blademaw.github.io/posts/2022/01/stochastic-games/" rel="alternate"></link><published>2022-01-28T16:00:00+11:00</published><updated>2022-01-28T16:00:00+11:00</updated><author><name>Jack Oliver</name></author><id>tag:blademaw.github.io,2022-01-28:/posts/2022/01/stochastic-games/</id><summary type="html">&lt;!-- PELICAN_BEGIN_SUMMARY --&gt;
 
 &lt;figure class="styled"&gt;&lt;img class="styled" src="/images/markov_abc.png" width="275" height="200" title="A basic absorbing Markov chain" alt="A basic absorbing Markov chain"&gt;&lt;figcaption&gt;An absorbing Markov chain.&lt;/figcaption&gt;&lt;/figure&gt;
 
@@ -7,9 +7,8 @@
 
 &lt;figure class="styled"&gt;&lt;img class="styled" src="/images/markov_abc.png" width="275" height="200" title="A basic absorbing Markov chain" alt="A basic absorbing Markov chain"&gt;&lt;figcaption&gt;An absorbing Markov chain.&lt;/figcaption&gt;&lt;/figure&gt;
 
-&lt;p&gt;In this post, I'd like to (perhaps overly) analyze a pretty simple problem, and explore a few routes of answering it through analytical solutions and simulation. This problem actually came from a very enjoyable class I took called &lt;em&gt;Computational Modeling and Simulation&lt;/em&gt;, which taught me (among many other things) the beauty of simulation, stochastic processes, and dynamical systems.&lt;/p&gt;
-&lt;!-- PELICAN_END_SUMMARY --&gt;
-
+&lt;p&gt;In this post, I'd like to (perhaps overly) analyze a pretty simple problem, and explore a few routes of answering it through analytical solutions and simulation. This problem actually came from a very enjoyable class I took called &lt;em&gt;Computational Modeling and Simulation&lt;/em&gt;, which taught me (among many other things) the beauty of simulation, stochastic processes, and dynamical systems.
+&lt;!-- PELICAN_END_SUMMARY --&gt;&lt;/p&gt;
 &lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
@@ -1053,29 +1052,29 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
  .highlight pre  .hll { background-color: #ffffcc }
  .highlight pre  { background: #f8f8f8; }
- .highlight pre  .c { color: #408080; font-style: italic } /* Comment */
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
  .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
  .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
  .highlight pre  .o { color: #666666 } /* Operator */
- .highlight pre  .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
- .highlight pre  .cm { color: #408080; font-style: italic } /* Comment.Multiline */
- .highlight pre  .cp { color: #BC7A00 } /* Comment.Preproc */
- .highlight pre  .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
- .highlight pre  .c1 { color: #408080; font-style: italic } /* Comment.Single */
- .highlight pre  .cs { color: #408080; font-style: italic } /* Comment.Special */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
  .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
  .highlight pre  .ge { font-style: italic } /* Generic.Emph */
- .highlight pre  .gr { color: #FF0000 } /* Generic.Error */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
  .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
- .highlight pre  .gi { color: #00A000 } /* Generic.Inserted */
- .highlight pre  .go { color: #888888 } /* Generic.Output */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
  .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
  .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
  .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -1088,15 +1087,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
  .highlight pre  .m { color: #666666 } /* Literal.Number */
  .highlight pre  .s { color: #BA2121 } /* Literal.String */
- .highlight pre  .na { color: #7D9029 } /* Name.Attribute */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
  .highlight pre  .nb { color: #008000 } /* Name.Builtin */
  .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
  .highlight pre  .no { color: #880000 } /* Name.Constant */
  .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
- .highlight pre  .ni { color: #999999; font-weight: bold } /* Name.Entity */
- .highlight pre  .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
  .highlight pre  .nf { color: #0000FF } /* Name.Function */
- .highlight pre  .nl { color: #A0A000 } /* Name.Label */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
  .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
  .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
  .highlight pre  .nv { color: #19177C } /* Name.Variable */
@@ -1113,11 +1112,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
  .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
  .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
- .highlight pre  .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
  .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
- .highlight pre  .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
  .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
- .highlight pre  .sr { color: #BB6688 } /* Literal.String.Regex */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
  .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
  .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
  .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -1827,9 +1826,8 @@ MathJax.Hub.Config({
 &lt;p&gt;This got me thinking — could I conduct a toy case-study on myself? Where would I get the data? Suddenly, I remembered in the months of study-leave leading up to my International Baccalaureate (IB) exams, I had tracked &lt;strong&gt;my time spent studying and doing homework&lt;/strong&gt; using &lt;a href="https://toggl.com/"&gt;Toggl&lt;/a&gt;.&lt;/p&gt;
 &lt;figure class="styled"&gt;&lt;img class="styled" src="/images/toggl-time.png" width="350" height="260" title="My hours logged leading up to the IB examinations" alt="My hours logged leading up to the IB examinations"&gt;&lt;/figure&gt;
 
-&lt;p&gt;So I had 135 hours' worth of data over March, April, and May 2019 that could be downloaded as a &lt;code&gt;.csv&lt;/code&gt; — not bad. Also, at the time, I was &lt;strong&gt;totally blind&lt;/strong&gt; to what I would do with the data, meaning I possibly ducked data collection biases by being naïve! I wagered it wouldn't be too hard to find the weather data, and the rest of this blog post is what ensued.&lt;/p&gt;
-&lt;!-- PELICAN_END_SUMMARY --&gt;
-
+&lt;p&gt;So I had 135 hours' worth of data over March, April, and May 2019 that could be downloaded as a &lt;code&gt;.csv&lt;/code&gt; — not bad. Also, at the time, I was &lt;strong&gt;totally blind&lt;/strong&gt; to what I would do with the data, meaning I possibly ducked data collection biases by being naïve! I wagered it wouldn't be too hard to find the weather data, and the rest of this blog post is what ensued.
+&lt;!-- PELICAN_END_SUMMARY --&gt;&lt;/p&gt;
 &lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
@@ -2873,29 +2871,29 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
  .highlight pre  .hll { background-color: #ffffcc }
  .highlight pre  { background: #f8f8f8; }
- .highlight pre  .c { color: #408080; font-style: italic } /* Comment */
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
  .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
  .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
  .highlight pre  .o { color: #666666 } /* Operator */
- .highlight pre  .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
- .highlight pre  .cm { color: #408080; font-style: italic } /* Comment.Multiline */
- .highlight pre  .cp { color: #BC7A00 } /* Comment.Preproc */
- .highlight pre  .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
- .highlight pre  .c1 { color: #408080; font-style: italic } /* Comment.Single */
- .highlight pre  .cs { color: #408080; font-style: italic } /* Comment.Special */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
  .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
  .highlight pre  .ge { font-style: italic } /* Generic.Emph */
- .highlight pre  .gr { color: #FF0000 } /* Generic.Error */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
  .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
- .highlight pre  .gi { color: #00A000 } /* Generic.Inserted */
- .highlight pre  .go { color: #888888 } /* Generic.Output */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
  .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
  .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
  .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -2908,15 +2906,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
  .highlight pre  .m { color: #666666 } /* Literal.Number */
  .highlight pre  .s { color: #BA2121 } /* Literal.String */
- .highlight pre  .na { color: #7D9029 } /* Name.Attribute */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
  .highlight pre  .nb { color: #008000 } /* Name.Builtin */
  .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
  .highlight pre  .no { color: #880000 } /* Name.Constant */
  .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
- .highlight pre  .ni { color: #999999; font-weight: bold } /* Name.Entity */
- .highlight pre  .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
  .highlight pre  .nf { color: #0000FF } /* Name.Function */
- .highlight pre  .nl { color: #A0A000 } /* Name.Label */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
  .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
  .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
  .highlight pre  .nv { color: #19177C } /* Name.Variable */
@@ -2933,11 +2931,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
  .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
  .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
- .highlight pre  .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
  .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
- .highlight pre  .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
  .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
- .highlight pre  .sr { color: #BB6688 } /* Literal.String.Regex */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
  .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
  .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
  .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -5290,8 +5288,8 @@ $$ H_0:\mu_R=\mu_N \\ \text{vs} \\ H_A:\mu_R\gt\mu_N$$&lt;p&gt;where $\mu_R,\mu_
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="nf"&gt;read.csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;rain_school.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nf"&gt;t.test&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Yes&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;minutes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;No&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;minutes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;alternative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;greater&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;read.csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;rain_school.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nf"&gt;t.test&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Yes&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;minutes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;No&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;minutes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;alternative&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;greater&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;pre&gt;&lt;code&gt;    Welch Two Sample t-test
@@ -5712,10 +5710,10 @@ cloud     -0.07462029 -0.63293077  0.5644089  1.00000000  0.33323933 -0.90797842
 rain      -0.04984429 -0.23396924  0.5363590  0.33323933  1.00000000 -0.38933099
 sunshine   0.07714833  0.70265663 -0.6329729 -0.90797842 -0.38933099  1.00000000&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We can see the weather associations we'd expect — temperature/cloud and sunshine, humidity and cloud, etc. But the correlations among &lt;code&gt;minutes&lt;/code&gt; look pretty unpromising. Regardless, let's begin by partitioning our data with a 75/25 training/testing split:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;set.seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;30734592&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# for reproduceability&lt;/span&gt;
-&lt;span class="n"&gt;train.ind&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="nf"&gt;sample&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;seq_len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;floor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;.&lt;/span&gt;&lt;span class="m"&gt;75&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nf"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="n"&gt;days.train&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;train.ind&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;
-&lt;span class="n"&gt;days.test&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;train.ind&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;set.seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;30734592&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# for reproduceability&lt;/span&gt;
+&lt;span class="n"&gt;train.ind&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;sample&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;seq_len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;floor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;.&lt;/span&gt;&lt;span class="m"&gt;75&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nf"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="n"&gt;days.train&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;train.ind&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;
+&lt;span class="n"&gt;days.test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;train.ind&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And fit a multiple regression equation by modeling &lt;code&gt;minutes&lt;/code&gt; as a function of our weather variables:&lt;/p&gt;
 
@@ -5748,21 +5746,21 @@ $$
 &lt;pre&gt;&lt;code&gt;&amp;gt; sqrt(mean((days.test$minutes - predict(days.fit, days.test))^2))
 [1] 160.763&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Which is quite a large average difference. We can try a few other models — bagged regression trees are generally good for reducing variance. We can create one in R with the &lt;code&gt;rpart&lt;/code&gt; package:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;rain_bag&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="nf"&gt;bagging&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="n"&gt;formula&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;minutes&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="n"&gt;mean_temp&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;humid&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;cloud&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;rain&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sunshine&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;days.train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="n"&gt;nbagg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="n"&gt;coob&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="n"&gt;control&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nf"&gt;rpart.control&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;minsplit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;rain_bag&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;bagging&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;formula&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;minutes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;mean_temp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;humid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cloud&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sunshine&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;days.train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;nbagg&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;coob&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;rpart.control&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;minsplit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; sqrt(mean((days.test$minutes - predict(rain_bag, days.test))^2))
 [1] 154.6983&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And we achieve a new RMSE of 155, which is a slight improvement over 161. We can try one more model — a random forest, for fun. We can use the &lt;code&gt;randomForest&lt;/code&gt; library in R to elegantly do this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;rain.rf&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="nf"&gt;randomForest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;minutes&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="n"&gt;mean_temp&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;humid&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;cloud&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;rain&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sunshine&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                        &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;days.train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                        &lt;span class="n"&gt;importance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;rain.rf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;randomForest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;minutes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;mean_temp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;humid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cloud&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sunshine&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;                        &lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;days.train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;                        &lt;/span&gt;&lt;span class="n"&gt;importance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; sqrt(mean((days.test$minutes - predict(rain.rf, days.test))^2))
@@ -5814,13 +5812,15 @@ MathJax.Hub.Config({
 
 &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt;&lt;/script&gt;</content><category term="articles"></category><category term="statistics"></category><category term="python"></category><category term="r"></category></entry><entry><title>Setting up &amp; Customizing Liquid Tags in Pelican</title><link href="https://blademaw.github.io/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/" rel="alternate"></link><published>2021-09-21T16:00:00+10:00</published><updated>2021-09-21T16:00:00+10:00</updated><author><name>Jack Oliver</name></author><id>tag:blademaw.github.io,2021-09-21:/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/</id><summary type="html">&lt;h2&gt;A word on &lt;code&gt;liquid-tags&lt;/code&gt; and Pelican plugins&lt;/h2&gt;
 &lt;p&gt;Without delving in too deep, &lt;abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin"&gt;Liquid Tags&lt;/abbr&gt; are the saving grace of media integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, the following:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;displays cells &lt;code&gt;[2–3)&lt;/code&gt; (so cell …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;A word on &lt;code&gt;liquid-tags&lt;/code&gt; and Pelican plugins&lt;/h2&gt;
 &lt;p&gt;Without delving in too deep, &lt;abbr title="'Liquid tags' are the actual tag objects, whereas 'liquid-tags' is the Pelican plugin"&gt;Liquid Tags&lt;/abbr&gt; are the saving grace of media integration in Pelican — they integrate seamlessly with Markdown or reStructuredText, and can be customized. For example, the following:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;notebook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my-jupyter-notebook.ipynb&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="na"&gt;cells[2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;displays cells &lt;code&gt;[2–3)&lt;/code&gt; (so cell 2) of a Jupyter notebook:&lt;/p&gt;
 &lt;style type="text/css"&gt;/*!
@@ -6866,29 +6866,29 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
  .highlight pre  .hll { background-color: #ffffcc }
  .highlight pre  { background: #f8f8f8; }
- .highlight pre  .c { color: #408080; font-style: italic } /* Comment */
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
  .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
  .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
  .highlight pre  .o { color: #666666 } /* Operator */
- .highlight pre  .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
- .highlight pre  .cm { color: #408080; font-style: italic } /* Comment.Multiline */
- .highlight pre  .cp { color: #BC7A00 } /* Comment.Preproc */
- .highlight pre  .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
- .highlight pre  .c1 { color: #408080; font-style: italic } /* Comment.Single */
- .highlight pre  .cs { color: #408080; font-style: italic } /* Comment.Special */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
  .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
  .highlight pre  .ge { font-style: italic } /* Generic.Emph */
- .highlight pre  .gr { color: #FF0000 } /* Generic.Error */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
  .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
- .highlight pre  .gi { color: #00A000 } /* Generic.Inserted */
- .highlight pre  .go { color: #888888 } /* Generic.Output */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
  .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
  .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
  .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -6901,15 +6901,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
  .highlight pre  .m { color: #666666 } /* Literal.Number */
  .highlight pre  .s { color: #BA2121 } /* Literal.String */
- .highlight pre  .na { color: #7D9029 } /* Name.Attribute */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
  .highlight pre  .nb { color: #008000 } /* Name.Builtin */
  .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
  .highlight pre  .no { color: #880000 } /* Name.Constant */
  .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
- .highlight pre  .ni { color: #999999; font-weight: bold } /* Name.Entity */
- .highlight pre  .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
  .highlight pre  .nf { color: #0000FF } /* Name.Function */
- .highlight pre  .nl { color: #A0A000 } /* Name.Label */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
  .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
  .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
  .highlight pre  .nv { color: #19177C } /* Name.Variable */
@@ -6926,11 +6926,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
  .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
  .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
- .highlight pre  .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
  .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
- .highlight pre  .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
  .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
- .highlight pre  .sr { color: #BB6688 } /* Literal.String.Regex */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
  .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
  .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
  .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -7013,6 +7013,7 @@ MathJax.Hub.Config({
 &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt;&lt;/script&gt;
 
 
+
 &lt;p&gt;They follow a simplistic structure — enclosed in curly braces and percent signs, the first argument is the type of liquid tag to be integrated, and the following arguments are content parameters, usually a directory to a file, and aesthetic tuners.&lt;/p&gt;
 &lt;p&gt;They use regular expressions to match arguments to groups, generating HTML tags appropriately. Created by one of my favorite data scientists, &lt;a href="https://github.com/jakevdp"&gt;Jake VanderPlas&lt;/a&gt;, they are an ingenious invention that are difficult to live without once you start using them.&lt;/p&gt;
 &lt;p&gt;Unfortunately, they &lt;strong&gt;do not come standard&lt;/strong&gt; with Pelican, and must be installed and recognized by Pelican in order to be used within articles. Choosing which method of installation and which version of &lt;code&gt;liquid-tags&lt;/code&gt; to install can be time-consuming, so it is my aim in this brief article to simplify the process for any future users.&lt;/p&gt;
@@ -7021,48 +7022,54 @@ MathJax.Hub.Config({
 &lt;p&gt;The majority of plugins can now be installed via a simple &lt;code&gt;pip install &amp;lt;plugin&amp;gt;&lt;/code&gt; and specified in your &lt;code&gt;pelicanconf.py&lt;/code&gt; for use without hassle. This is a good and viable option &lt;strong&gt;if you do not wish to customize the tags at all&lt;/strong&gt;. However, if you &lt;strong&gt;do&lt;/strong&gt; want some customization, you'll need to go local.&lt;/p&gt;
 &lt;p&gt;The most up-to-date version of liquid-tags should be installed, available &lt;a href="https://github.com/pelican-plugins/liquid-tags"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;For no customization, a simple&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ python -m pip install pelican-liquid-tags
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pelican-liquid-tags
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;will suffice. Then you can specify the plugin and choose your tags in order to use it in your &lt;code&gt;pelicanconf.py&lt;/code&gt; as such:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;liquid-tags&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;liquid-tags&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;LIQUID_TAGS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;literal&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;video&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;img&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;include_code&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;&lt;br/&gt;
 For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirectory in your &lt;code&gt;pelican&lt;/code&gt; root directory if you don't already have one, and then clone the &lt;code&gt;liquid-tags&lt;/code&gt; repo into a folder:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ git clone https://github.com/pelican-plugins/liquid-tags.git pelican-plugins/liquid_tags
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/pelican-plugins/liquid-tags.git&lt;span class="w"&gt; &lt;/span&gt;pelican-plugins/liquid_tags
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;Here I've created an extra subdirectory &lt;code&gt;/plugins/pelican-plugins/&lt;/code&gt; to match the legacy system of importing plugins. Once you've cloned the repo, move all the contents of &lt;code&gt;liquid_tags/pelican/plugins/liquid_tags/&lt;/code&gt; to the folder you cloned liquid-tags to. My final folder looks like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;main_dir
-├── ...
-├── content
-│   ├── ...
-├── output
-│   ├── ...
-└── plugins
-    └── pelican-plugins
-        └── liquid_tags
-            ├── img.py
-            ├── notebook.py
-            └── ...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;main_dir
+├──&lt;span class="w"&gt; &lt;/span&gt;...
+├──&lt;span class="w"&gt; &lt;/span&gt;content
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;...
+├──&lt;span class="w"&gt; &lt;/span&gt;output
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;...
+└──&lt;span class="w"&gt; &lt;/span&gt;plugins
+&lt;span class="w"&gt;    &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;pelican-plugins
+&lt;span class="w"&gt;        &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;liquid_tags
+&lt;span class="w"&gt;            &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;img.py
+&lt;span class="w"&gt;            &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;notebook.py
+&lt;span class="w"&gt;            &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;...
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;Then add the source directory to your &lt;code&gt;pelicanconf.py&lt;/code&gt; for liquid-tags and import the tags you want to use (with the local directory, these must be &lt;strong&gt;individually specified and added&lt;/strong&gt; to &lt;code&gt;PLUGINS&lt;/code&gt; prefixed by &lt;code&gt;liquid_tags.&lt;/code&gt;):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;./plugins/pelican-plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;./plugins/pelican-plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;render_math&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;liquid_tags.img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
          &lt;span class="s1"&gt;&amp;#39;liquid_tags.notebook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;liquid_tags.literal&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;Now you can begin using the tags. Regarding documentation of specific tags, I find reading the header in the tag's &lt;code&gt;.py&lt;/code&gt; file easiest, but you can view the &lt;code&gt;README&lt;/code&gt; for &lt;code&gt;liquid-tags&lt;/code&gt; &lt;a href="https://github.com/pelican-plugins/liquid-tags"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Customizing tags&lt;/h2&gt;
 &lt;p&gt;As mentioned, liquid tags substitute the written tag in Markdown by matching a regular expression to the given arguments, and inserting them into appropriate groups in an HTML snippet. If you'd like to add your own arguments to tags, create your own, or edit the HTML outputted by a tag, you can edit the appropriate &lt;code&gt;.py&lt;/code&gt; file.&lt;/p&gt;
 &lt;p&gt;The good news is most of the legwork is already done for you — the first step is customizing the regular expression to match. It'll look something like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;AUDIO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;AUDIO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;(/\S+|https?:\S+)(?:\s+(/\S+|https?:\S+))?(?:\s+(/\S+|https?:\S+))?&amp;quot;&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;Once you've altered it to your liking, check how the file splits and assigns groups, which will depend on the tag. Most files have a &lt;code&gt;for&lt;/code&gt; loop that collects arguments into a dictionary &lt;code&gt;attrs&lt;/code&gt; where &lt;code&gt;(key, value)&lt;/code&gt; pairs are in the format &lt;code&gt;(regex_group, matched_string)&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;All tags work by returning the HTML to be put in your page as a string. Since string manipulation is especially easy in Python, the rest of the work is really just formatting your HTML string by inserting the right dictionary values in the right places.&lt;/p&gt;
@@ -7076,18 +7083,21 @@ For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirector
 &lt;p&gt;&lt;figure class="styled"&gt;&lt;img class="styled" src="/images/stochastic_lotka_volterra.png" width="450" height="300" title="Figure 1. A stochastic Lotka-Volterra model" alt="A stochastic Lotka-Volterra model"&gt;&lt;figcaption&gt;Figure 1. A stochastic Lotka-Volterra model (&lt;a href='#'&gt;source&lt;/a&gt;)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;To accomplish this, I tweaked the &lt;code&gt;img.py&lt;/code&gt; file:&lt;/p&gt;
 &lt;p&gt;I first changed the expression to match from&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;class&amp;gt;&lt;span class="se"&gt;\S&lt;/span&gt;.*&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;)&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;src&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;?:https?:&lt;span class="se"&gt;\/\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="o"&gt;)(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;width&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;height&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;title&amp;gt;&lt;span class="se"&gt;\s&lt;/span&gt;+.+&lt;span class="o"&gt;)&lt;/span&gt;?
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;class&amp;gt;&lt;span class="se"&gt;\S&lt;/span&gt;.*&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;)&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;src&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;?:https?:&lt;span class="se"&gt;\/\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="o"&gt;)(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;width&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;height&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;title&amp;gt;&lt;span class="se"&gt;\s&lt;/span&gt;+.+&lt;span class="o"&gt;)&lt;/span&gt;?
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;to:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;class&amp;gt;&lt;span class="se"&gt;\S&lt;/span&gt;*&lt;span class="se"&gt;\s&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;src&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;?:https?:&lt;span class="se"&gt;\/\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="o"&gt;)(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;width&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;height&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;title&amp;gt;&lt;span class="se"&gt;\s&lt;/span&gt;+.+&lt;span class="o"&gt;)&lt;/span&gt;?
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;class&amp;gt;&lt;span class="se"&gt;\S&lt;/span&gt;*&lt;span class="se"&gt;\s&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;src&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;?:https?:&lt;span class="se"&gt;\/\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="se"&gt;\/&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="se"&gt;\S&lt;/span&gt;+&lt;span class="o"&gt;)(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;width&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?:&lt;span class="se"&gt;\s&lt;/span&gt;+&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;height&amp;gt;&lt;span class="se"&gt;\d&lt;/span&gt;+&lt;span class="o"&gt;))&lt;/span&gt;?&lt;span class="o"&gt;(&lt;/span&gt;?P&amp;lt;title&amp;gt;&lt;span class="se"&gt;\s&lt;/span&gt;+.+&lt;span class="o"&gt;)&lt;/span&gt;?
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;which limits the tag to one class name. The figure caption, alt text, and source are all captured in the &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; group.&lt;/p&gt;
 &lt;p&gt;Then, I altered the function body to parse the regex like so:&lt;/p&gt;
 &lt;figure class='code'&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;# See if source exists (must provide all 3 title/alt/source)&lt;/span&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="c1"&gt;# See if source exists (must provide all 3 title/alt/source)&lt;/span&gt;
     &lt;span class="c1"&gt;# Check if alt text or source are present -- if so, split it from title&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;match&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ReTitleAltSource&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
@@ -7101,45 +7111,57 @@ For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirector
                 &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupdict&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
             &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
                 &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# no alt, set to title&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;/figure&gt;
+
 &lt;p&gt;which matches a title, alt text, and source if possible — if not, it tries to match a title and alt text. If it can't match either of these and just finds a title (minimum requirement) it'll assign the alt text the title.&lt;/p&gt;
 &lt;p&gt;Then the beginning of the HTML is specified:&lt;/p&gt;
 &lt;figure class='code'&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;figure&amp;gt;&amp;quot;&lt;/span&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;figure&amp;gt;&amp;quot;&lt;/span&gt;
     &lt;span class="n"&gt;fig_tag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;/figure&gt;
+
 &lt;p&gt;which defines &lt;code&gt;tag_out&lt;/code&gt;, the output HTML, and &lt;code&gt;fig_tag&lt;/code&gt;, the caption to be displayed.&lt;/p&gt;
 &lt;figure class='code'&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c1"&gt;# special case: sets title=alt but no caption&lt;/span&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c1"&gt;# special case: sets title=alt but no caption&lt;/span&gt;
         &lt;span class="n"&gt;fig_tag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;figcaption&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
     &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# if no title, add as alt in image&lt;/span&gt;
 
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c1"&gt;# set figure class if given&lt;/span&gt;
         &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;figure class=&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;/figure&gt;
+
 &lt;p&gt;The above code then adds a caption to the figure if necessary, and a class if given in the liquid tag. The following code is from the original plugin:&lt;/p&gt;
 &lt;figure class='code'&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;# add all arguments&lt;/span&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="c1"&gt;# add all arguments&lt;/span&gt;
     &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;img &lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt;&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s1"&gt;=&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s1"&gt;&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
                                        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;six&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iteritems&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
     &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;fig_tag&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;/figure&gt;
+
 &lt;p&gt;which appends all additional arguments in the liquid tag to the HTML &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag. Finally, the source is added if supplied, and all tags are closed:&lt;/p&gt;
 &lt;figure class='code'&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;# if source, append to caption&lt;/span&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="c1"&gt;# if source, append to caption&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;source_tag&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; (&amp;lt;a href=&amp;#39;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;source_tag&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;gt;source&amp;lt;/a&amp;gt;)&amp;quot;&lt;/span&gt;
     
@@ -7149,16 +7171,19 @@ For local installations, create a &lt;code&gt;/plugins/&lt;/code&gt; subdirector
         &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/figure&amp;gt;&amp;quot;&lt;/span&gt;
 
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;tag_out&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;/figure&gt;
+
 &lt;p&gt;So in the end, the three images above can then be displayed using the following tags:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/images/stochastic_lotka_volterra.png&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;450&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/images/stochastic_lotka_volterra.png&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;450&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
 
 &lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;styled&lt;span class="w"&gt; &lt;/span&gt;/images/stochastic_lotka_volterra.png&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;450&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
 
 &lt;span class="p"&gt;{%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;styled&lt;span class="w"&gt; &lt;/span&gt;/images/stochastic_lotka_volterra.png&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;450&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Figure 1. A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A stochastic Lotka-Volterra model&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;%}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Liquid tags in Markdown ([un]confusingly supplied by the &lt;code&gt;liquid-tags&lt;/code&gt; plugin) are a great way to seamlessly incorporate multimedia in your Markdown articles or pages. In short, acquiring them through &lt;code&gt;pip&lt;/code&gt; is your best bet if you plan on using them as-is, but to alter their behavior you're going to need to peek behind the curtain.&lt;/p&gt;

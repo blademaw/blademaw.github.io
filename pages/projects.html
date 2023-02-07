@@ -6,7 +6,7 @@
         <meta name="author" content="Jack Oliver">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title>Archives | Divide & Ponder</title>
+        <title>Projects | Divide & Ponder</title>
 
 	<link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico?" type="image/x-icon">
@@ -487,6 +487,32 @@ figcaption {
   /* align-items: flex-start; */
   width: 100%;
   margin: 0 auto;
+}
+
+.wrapper {
+  position: relative;
+  padding: 0;
+  display:block;
+}
+#text {
+  position: absolute;
+  top: 0;
+  background-color:rgba(255,255,255,0.8);
+  color: black;
+  font-size: x-large;
+  width: 100%;
+  height: 100px;
+  line-height:100px;
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#text:hover {
+  opacity: .7;
 }</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -543,7 +569,7 @@ figcaption {
                               <li><a href="https://medium.com/@jack_oliver" target="_blank">Medium</a></li>
                             </ul>
                         </li>
-                        <li><a href="/pages/papers.html" title="Papers">Papers</a></li>
+                        <li><a href="/pages/projects.html" title="Projects">Projects</a></li>
                             <li><a href="/pages/about.html" title="About">About</a></li>
                             <li><a href="/archives.html" title="Archive">Archive</a></li>
                     </ul>
@@ -552,20 +578,499 @@ figcaption {
         </header>
 
         <div id="wrap">
-<div class="container list">
-    <article>
-        <h1 style="margin-bottom: 30px;">Tag: plugins</h1>
 
-        <ul class="double-list">
-            <li>
-                <a href='/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/'>
-                    <h2>Setting up & Customizing Liquid Tags in Pelican</h2>
-                    <span>21.09.2021</span>
-                </a>
-            </li>
-        </ul>
+<div class="container post">
+    <article>
+        <header class="projects">
+          <h1>Projects</h1>
+        </header>
+
+        <div class="article_content">
+            <p>A list and collection of my current projects to date.</p>
+        </div>
+
+        <!-- start of project showcase -->
+        <div class="container projs">
+            <div class="container proj-row">
+                <div class="proj-img">
+                    <a href="#" class="wrapper">
+                        <i id="text" class="fas fa-download"></i>
+
+                        <img class="paperimg" src="/features/papers/biofilm.png" alt="biofilm paper">
+                    </a>
+                </div>
+
+                <div class="proj-contents">
+                    <p style="font-size: larger; font-weight: bolder;"> Evaluating biofilm prevention strategies with agent-based modelling</p>
+                    <p>Jack Oliver, Bocong Zhao</p>
+                    <p>24/10/2022</p>
+                    <p>Exploratory use of agent-based modelling for implementing and evaluating effectiveness of methods for biofilm infection treatment. Written as part of a class on computational modelling and simulation.</p>
+                </div>
+            </div>
+
+            <div class="container proj-row">
+                <div class="proj-img">
+                    <a href="#" class="wrapper">
+                        <i id="text" class="fas fa-download"></i>
+
+                        <img class="paperimg" src="/features/papers/hke.png" alt="Hong Kong English paper">
+                    </a>
+                </div>
+
+                <div class="proj-contents">
+                    <p style="font-size: larger; font-weight: bolder;">Hong Kong English: creation, characteristics, and identity</p>
+                    <p>Jack Oliver</p>
+                    <p>07/11/2021</p>
+                    <p>Exploration and analysis of the background, local context, and salient features of Hong Kong English. Written for an introductory linguistics class.</p>
+                </div>
+            </div>
+
+        </div>
+        
     </article>
 </div>
+
+<style type="text/css">
+body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 20px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ul,
+article ol {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+h2 code {
+  font-size: 26px;
+  font-weight: 400;
+}
+h3 code {
+  font-size: 20px;
+  font-weight: 400;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 700px;
+}
+.post h2:before {
+  content: "# ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  content: "## ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  content: "### ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+figure {
+  text-align: center;
+}
+
+td.code {
+  width: 100%;
+}
+
+figure.code {
+  text-align: left;
+}
+
+figure.styled {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background: repeating-linear-gradient(135deg, #dfdfdf 0, #dfdfdf 1%, #ffffff 0, #ffffff 50%) 0 / 20px 20px;
+  text-align: center;
+  img {
+      margin: 0 auto 0.2rem auto;
+      border: 1px solid #ddd;
+      box-shadow: none;
+      background-color: #fff;
+  }
+}
+figcaption {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 1.6;
+  font-family: Consolas, monaco, monospace;
+  span {
+      background-color: #fff;
+      padding: 0.2rem 0.5rem;
+  }
+  a:hover {
+      cursor: pointer;
+  }
+}
+
+.vis-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background: repeating-linear-gradient(135deg, #dfdfdf 0, #dfdfdf 1%, #ffffff 0, #ffffff 50%) 0 / 20px 20px;
+  width: 100%;
+  margin:0 auto;
+}
+
+#cent {
+  text-align: center;
+}
+
+.proj-contents {
+  width: 80%;
+  text-align: left;
+  padding: 2%;
+  /* justify-content: flex-start; */
+}
+
+.proj-contents p {
+  margin: 0;
+}
+
+.paperimg {
+  object-fit: cover;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+}
+
+.proj-img {
+  width: 20%;
+  height: 100%;
+}
+
+.proj-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(228, 228, 228);
+}
+
+.projs {
+  display: flex;
+  flex-direction: column;
+  /* background: rgb(241, 241, 241); */
+  padding: 2%;
+  row-gap: 25px;
+  /* align-items: flex-start; */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  position: relative;
+  padding: 0;
+  display:block;
+}
+#text {
+  position: absolute;
+  top: 0;
+  background-color:rgba(255,255,255,0.8);
+  color: black;
+  font-size: x-large;
+  width: 100%;
+  height: 100px;
+  line-height:100px;
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#text:hover {
+  opacity: .7;
+}</style>
+
+
         </div>
 
         <script>
@@ -588,23 +1093,5 @@ figcaption {
       </p>
     </footer>
 -->
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-208210830-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-208210830-1');
-    ga('send', 'pageview');
-</script>
     </body>
 </html>

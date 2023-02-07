@@ -444,6 +444,49 @@ figcaption {
 
 #cent {
   text-align: center;
+}
+
+.proj-contents {
+  width: 80%;
+  text-align: left;
+  padding: 2%;
+  /* justify-content: flex-start; */
+}
+
+.proj-contents p {
+  margin: 0;
+}
+
+.paperimg {
+  object-fit: cover;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+}
+
+.proj-img {
+  width: 20%;
+  height: 100%;
+}
+
+.proj-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(228, 228, 228);
+}
+
+.projs {
+  display: flex;
+  flex-direction: column;
+  /* background: rgb(241, 241, 241); */
+  padding: 2%;
+  row-gap: 25px;
+  /* align-items: flex-start; */
+  width: 100%;
+  margin: 0 auto;
 }</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -499,7 +542,8 @@ figcaption {
                               <li><a href="/">Divide & Ponder</a></li>
                               <li><a href="https://medium.com/@jack_oliver" target="_blank">Medium</a></li>
                             </ul>
-                          </li>
+                        </li>
+                        <li><a href="/pages/papers.html" title="Papers">Papers</a></li>
                             <li><a href="/pages/about.html" title="About">About</a></li>
                             <li><a href="/archives.html" title="Archive">Archive</a></li>
                     </ul>
@@ -526,8 +570,8 @@ figcaption {
         <div class="article_content">
             <p><img src="/images/me.jpg" align="left" width="150" style="padding-right:20px;"/>
 Hi! — My name is Jack, and I'm an aspiring data scientist with a passion for computer science. 
-I'm currently completing a Bachelor's degree of Computer Science
-at <a href="https://www.monash.edu/" target="_blank">Monash University</a>. When I'm not occupied with school,
+I'm currently pursuing a Master's degree in Computer Science at the University of Melbourne
+after recently completing my Bachelor's at Monash University. When I'm not occupied with school,
 I enjoy crafting side-projects that give me space to experiment and explore topics in data science
 or computer science. Sometimes I end up uploading them to this blog and talking about them.
 <br/></p>
@@ -536,6 +580,7 @@ or computer science. Sometimes I end up uploading them to this blog and talking 
 <li>This blog is built with <a href="https://blog.getpelican.com/" target="_blank">Pelican</a>, using a (slightly tweaked) theme from <a href="https://github.com/jakevdp/jakevdp.github.io-source" target="_blank">Jake VanderPlas</a>.</li>
 <li>Images on this blog such as the following: <figure class="styled"><img class="styled" src="/images/lorenz.png" width="200" height="150" title="Figure 1: The Lorenz System" alt="Figure 1: The Lorenz System"><figcaption>Figure 1: The Lorenz System</figcaption></figure> are implemented using a <a href="https://blademaw.github.io/posts/2021/09/setting-up-customizing-liquid-tags-in-pelican/">modified version</a> of Jake VanderPlas' <a href="https://github.com/pelican-plugins/liquid-tags" target="_blank">Liquid Tags</a> and styling inspired by <a href="https://heiswayi.nrird.com/image-caption-using-liquid-syntax" target="_blank">Heiswayi Nrird</a>.</li>
 <li>Jupyter notebooks are integrated with a 'Frankensteined' version of the liquid tag — I'm using an environment with <code>notebook</code> and <code>nbconvert</code> versions <code>5.6.0</code>, and my <code>liquid_tags</code> plugin directory has an additional <code>core.py</code> file from the legacy <code>ipynb.liquid</code> Pelican plugin, and modified <code>notebook.py</code>. You can click <a href="/features/code/core.py">here</a> and <a href="/features/code/notebook.py">here</a> to download both files, respectively.</li>
+<li>This blog's name is a pun on the programming paradigm "divide and conquer," and I <em>would</em> change it to something less shameful, but it is simply too much hassle to update all of the Pelican source files.</li>
 </ul>
         </div>
 
