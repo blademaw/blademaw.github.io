@@ -498,12 +498,13 @@ figcaption {
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript"></script>
         <script type="text/javascript">
         init_mathjax = function() {
             if (window.MathJax) {
                 // MathJax loaded
                 MathJax.Hub.Config({
+                    jax: ["input/TeX", "output/CommonHTML", "output/HTML-CSS"],
                     tex: {
                         packages: {'[+]': ['boldsymbol', 'amsmath']}
                     },
@@ -557,6 +558,9 @@ figcaption {
         <h1 style="margin-bottom: 30px;">Archives and tags</h1>
 
         <div class="meta" style="margin-bottom: 30px;">
+                <a href="https://blademaw.github.io/tag/prolog.html" class="tag">prolog (1)</a>
+                <a href="https://blademaw.github.io/tag/programming.html" class="tag">programming (1)</a>
+                <a href="https://blademaw.github.io/tag/logic.html" class="tag">logic (1)</a>
                 <a href="https://blademaw.github.io/tag/statistics.html" class="tag">statistics (2)</a>
                 <a href="https://blademaw.github.io/tag/probability.html" class="tag">probability (2)</a>
                 <a href="https://blademaw.github.io/tag/simulation.html" class="tag">simulation (2)</a>
@@ -567,6 +571,12 @@ figcaption {
         </div>
 
         <ul class="double-list">
+            <li>
+                <a href='/posts/2023/07/prolog-puzzles/'>
+                    <h2>Solving Logic Puzzles in Prolog</h2>
+                    <span>01.07.2023</span>
+                </a>
+            </li>
             <li>
                 <a href='/posts/2023/02/chatgpt-prngs/'>
                     <h2>Are ChatGPT's Random Numbers Actually Random?</h2>

@@ -498,12 +498,13 @@ figcaption {
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript"></script>
         <script type="text/javascript">
         init_mathjax = function() {
             if (window.MathJax) {
                 // MathJax loaded
                 MathJax.Hub.Config({
+                    jax: ["input/TeX", "output/CommonHTML", "output/HTML-CSS"],
                     tex: {
                         packages: {'[+]': ['boldsymbol', 'amsmath']}
                     },
@@ -554,7 +555,7 @@ figcaption {
         <div id="wrap">
     <h1>Authors on Divide & Ponder</h1>
     <ul>
-        <li><a href="https://blademaw.github.io/author/jack-oliver.html">Jack Oliver</a> (4)</li>
+        <li><a href="https://blademaw.github.io/author/jack-oliver.html">Jack Oliver</a> (5)</li>
     </ul>
         </div>
 
