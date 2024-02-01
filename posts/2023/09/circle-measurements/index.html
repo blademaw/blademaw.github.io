@@ -564,8 +564,10 @@ figcaption {
         <div class="article_content">
             <!-- PELICAN_BEGIN_SUMMARY -->
 
-<p>Choose a point on a circle. Then, imagine shooting out a bunch of "rays" to the circumference of the circle, measuring their lengths, and averaging them. Let's call this the "average radius." At the center of the circle, this average would clearly just be the radius.</p>
-<p>But what if we picked any other point within the circle? Surely it wouldn't matter — the average radius would just be the radius because of the circle's symmetry: the shorter distances to the circumferences would be averaged out by the larger ones! Right? ...right?</p>
+<figure class="styled"><img class="styled" src="/images/circles-splash.png" width=500 height=375 title="Two circles with chords to the circumference." alt="Two circles with chords to the circumference."></figure>
+
+<p>Choose a point on a circle. Then, imagine shooting out a bunch of "rays" to the circumference of the circle, measuring their lengths, and averaging them. Let's call this the <em>average radius</em>. At the center of the circle, this average would clearly just be the radius (one, in the case of the unit circle).</p>
+<p>But what if we picked any other point within the circle? Surely it wouldn't matter — the average radius would just be the radius, because the circle is symmetrical: the shorter distances to the circumferences would be averaged out by the larger ones! Right? ...right?</p>
 <!-- PELICAN_END_SUMMARY -->
 
 <style type="text/css">/*!
@@ -1709,7 +1711,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <blockquote><p>It's a strange but true fact that the average radius as measured from the center of a circle is different from the average if you measure it off-center [...]</p>
 </blockquote>
 <p>This quote was visually accompanied by something similar to the images at the top of this post, and I had to pause the video to digest the quote.</p>
-<p>Could shifting the point of measurement, even slightly, seriously lead to a different value for the average radius? Why wouldn't circular symmetry just recoup the loss in distance to the circumference with the corresponding gains? Is this average radius larger or smaller than the true radius? (Joke's on me — if I had just waited five more seconds before pausing the video, this last question would have been answered.)</p>
+<p>Could shifting the point of measurement, even slightly, seriously lead to a different value for the average radius? Why wouldn't circular symmetry just recoup the loss in distance to the circumference with the corresponding gains? Is this average radius larger or smaller than the true radius?</p>
 <p>Unable to mentally convince myself with some rough mental geometry, I set out to understand this quirk of circles a little better.</p>
 
 </div>
@@ -1720,7 +1722,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="alert alert-info">
 
-<b>Disclaimer</b>: I am <i>not</i> a mathematician. This post is likely to contain flawed/erroneous/non-rigorous mathematical statements and sentiments. Proceed with caution.
+<b>Disclaimer</b>: I am <i>not</i> a mathematician. This post likely contains flawed/erroneous/non-rigorous mathematical statements and sentiments. Proceed with caution.
 
 </div>
 </div>
@@ -3197,7 +3199,7 @@ z
 <p>Then, we can use the Euclidean distance $d(\vec{p},\vec{q})=\sqrt{\sum_i{\left(q_i-p_i\right)^2}}$ for any two points $\vec{p}=(p_1,p_2)$ and $\vec{q}=(q_1,q_2)$ to calculate the distance from our off-center point $(x_0,y_0)$ to any equidistant point on the unit circle's circumference $p_i=\left(\cos(\theta i), \sin(\theta i) \right)$:</p>
 $$
 \forall i : d_i = \sqrt{\left(\cos(\theta i) - x_0\right)^2 + \left(\sin(\theta i) - y_0 \right)^2}
-$$<p>The average radius $\hat{r}$ measured from our off-center point is then just the arithemtic mean of the distances, or:</p>
+$$<p>The average radius $\hat{r}$ measured from our off-center point is then just the arithmetic mean of the distances, or:</p>
 $$
 \hat{r} = \frac{1}{n} \sum_{i=0}^{n-1}{\sqrt{\left(\cos(\theta i) - x_0\right)^2 + \left(\sin(\theta i) - y_0 \right)^2}}
 $$<p>This is visualized again for $(.25, .15)$ below:</p>
