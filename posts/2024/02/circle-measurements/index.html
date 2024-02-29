@@ -557,7 +557,7 @@ figcaption {
     <article>
         <header>
             <h1>Off-Center Measurements of Circles</h1>
-            <time datetime="article.date.isoformat()" pubdate>Fri 01 September 2023</time>
+            <time datetime="article.date.isoformat()" pubdate>Sat 03 February 2024</time>
 
         </header>
 
@@ -32469,10 +32469,10 @@ z
 <p>To show that $\hat{d}$ must always be less than $d=2$, we can revisit the Euclidean distance between the two points of intersection for some $\theta$:</p>
 $$
 \hat{d}_{(x_0,y_0);\theta} = \sqrt{4-4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)}
-$$<p>We can note that when $(x_0,y_0)\ne(0,0)$, $4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)&gt;0$ except for when $\theta=\pi/2$ ($\tan\left(\frac{\pi}{2}\right)$ is undefined), and when the $y$-intercept term $y_0-x_0\tan\theta$ is $0$. Let this term be denoted by $\phi$, and so the distance is $\sqrt{4-\phi}$ where $\phi&gt;0$, so the value inside the square root must be strictly less than $4$, and therefore $\sqrt{4-4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)}=\hat{d}_{(x_0,y_0);\theta}&lt;2$ for any $\theta\ne\pi/2$ and $(x_0,y_0)\ne(0,0)$.</p>
+$$<p>We can observe that when $(x_0,y_0)\ne(0,0)$, the second term $4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)&gt;0$ except for when $\theta=\pi/2$ (note $\tan\left(\frac{\pi}{2}\right)$ is undefined) or when the $y$-intercept term $\beta=y_0-x_0\tan\theta=0$. Let this second term be denoted by $\phi$ for clarity, so we have $\hat{d}_{(x_0,y_0);\theta} = \sqrt{4-\phi}$ where $\phi&gt;0$, implying $4-\phi &lt; 4$ and therefore $\sqrt{4-\phi}=\hat{d}_{(x_0,y_0);\theta}&lt;2$ for any $\theta\ne\pi/2$ and $(x_0,y_0)\ne(0,0)$.</p>
 <p>If any line segment about the off-center point is less than $2$ apart from one line of length $2$, then the average (integral) of these segments will clearly be less than $2$. In other words,</p>
 $$
-\forall (x_0,y_0) : (x_0,y_0)\ne(0,0) \Rightarrow \frac{1}{\pi} \int_0^\pi {\sqrt{4-4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)}} d\theta = \hat{d}_{(x_0,y_0)} &lt; 2
+\forall (x_0,y_0) : (x_0,y_0)\ne(0,0) \implies \frac{1}{\pi} \int_0^\pi {\sqrt{4-4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)}} d\theta = \hat{d}_{(x_0,y_0)} &lt; 2
 $$
 </div>
 </div>
@@ -32535,7 +32535,7 @@ MathJax.Hub.Config({
 
         <div class="meta">
             <div>
-                    <a href="https://blademaw.github.io/tag/math.html" class="tag">math</a>
+                    <a href="https://blademaw.github.io/tag/geometry.html" class="tag">geometry</a>
                     <a href="https://blademaw.github.io/tag/python.html" class="tag">python</a>
                     <a href="https://blademaw.github.io/tag/proof.html" class="tag">proof</a>
             </div>
@@ -32547,8 +32547,8 @@ MathJax.Hub.Config({
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
     <script type="text/javascript">
       var disqus_shortname = 'blademaw-blog';
-      var disqus_identifier = '/posts/2023/09/circle-measurements/';
-      var disqus_url = 'https://blademaw.github.io/posts/2023/09/circle-measurements/';
+      var disqus_identifier = '/posts/2024/02/circle-measurements/';
+      var disqus_url = 'https://blademaw.github.io/posts/2024/02/circle-measurements/';
       var disqus_title = 'Off-Center Measurements of Circles';
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -557,7 +557,7 @@ figcaption {
     <article>
         <header>
             <h1>Off-Center Measurements of Circles</h1>
-            <time datetime="article.date.isoformat()" pubdate>Fri 01 September 2023</time>
+            <time datetime="article.date.isoformat()" pubdate>Sat 03 February 2024</time>
 
         </header>
 
@@ -1691,7 +1691,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="alert alert-warning">
 
-<b>NB:</b> This post uses a lot of $\LaTeX$ for displaying math. If it hasn't rendered and loaded correctly, try refreshing the page.
+<b>NB:</b> This post uses $\LaTeX$ for displaying math. If it hasn't rendered and loaded correctly, try refreshing the page or a different browser.
 
 </div>
 </div>
@@ -5599,7 +5599,7 @@ z
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As we increase the number of lines or measurements to the circumference $n$, we also decrease the angle between these lines, $\theta$. But as the above diagrams show, different $n$ can yield different values of $\hat{r}$. In reality, these are just approximations of $\hat{r}$.</p>
-<p>The "true" value of $\hat{r}$ is what we get if we kept decreasing $\theta$ (or equivalently, kept increasing $n$) such that $\theta\to0$. If you have a background in calculus, this should remind you of integrals! After all, integrals are <a href="https://xaktly.com/IntegralAsSum.html">just fancy sums</a>, anyway.</p>
+<p>The "true" value of $\hat{r}$ is what we get if we kept decreasing $\theta$ (or equivalently, kept increasing $n$) such that $\theta\to0$. And as anyone who's taken a calculus course will tell you, adding up a bunch of terms that become smaller and smaller should get you thinking of integrals — which are <a href="https://xaktly.com/IntegralAsSum.html">just fancy sums</a>, in reality.</p>
 <p>To take an integral with respect to $\theta$, we'll slightly rephrase the summation by dropping the $i$ term and dividing by the total number of angles ($2\pi$) rather than $1/n$ (you can think of this as averaging over all possible degrees of rotation of measuring from $(x_0,y_0)$ to the circumference):</p>
 $$
 \hat{r} = \frac{1}{2\pi} \int_0^{2\pi}{\sqrt{\left(\cos(\theta) - x_0\right)^2 + \left(\sin(\theta) - y_0 \right)^2}}d\theta
@@ -5677,9 +5677,9 @@ $$<p>Equivalently in Python, we have:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So what happens when $(x_0,y_0)\ne(0,0)$? Our numerical solution (averaging distances from $(x_0,y_0)$ to equidistant points on the unit circle circumference) clearly suggests that $\hat{r}&gt;1$ for $n=6,n=36$. In fact, for $n\ge3$, we will always achieve $\hat{r}&gt;1$ when $(x_0,y_0)\ne(0,0)$.</p>
-<p>Before we get to the $\hat{r}&gt;1$ part, why $n\ge3$ specifically? Firstly, an average over "one equidistant point" ($n=1$) is just the distance to that point, so that doesn't work. Secondly, $n=2$ yields $\hat{r}=1$ for all off-center points where $y_0=0$ (the algebraic proof is left as an exercise for the reader). So, $n=3$ is the first acceptable size of $n$ for averaging over the equidistant distances.</p>
-<p>Still, these numerical approximations are inherently "biased" in certain locations because of the few number of points:</p>
+<p>So what happens when $(x_0,y_0)\ne(0,0)$? Our numerical solution above (averaging distances from $(x_0,y_0)$ to equidistant points on the unit circle circumference) clearly suggests that $\hat{r}&gt;1$ for $n=6,n=36$. In fact, we can show that for $n\ge3$, we will always achieve $\hat{r}&gt;1$ when $(x_0,y_0)\ne(0,0)$.</p>
+<p>Before we get to why $\hat{r}&gt;1$, note that the first case of $n=1$ is an average over "one equidistant point," which is just the distance to that point. Secondly, the $n=2$ case yields $\hat{r}=1$ for all off-center points where $y_0=0$ (this can be algebraically proved). The $n=3$ case is therefore the first acceptable size of $n$ for "averaging" over the equidistant distances that satisfy the $\hat{r}&gt;1$ condition.</p>
+<p>With smaller $n$, the "average off-center radius" is <em>biased</em> in certain locations due to fewer number of equidistant points sampled:</p>
 
 </div>
 </div>
@@ -25800,7 +25800,7 @@ z
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It's clear both our analytical and numerical solutions agree that $\hat{r}&gt;1$. But why is this? Despite all this work, there is no clear intuition behind why the average radius becomes <em>greater</em> than the true radius when measured off-center — it almost feels like it violates some kind of conservation property of distances.</p>
-<p>A great explanation is given in <a href="https://math.stackexchange.com/questions/4764228/average-distance-from-point-to-unit-circle/4764245#4764245">this forum</a>, so I'll repeat the visualization here (but be sure to read the original thread):</p>
+<p>An explanation is given in <a href="https://math.stackexchange.com/questions/4764228/average-distance-from-point-to-unit-circle/4764245#4764245">this forum</a>, and I'll repeat the visualization here (but be sure to read the original thread):</p>
 
 </div>
 </div>
@@ -27564,7 +27564,7 @@ L 348.087273 140.256
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Part two of this post is perhaps easier to accept — there is a nice and intuitive mental way to convince yourself that the above statement is true. I'll start with this informal proof, and then work toward a closed solution for the average diameter as measured from any off-center point within a circle.</p>
+<p>Part two of this post is an easier to come to — there is a nice and intuitive mental way to convince yourself that the above statement is true. I'll start with this informal proof, and then work toward a closed solution for the average diameter as measured from any off-center point within a circle.</p>
 
 </div>
 </div>
@@ -31174,7 +31174,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>And we get a quadratic (I purposefully laid out the $x$s like that). Plugging this in to the quadratic formula, we have:</p>
+<p>which we can plug into the quadratic formula to yield:</p>
 $$
 x = \frac{\pm\sqrt{-4\beta^2 + 4\tan^2(\theta)+4}-2\beta\tan(\theta)}{2\left(\tan^2(\theta)+1\right)}
 $$<p>and thus</p>
@@ -32469,10 +32469,10 @@ z
 <p>To show that $\hat{d}$ must always be less than $d=2$, we can revisit the Euclidean distance between the two points of intersection for some $\theta$:</p>
 $$
 \hat{d}_{(x_0,y_0);\theta} = \sqrt{4-4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)}
-$$<p>We can note that when $(x_0,y_0)\ne(0,0)$, $4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)&gt;0$ except for when $\theta=\pi/2$ ($\tan\left(\frac{\pi}{2}\right)$ is undefined), and when the $y$-intercept term $y_0-x_0\tan\theta$ is $0$. Let this term be denoted by $\phi$, and so the distance is $\sqrt{4-\phi}$ where $\phi&gt;0$, so the value inside the square root must be strictly less than $4$, and therefore $\sqrt{4-4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)}=\hat{d}_{(x_0,y_0);\theta}&lt;2$ for any $\theta\ne\pi/2$ and $(x_0,y_0)\ne(0,0)$.</p>
+$$<p>We can observe that when $(x_0,y_0)\ne(0,0)$, the second term $4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)&gt;0$ except for when $\theta=\pi/2$ (note $\tan\left(\frac{\pi}{2}\right)$ is undefined) or when the $y$-intercept term $\beta=y_0-x_0\tan\theta=0$. Let this second term be denoted by $\phi$ for clarity, so we have $\hat{d}_{(x_0,y_0);\theta} = \sqrt{4-\phi}$ where $\phi&gt;0$, implying $4-\phi &lt; 4$ and therefore $\sqrt{4-\phi}=\hat{d}_{(x_0,y_0);\theta}&lt;2$ for any $\theta\ne\pi/2$ and $(x_0,y_0)\ne(0,0)$.</p>
 <p>If any line segment about the off-center point is less than $2$ apart from one line of length $2$, then the average (integral) of these segments will clearly be less than $2$. In other words,</p>
 $$
-\forall (x_0,y_0) : (x_0,y_0)\ne(0,0) \Rightarrow \frac{1}{\pi} \int_0^\pi {\sqrt{4-4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)}} d\theta = \hat{d}_{(x_0,y_0)} &lt; 2
+\forall (x_0,y_0) : (x_0,y_0)\ne(0,0) \implies \frac{1}{\pi} \int_0^\pi {\sqrt{4-4\left(y_0-x_0\tan\theta\right)^2\cos^2(\theta)}} d\theta = \hat{d}_{(x_0,y_0)} &lt; 2
 $$
 </div>
 </div>
@@ -32535,7 +32535,7 @@ MathJax.Hub.Config({
 
         <div class="meta">
             <div>
-                    <a href="https://blademaw.github.io/tag/math.html" class="tag">math</a>
+                    <a href="https://blademaw.github.io/tag/geometry.html" class="tag">geometry</a>
                     <a href="https://blademaw.github.io/tag/python.html" class="tag">python</a>
                     <a href="https://blademaw.github.io/tag/proof.html" class="tag">proof</a>
             </div>
