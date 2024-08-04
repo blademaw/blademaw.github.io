@@ -566,8 +566,9 @@ figcaption {
 
 <figure class="styled"><img class="styled" src="/images/circles-splash.png" width=500 height=375 title="Two circles with chords to the circumference." alt="Two circles with chords to the circumference."></figure>
 
-<p>Choose a point on a circle. Then, imagine shooting out a bunch of "rays" to the circumference of the circle, measuring their lengths, and averaging them. Let's call this the <em>average radius</em>. At the center of the circle, this average would clearly just be the radius (one, in the case of the unit circle).</p>
-<p>But what if we picked any other point within the circle? Surely it wouldn't matter — the average radius would just be the radius, because the circle is symmetrical: the shorter distances to the circumferences would be averaged out by the larger ones! Right? ...right?</p>
+<p>Choose any point on a circle, imagine shooting out a bunch of "rays" from the point to the circumference, and then averaging their lengths — let's call this the <em>average radius</em>. If the origin of the rays is the center of the circle (as in the figure on the left), this average would just be the radius of the circle.</p>
+<p>But what if we picked any other point within the circle (e.g., the figure on the right)? Surely it wouldn't matter — the average radius would just be the radius, because the circle is symmetrical: the shorter distances to the circumferences would be averaged out by the larger ones! Right? ...right?</p>
+<p>It turns out that this is not the case, and the chosen point of origin for the "average radius" produces a number very different from the actual radius of the circle.</p>
 <!-- PELICAN_END_SUMMARY -->
 
 <style type="text/css">/*!
@@ -1689,17 +1690,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-warning">
-
-<b>NB:</b> This post uses $\LaTeX$ for displaying math. If it hasn't rendered and loaded correctly, try refreshing the page or a different browser.
-
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2>
 </div>
 </div>
@@ -1707,24 +1697,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I was watching a video about a <a href="https://www.youtube.com/watch?v=jmtYW1lDP8M">radial planimeter from the 1920s</a> (sounds esoteric, I know) used to measure the average radius of a circular shape, when I heard the following quote:</p>
-<blockquote><p>It's a strange but true fact that the average radius as measured from the center of a circle is different from the average if you measure it off-center [...]</p>
+<p>I was watching a video about a <a href="https://www.youtube.com/watch?v=jmtYW1lDP8M">radial planimeter from the 1920s</a> which was used to measure the average radius of a circular shape, when I heard something that surprised me:</p>
+<blockquote><p>It's a strange — but true — fact that the average radius as measured from the center of a circle is different from the average if you measure it off-center [...]</p>
 </blockquote>
-<p>This quote was visually accompanied by something similar to the images at the top of this post, and I had to pause the video to digest the quote.</p>
-<p>Could shifting the point of measurement, even slightly, seriously lead to a different value for the average radius? Why wouldn't circular symmetry just recoup the loss in distance to the circumference with the corresponding gains? Is this average radius larger or smaller than the true radius?</p>
-<p>Unable to mentally convince myself with some rough mental geometry, I set out to understand this quirk of circles a little better.</p>
+<p>This struck me as odd, because my intuition was that the circular symmetry of a circle would just recoup the loss in distance to the circumference in one ray with the opposite corresponding longer ray. Unable to convince myself with some rough mental geometry, I set out to understand this odd fact a little better.</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-info">
-
-<b>Disclaimer</b>: I am <i>not</i> a mathematician. This post likely contains flawed/erroneous/non-rigorous mathematical statements and sentiments. Proceed with caution.
-
-</div>
 </div>
 </div>
 </div>
@@ -27564,7 +27541,7 @@ L 348.087273 140.256
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Part two of this post is an easier to come to — there is a nice and intuitive mental way to convince yourself that the above statement is true. I'll start with this informal proof, and then work toward a closed solution for the average diameter as measured from any off-center point within a circle.</p>
+<p>Part two of this post is an easier realization to make — I'll start with an informal proof, before using the closed-form solution for the average diameter as measured from any off-center point within the unit circle.</p>
 
 </div>
 </div>
@@ -32462,6 +32439,26 @@ z
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-warning" role="alert">
+    <strong>NB.</strong> To prove that when $(x_0,y_0)\ne (0,0)$, $\hat{d}_{(x_0,y_0)}<2$, I need to prove that (1) $\hat{d}_{(x_0', 0)}<2$, (2) $\hat{d}_{(0, y_0')} < 2$, and $\hat{d}_{(x_0', y_0')} < 2$ for some $x_0', y_0' > 0$.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>When we have $x=x_0', y=0$</strong>:</p>
+<ul>
+<li>Then </li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
