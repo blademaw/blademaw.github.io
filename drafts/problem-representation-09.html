@@ -571,19 +571,19 @@ figcaption {
 <h2>Enumeration and Exhaustion</h2>
 <h3>Problem 1 — Toy Builder</h3>
 <p>Imagine you are a <a href="http://puzzlor.com/2016-02_ToyBuilder.html">toy builder</a> who can build three different toys — <strong>airplanes, helicopters, or cars</strong>. Each of these toys requires resources to make, namely <strong>blue blocks, green rods,</strong> or <strong>red wheels</strong>. Below is a table that summarizes the cost for each toy:</p>
-<div class="math">$$ \begin{array} {r|| r r r}
- \textbf{Toy} &amp; \textbf{Blue Blocks} &amp; \textbf{Green Rods} &amp; \textbf{Red Wheels} \\
-  \hline \text{Airplane} &amp; 3 &amp; 2 &amp; 1 \\ 
-   \text{Helicopter} &amp; 2 &amp; 4 &amp; 1 \\
-    \text{Car} &amp; 1 &amp; 2 &amp; 4 \\
-     \end{array} $$</div>
+<p>$$ \begin{array} {r|| r r r}
+ \textbf{Toy} &amp; \textbf{Blue Blocks} &amp; \textbf{Green Rods} &amp; \textbf{Red Wheels} \
+  \hline \text{Airplane} &amp; 3 &amp; 2 &amp; 1 \ 
+   \text{Helicopter} &amp; 2 &amp; 4 &amp; 1 \
+    \text{Car} &amp; 1 &amp; 2 &amp; 4 \
+     \end{array} $$</p>
 <p>Once each toy is crafted, they can be sold (presumably on the luxury toy market) to net the following profits:</p>
-<div class="math">$$ \begin{array} {r|| r }
- \textbf{Toy} &amp; \textbf{Profit}  \\
-  \hline \text{Airplane} &amp; \$7 \\ 
-   \text{Helicopter} &amp; \$8  \\
-    \text{Car} &amp; \$5 \\
-     \end{array} $$</div>
+<p>$$ \begin{array} {r|| r }
+ \textbf{Toy} &amp; \textbf{Profit}  \
+  \hline \text{Airplane} &amp; \$7 \ 
+   \text{Helicopter} &amp; \$8  \
+    \text{Car} &amp; \$5 \
+     \end{array} $$</p>
 <p>You begin with <strong>25 blue blocks, 29 green rods,</strong> and <strong>30 red wheels</strong>. The question is, of course,</p>
 <blockquote>
 <p>What is the maximum profit you can achieve?</p>
@@ -592,17 +592,13 @@ figcaption {
 <p>As the search space for this problem is quite restricted, one approach is to just enumerate over all possibilities, i.e., brute force. This cut-and-dried approach is (potentially very) expensive, but is less costly on us humans to implement in favor of something like a convoluted backtracking algorithm.</p>
 <p>When implementing brute-force, there are generally three steps: <strong>(1)</strong> defining the representation of a candidate solution, <strong>(2)</strong> generating all possibilities, and <strong>(3)</strong> finding the candidate that solves our problem. "Solving the problem" means fitting a criteria, in this case the maximum cost-generating combination of toys to build.</p>
 <h4>Representation</h4>
-<p>This problem is relatively easy to represent — we can define a <span class="math">$ 1\times3 $</span> vector to hold the number of airplanes, helicopters, and cars made, respectively. I.e.,
-</p>
-<div class="math">$$ \text{solution} \leftarrow (airplanes, \space helicopters, \space cars) $$</div>
-<p>
+<p>This problem is relatively easy to represent — we can define a $1\times3$ vector to hold the number of airplanes, helicopters, and cars made, respectively. I.e.,
+$$ \text{solution} \leftarrow (airplanes, \space helicopters, \space cars) $$
 is our representation of a candidate solution. </p>
 <h4>Generating possibilities</h4>
 <p>First, we need to limit each toy produced in a given solution by the maximum number we can make of that toy. This will be given by the floor of the minimum amount of toys you can make with <strong>any</strong> of the resources available, or
-</p>
-<div class="math">$$ \left \lfloor{\min\left(\frac{c^{(i)}_b}{25}, \frac{c_g^{(i)}}{29}, \frac{c^{(i)}_r}{30} \right)}\right \rfloor $$</div>
-<p>
-where <span class="math">$ c^{(i)}_{b,g,r} $</span> is the cost in blue/green/red resources of toy <span class="math">$ i $</span>. We can query these results</p>
+$$ \left \lfloor{\min\left(\frac{c^{(i)}<em b_g_r="b,g,r">b}{25}, \frac{c_g^{(i)}}{29}, \frac{c^{(i)}_r}{30} \right)}\right \rfloor $$
+where $c^{(i)}</em>$ is the cost in blue/green/red resources of toy $i$. We can query these results</p>
 <style type="text/css">/*!
 *
 * IPython notebook
@@ -1796,7 +1792,7 @@ MathJax.Hub.Config({
 
 
 
-<p>to discover we can create a maximum of <span class="math">$ 8 $</span> airplanes, <span class="math">$ 7 $</span> helicopters, and <span class="math">$ 7 $</span> cars. To enumerate all possibilities, we can use a nested <code>for</code> loop to create each vector solution with the maximums in place. We can also cut down on the number of solutions to sift through in the future by axing solutions we know are wrong (if they use excess resources). We can write a function:</p>
+<p>to discover we can create a maximum of $8$ airplanes, $7$ helicopters, and $7$ cars. To enumerate all possibilities, we can use a nested <code>for</code> loop to create each vector solution with the maximums in place. We can also cut down on the number of solutions to sift through in the future by axing solutions we know are wrong (if they use excess resources). We can write a function:</p>
 <style type="text/css">/*!
 *
 * IPython notebook
@@ -2978,7 +2974,7 @@ MathJax.Hub.Config({
 
 <p>that ensures after spending all required resources, we didn't over-use any.</p>
 <h4>Identifying the solution</h4>
-<p>Next, we can enumerate the solutions and accumulate the <em>'correct'</em> ones with the <span class="math">$ O(n^3) $</span> <code>for</code> loop:</p>
+<p>Next, we can enumerate the solutions and accumulate the <em>'correct'</em> ones with the $O(n^3)$ <code>for</code> loop:</p>
 <style type="text/css">/*!
 *
 * IPython notebook
@@ -6557,36 +6553,43 @@ MathJax.Hub.Config({
 <p>This is the (sadly apparent) <a href="http://puzzlor.com/2017-02_PortInAStorm.html">last published puzzle</a> from the great <em>PuzzlOR</em>, where it is your job to direct <strong>20 boats</strong> at sea to their nearest dock (with a total of <strong>20 dock spaces</strong>) in the midst of a storm.</p>
 <p><figure class="styled"><img class="styled" src="/images/portinastorm_desc.png" width="450" height="315" title="Twenty boats at sea to be assigned docks" alt="None"><figcaption>Twenty boats at sea to be assigned docks (<a href='https://puzzlor.com/2017-02_PortInAStorm.html'>source</a>)</figcaption></figure></p>
 <p>There are three distinct clusters of boats (labelled above), and we can summarize them as follows:</p>
-<div class="math">$$ \begin{array} {r r r}
- \quad\quad\quad\quad &amp; \textbf{Distance} &amp; \quad\quad\\
-\end{array} \\
+<p>$$ 
+\begin{array} {r r r}
+ \quad\quad\quad\quad &amp; \textbf{Distance} &amp; \quad\quad\
+\end{array} \
 \begin{array} {r|| r r r |r}
- \textbf{Cluster} &amp; \text{Dock 1} &amp; \text{Dock 2} &amp; \text{Dock 3} &amp; \textbf{Boats}\\
-  \hline 1 &amp; 1 &amp; 3 &amp; 2 &amp; 8\\ 
-   2 &amp; 2 &amp; 2 &amp; 1 &amp; 5\\
-    3 &amp; 3 &amp; 2 &amp; 1 &amp; 7\\
-\end{array} $$</div>
+ \textbf{Cluster} &amp; \text{Dock 1} &amp; \text{Dock 2} &amp; \text{Dock 3} &amp; \textbf{Boats}\
+  \hline 1 &amp; 1 &amp; 3 &amp; 2 &amp; 8\ 
+   2 &amp; 2 &amp; 2 &amp; 1 &amp; 5\
+    3 &amp; 3 &amp; 2 &amp; 1 &amp; 7\
+\end{array}
+$$</p>
 <p>And the dock spaces are:</p>
-<div class="math">$$ \begin{array} {r|| r r r}
- \textbf{Dock} &amp; \textbf{Spaces Available} \\
-  \hline 1 &amp; 4   \\ 
-   2 &amp; 7 \\
-    3 &amp; 9  \\
-\end{array} $$</div>
+<p>$$ 
+\begin{array} {r|| r r r}
+ \textbf{Dock} &amp; \textbf{Spaces Available} \
+  \hline 1 &amp; 4   \ 
+   2 &amp; 7 \
+    3 &amp; 9  \
+\end{array}
+$$</p>
 <p>Given the data, the question this time is:</p>
 <blockquote>
 <p>What is the minimum total distance travelled by all boats?</p>
 </blockquote>
 <h4>Representation</h4>
 <p>With this puzzle, it is harder to see how we would go about abstracting a solution to a data structure. Several ideas are possible, some more efficient than others. Take for instance each boat represented by a list with relevant attributes:</p>
-<div class="math">$$ \text{boat}_i \leftarrow \left[ \left(\text{dist}_1, \text{dist}_2, \text{dist}_3 \right), \space \text{current_dock} \right] $$</div>
-<p>where <span class="math">$ \text{dist}_i $</span> is the distance of the boat to the <span class="math">$ i $</span>-th dock.</p>
-<p>This representation is clear and allows querying of the boat's <em>travelled distance,</em> or <em>cost</em> via <span class="math">$ \verb|boat|_i\verb|[0][1]| $</span>. However, we must consider that twenty boats in an array means <span class="math">$ 20\cdot4=100 $</span> total elements in memory, and it's easy to see that many boats are essentially the same array, with the <code>current_dock</code> being the only altered attribute.</p>
+<p>$$ 
+\text{boat}_i \leftarrow \left[ \left(\text{dist}_1, \text{dist}_2, \text{dist}_3 \right), \space \text{current_dock} \right] 
+$$</p>
+<p>where $\text{dist}_i$ is the distance of the boat to the $i$-th dock.</p>
+<p>This representation is clear and allows querying of the boat's <em>travelled distance,</em> or <em>cost</em> via $\verb|boat|_i\verb|[0][1]|$. However, we must consider that twenty boats in an array means $20\cdot4=100$ total elements in memory, and it's easy to see that many boats are essentially the same array, with the <code>current_dock</code> being the only altered attribute.</p>
 <p>Okay, what about a different data structure? Since <code>current_dock</code> is the only variable attribute, can we encode that data without constantly altering it in some fashion? One possible representation is to transform <code>current_dock</code> a position in an array:</p>
-<div class="math">$$ \text{docks} \leftarrow \left[ \left[ \text{boats}\right], \space \left[\dots\right],\space \left[\dots\right] 
-    \right] $$</div>
-<p>where <span class="math">$ \text{docks}[i] $</span> stores all boats docked at the <span class="math">$ i $</span>-th dock. In this representation, boats would change destinations via array swapping, which is possibly even more costly given the nature of array concatenation and slicing.</p>
-<p>As explicit as this representation is, it still suffers from the redundancy issues of the boat representation, and its practical implementation must constantly ensure <span class="math">$ \text{len}(\text{docks}[i])\le\text{dock_spaces}_i $</span>, which is at least three comparisons per iteration.</p>
+<p>$$ \text{docks} \leftarrow \left[ \left[ \text{boats}\right], \space \left[\dots\right],\space \left[\dots\right] 
+    \right] 
+$$</p>
+<p>where $\text{docks}[i]$ stores all boats docked at the $i$-th dock. In this representation, boats would change destinations via array swapping, which is possibly even more costly given the nature of array concatenation and slicing.</p>
+<p>As explicit as this representation is, it still suffers from the redundancy issues of the boat representation, and its practical implementation must constantly ensure $\text{len}(\text{docks}[i])\le\text{dock_spaces}_i$, which is at least three comparisons per iteration.</p>
 <p>Let's move on from this nested array approach. In a <em>single array,</em> can we somehow encode the assigned dock of a boat and identify its cluster at the same time? Unsurprisingly, the answer is yes — probably in many ways.</p>
 <p>Let's move forward with a representation that makes use of the position in the array to signify dock number, and integers 1–3 to signify boat cluster. Here is a sample solution that assigns boats to each dock in sorted order:
 <figure><img src="/images/portinastorm_rep.png" width="500" height="78" title="Problem representation for Problem 2" alt="Problem representation for Problem 2"></figure></p>
@@ -6595,10 +6598,10 @@ MathJax.Hub.Config({
 <p>We can think of our representation as a result of <em>choosing</em> different individual boats from a pool of available boats, one dock at a time. We can define the algorithm for generating a given solution as</p>
 <blockquote>
 <ol>
-<li>Define a pool of available boats, <span class="math">$ S $</span></li>
-<li>Choose <span class="math">$ 4 $</span> boats from <span class="math">$ S $</span>, let this be the set <span class="math">$ D_1 $</span></li>
-<li>Choose <span class="math">$ 7 $</span> boats from <span class="math">$ \{S-D_1\} $</span>, let this be the set <span class="math">$ D_2 $</span></li>
-<li>The remaining <span class="math">$ 9 $</span> boats in dock three will be <span class="math">$ D_3=\{S-D_1-D_2\} $</span></li>
+<li>Define a pool of available boats, $S$</li>
+<li>Choose $4$ boats from $S$, let this be the set $D_1$</li>
+<li>Choose $7$ boats from ${S-D_1}$, let this be the set $D_2$</li>
+<li>The remaining $9$ boats in dock three will be $D_3={S-D_1-D_2}$</li>
 </ol>
 </blockquote>
 <p>Of course, the real algorithm must enumerate all choices of <code>(2)</code> and then <code>(3)</code>.</p>
@@ -11381,70 +11384,6 @@ MathJax.Hub.Config({
 <p>Of course, we should note <strong>the only reason we could feasibly solve the previous problems</strong> with <strong>brute-force</strong> was because of the small number of solutions to verify, and the guarantee our parameters/arguments were fixed.</p>
 <p>But what happens when our problem is more general, or simply has too many possibilities to check?</p>
 <h3>Problem 3 — The N-Queens Problem</h3>
-<script type="text/javascript">// MathJax injection here
-
-// if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-//     var align = "center",
-//         indent = "0em",
-//         linebreak = "false";
-// 
-//     if (false) {
-//         align = (screen.width < 768) ? "left" : align;
-//         indent = (screen.width < 768) ? "0em" : indent;
-//         linebreak = (screen.width < 768) ? 'true' : linebreak;
-//     }
-// 
-//     var mathjaxscript = document.createElement('script');
-//     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-//     mathjaxscript.type = 'text/javascript';
-//     mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML';
-// 
-//     var configscript = document.createElement('script');
-//     configscript.type = 'text/x-mathjax-config';
-//     configscript[(window.opera ? "innerHTML" : "text")] =
-//         "MathJax.Hub.Config({" +
-//         "    config: ['MMLorHTML.js']," +
-//         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-//         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-//         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-//         "    displayAlign: '"+ align +"'," +
-//         "    displayIndent: '"+ indent +"'," +
-//         "    showMathMenu: true," +
-//         "    messageStyle: 'normal'," +
-//         "    tex2jax: { " +
-//         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-//         "        displayMath: [ ['$$','$$'] ]," +
-//         "        processEscapes: true," +
-//         "        preview: 'TeX'," +
-//         "    }, " +
-//         "    'HTML-CSS': { " +
-//         "        availableFonts: ['TeX']," +
-//         "        preferredFont: 'STIX'," +
-//         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-//         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-//         "    }, " +
-//         "}); " +
-//         "if ('default' !== 'default') {" +
-//             "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-//                 "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-//                 "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-//                 "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-//                 "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-//                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-//             "});" +
-//             "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-//                 "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-//                 "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-//                 "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-//                 "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-//                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-//             "});" +
-//         "}";
-// 
-//     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-//     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-// }
-</script>
         </div>
 
         <div class="meta">
